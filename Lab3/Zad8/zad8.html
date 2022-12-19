@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="zad8.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="zad8.js" defer></script>
+
+    <title>Zadanie 8</title>
+</head>
+<body>
+    <div class="form-inline">
+        <div class="passwordForm">
+            <span>New password</span>
+            <div class="filler"></div>
+            <input type="password" class="textInput" placeholder="New password" id="inputPassword" maxlength="50"/>
+            <i class="far fa-eye" id="togglePassword" style="margin-left: -35px; cursor: pointer;"></i>
+            <div class="filler"></div>
+            <span>Repeat new password</span>
+            <div class="filler"></div>
+            <input type="password" class="textInput" placeholder="Repeat new password" id="inputPasswordRepeat" maxlength="50" />
+            <i class="far fa-eye" id="togglePasswordRepeat" style="margin-left: -35px; cursor: pointer;"></i>
+            <div></div>
+            <span class="alerts" id="alerts">Passwords should be the same!</span>
+        </div>
+        <div class="passwordRequirements">
+            <figure>
+                <figcaption>Password requirements</figcaption>
+                <ul>
+                    <li><input type="checkbox" name="switch" class="check" disabled="disabled" id="checkEight"> at least 8 characters </li>
+                    <li><input type="checkbox" name="switch" class="check" disabled="disabled" id="checkSpecial"> at least one special character </li>
+                    <li><input type="checkbox" name="switch" class="check" disabled="disabled" id="checkCapital"> at least one capital letter </li>
+                    <li><input type="checkbox" name="switch" class="check" disabled="disabled" id="checkDigit"> at least one digit </li>
+                </ul>
+            </figure>
+        </div>
+    </div>
+</body>
+</html>

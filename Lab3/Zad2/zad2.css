@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    text-align: center;
+    margin-top: 5%;
+    background-color: rgb(97, 181, 236);
+}
+
+img{
+    width: 1080px; 
+    height: 1920px;
+    width: 75%;
+    height: 100%;
+    max-width: 1080px;
+    max-height: 1920px;
+    object-fit: cover;
+    border-radius: 100px;
+    border: 5px solid rgb(48, 192, 236);
+}
+
+button{
+    box-sizing: border-box;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    background-color: rgb(84, 46, 189);
+    font-weight:900;
+    color: white;
+    border: 2px solid black;
+    border-radius: 100px;
+    margin-top: 15px;
+}

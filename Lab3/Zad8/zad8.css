@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  background-color: aliceblue;
+}
+
+input {
+  width: 70%;
+  height: 45px;
+  border-radius: 4px;
+}
+
+.form-inline{
+  display: grid;
+  grid-template-columns: 100%;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  border-radius: 10px;
+  box-shadow: 0.1rem 0.1rem 0.8rem rgba(0, 0, 0, 0.2);
+  height: 90vh;
+  padding: 10px;
+  background-color: white;
+}
+
+span {
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: 800;
+  color: grey;
+}
+
+.passwordForm{
+  height: fit-content;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.passwordRequirements{
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textInput {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+figcaption {
+  color: grey;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+}
+
+li {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.filler {
+  margin: 2vh;
+}
+
+.alerts {
+  color: red;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0;
+}
+
+.check {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  bottom: 3px;
+  left: 2px;
+  transition: 0.10s;
+  background-color: #FE0006;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  border-radius: 30px;
+  outline: none;
+}
+
+.check:checked {
+  background-color: #0E9700;
+}
+
+.check:before {
+  content: "✖";
+}
+.check:checked:before {
+  content: "✔";
+}
+
+.check:hover {
+  opacity: 0.8;
+}

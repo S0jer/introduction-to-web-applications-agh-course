@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    display: flex;
+    background-color: aliceblue;
+    width: 100vw;
+    height: 100vh;
+}
+
+.board {
+    background-color: rgb(54, 241, 241);
+    cursor: pointer;
+    text-align: center;
+    width: 80%;
+    height: 60%;
+    border: 5px solid white;
+    box-shadow: 0.1rem 0.1rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+.crosshair{
+    position: absolute;
+    overflow: visible;
+    border-radius: 80%;
+    backface-visibility: hidden;
+    z-index: 2000;
+    pointer-events: none;
+}
+
+#point {
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    background-color: red;
+}
+
+.instruction {
+    padding: 20vh;
+}
+
+@media only screen and (max-width: 800px){
+    .instruction {
+        padding: 10vh;
+    }
+}
+

@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.vertical-menu {
+    width: 250px;
+    height: 100vh;
+    background-color: #eee;
+    transition: ease all .7s;
+  }
+
+  .menuOption {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: none;
+    width: 100%;
+    float: left;
+  }
+
+  .menuText {
+    color: rgb(29, 67, 106);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    justify-content: left;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    transition: ease all .7s;
+  }
+
+
+  .textWindow {
+    display: grid;
+    width: 250px;
+    max-height: 20px;
+    overflow: hidden;
+    justify-content: left;
+    transition: ease all .7s;
+  }
+
+
+  @media only screen and (max-width: 1000px){
+    .menuText {
+      font-size: 0;
+    }
+    .textWindow {
+      width: 0;
+      opacity: 0;
+    }
+    .vertical-menu {
+      width: 70px;
+    }
+  }
+
+  .icon {
+    justify-content: left;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .vertical-menu button {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .vertical-menu button:hover {
+    background-color: rgb(55, 189, 182);
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  
+  .vertical-menu button.active {
+    background-color: rgb(55, 189, 182);
+    color: white;
+  }

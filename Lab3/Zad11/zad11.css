@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+
+.menuContainer {
+    background-color: white;
+    position: absolute;
+    height: 100vh;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.itemsContainer {
+    overflow: hidden;
+}
+
+.menu{
+    display: block;
+    width: 100vw;
+    overflow: hidden;
+}
+
+
+.expendedMenu {
+    background: greenyellow;
+    transition: max-height .8s;
+    max-height: 0;
+}
+
+.expendedMenu a{
+    display: block;
+    padding: 5%;
+    color: black;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+.button{
+    display: block;
+    padding: 5%;
+    background-color: green;
+    color: black;
+    position: relative;
+}
+
+.button:before{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 2% solid transparent;
+    border-right: 2% solid transparent;
+    border-top:10px solid greenyellow;
+    right: 15px;
+    bottom: -10px;
+    z-index: 1;
+}
+
+.button:hover {
+    background-color: rgb(39, 145, 39);
+}
+
+.expendedMenu a:before{
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.expendedMenu a:after{
+    opacity: 0;
+    transition: opacity .2s;
+
+}
+
+.expendedMenu a:hover{
+    background: greenyellow;
+
+    background: linear-gradient(to bottom,rgb(39, 145, 39) 0%,rgb(39, 145, 39)  50%,rgb(45, 122, 45)  51%,rgb(45, 122, 45) );
+
+    transition: all .4s;
+    
+    border-bottom: 1px solid black;
+}
+
+.expendedMenu a:last-child{
+    border:none;
+}
+
+.itemsContainer:target .expendedMenu{
+    max-height: 13em;
+}
+
+.firstSpan {
+    position: relative;
+    display: block;
+}
+
+.firstSpan:hover:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 10px solid greenyellow;
+    right: 15px;
+    top: -10px;
+    z-index: 9;
+}
+

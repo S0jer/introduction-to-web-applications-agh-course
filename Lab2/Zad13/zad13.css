@@ -1,0 +1,361 @@
+*,
+*::before,
+*::after {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-image: url(img/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#grid-container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 7vh 7vh auto 88vh 7vh 7vh;
+    row-gap: 3vh;
+    font-family: sans-serif;
+    min-height: fit-content;
+}
+
+.container{
+    border: 4px solid red;
+    border-radius: 7px;
+}
+
+#sidebar{
+    align-items: center;
+    display: block;
+    overflow: hidden;
+}
+
+    .info{
+        text-align: center;
+    }
+
+        .avatar{
+            width: 80%;
+            height: 80%;
+            border-radius: 50%; 
+        }
+
+        .text{
+            display: block;
+            align-items: center;
+            text-align: center;
+        }
+
+    .fa {
+        padding: 15px;
+        height: 45px;
+        font-size: 30px;
+        width: 45px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+        .fa-github {
+            background: #2c2e32;
+            color: white;
+        }
+
+        .fa-linkedin {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-instagram{
+            background: #a94ea9df;
+            color: white;
+        }
+
+
+#main{
+    min-height: auto;
+}
+
+    .content{
+        margin: 4vh auto;
+        display: border-box;
+        padding: 4vh;
+        min-height: 10vh;
+        width: 80%;
+        background-color: rgba(66, 148, 220, 0.478);
+        -webkit-transform: skewX(0);
+        transform: skewX(0);
+    }
+
+        .circle{
+            width: 10vh;
+            height: 10vh;
+            float: left;
+            margin-right:2rem; 
+            border-radius: 50%;
+            -webkit-shape-outside:circle();
+            shape-outside:circle();
+            -webkit-transform: skewX(0);
+            transform: skewX(0);
+        }
+
+        .span1{
+            shape-outside: circle();
+            -webkit-transform: skewX(12deg);
+            transform: skewX(12deg);
+        }
+
+        h3{
+            margin: auto;
+            padding-bottom: 10px;
+        }
+
+
+.icons {
+    display: block;
+    padding-top: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.letters {
+    font-weight: bold;
+    font-size: 150%;
+    color: gold;
+}
+
+
+.form_container{
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.856) 55%, rgba(255, 255, 255, 0.8) 0%, transparent 55%), url(img/small_back.jpg);
+    background-size: cover;
+    width: 70%;
+    margin: 4vh auto;
+    padding: 4vh;
+    max-width: 70rem;
+}
+
+.form_content{
+    height: 100%;
+    width: 50%;
+}
+
+form{
+    height: 100%;
+}
+
+h2{
+    margin-bottom: 6%;
+    text-transform: uppercase;
+    color: #55c57a;
+    font-family: sans-serif;
+    font-size: 4vh
+}
+
+.btn{
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10rem;
+    font-size: 2vh;
+    border: none;
+    background-color: #55c57a;
+    color: #fff;
+}
+
+.group{
+    margin-bottom: 6%;
+}
+
+.group2{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    margin-bottom: 10%;
+}
+
+.radio_group{
+    width: 140%;
+}
+
+.text_input{
+    width: 40%;
+    height: 4vh;
+}
+
+
+/* przyciski kolorowe */
+label > input[type="radio"] {
+    display: none;
+}
+label > input[type="radio"] + *::before {
+cursor: pointer;
+content: "";
+display: inline-block;
+vertical-align: bottom;
+width: 1rem;
+height: 1rem;
+margin-right: 0.3rem;
+border-radius: 50%;
+border-style: solid;
+border-width: 0.1rem;
+border-color: gray;
+}
+label > input[type="radio"]:checked + * {
+color: teal;
+}
+label > input[type="radio"]:checked + *::before {
+background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent);
+border-color: teal;
+}
+
+fieldset {
+margin: 20px;
+max-width: 400px;
+}
+label > input[type="radio"] + * {
+display: inline-block;
+padding: 0.5rem 1rem;
+}
+        
+
+
+@media (min-width: 800px){
+    #grid-container{
+        grid-template-columns: 15% auto 15%;
+        grid-template-rows: 7vh 7vh auto 7vh 7vh; 
+        row-gap: 3vh;
+        column-gap: 3vh;
+        min-height: fit-content;
+    }
+
+    .icons {
+        padding-top: 15px;
+    }
+
+    #header{
+        grid-row: 1/2;
+        grid-column: 1/4;
+    }
+
+    #navigation{
+        grid-row: 2/3;
+        grid-column: 1/4;
+    }
+
+    #sidebar{
+        grid-row: 3/4;
+        grid-column: 1/2;
+        position: sticky;
+        top: 0;
+        height: 79vh;
+    }
+
+    #main{
+        grid-column: 2/4;
+
+    }
+
+    #footer{
+        grid-column: 2/4;
+    }
+
+    .content{
+        -webkit-transform: skewX(0);
+        transform: skewX(0);
+    }
+
+    .letters {
+        font-size: 100%;
+    }
+
+}
+
+
+@media (min-width: 1200px){
+    .icons {
+        padding-top: 15px;
+    }
+
+    #grid-container{
+        grid-template-columns: 10% auto 10%;
+        grid-template-rows: 7vh 7vh auto 7vh; 
+        row-gap: 3vh;
+        column-gap: 3vh;
+        min-height: fit-content;
+    }
+
+    #header{
+        grid-row: 1/2;
+        grid-column: 1/4;
+    }
+
+    #sidebar{
+        grid-row: 2/4;
+        grid-column: 1/2;
+        height: 89vh;
+        position: sticky;
+        top: 0;
+    }
+
+    #navigation{
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+
+    #main{
+        grid-column: 2/3;
+    }
+
+    #ads{
+        grid-row: 2/4;
+    }
+
+    #footer{
+        grid-column: 1/4;
+    }
+
+    .content{
+        -webkit-transform: skewX(-12deg);
+        transform: skewX(-12deg);
+    }
+
+    .circle{
+        -webkit-transform: skewX(12deg);
+        transform: skewX(12deg);
+    }
+    .letters {
+        font-size: 100%;
+    }
+
+}
+
+@media(max-width: 1400px){
+
+    .icons {
+        padding-top: 15px;
+    }
+
+    .group2{
+        grid-template-columns: auto;
+    }
+    .radio_group{
+        margin-top: 5%;
+        width: 100%;
+    }
+
+    .form_container{
+        background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.856) 100%, rgba(255, 255, 255, 0.8) 0%, transparent 55%), url(imgs/podroze.jpg);
+        text-align: center;
+    }
+
+    .form_content{
+        width: 100%;
+    }
+
+}

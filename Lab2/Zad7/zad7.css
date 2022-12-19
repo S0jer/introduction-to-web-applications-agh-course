@@ -1,0 +1,99 @@
+*,
+*::before,
+*::after {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  margin: 0;
+  padding: 0;
+}
+
+
+.backgroundSetup{
+    height: 150vh;
+}
+
+.callContent {
+    background-color: rgb(0,42,66);
+}
+
+.mainPhoto {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.doctorMain {
+    border-radius: 1vh;
+    width: auto;
+    height: 100vh;
+    box-shadow: 0.2rem 0.2rem 0.8rem rgba(0, 0, 0, 0.738);
+}
+
+.secondPhoto {
+    position:absolute;
+    top: 2vh;
+    left: 2vh;
+    display: flex;
+    background-color: transparent;
+    box-shadow: 0.2rem 0.2rem 0.8rem rgba(0, 0, 0, 0.776);
+}
+
+.doctorSecond {
+    border-radius: 1vh;
+    height: 22vh;
+    background-color: transparent;
+    width: fit-content;
+}
+
+@media only screen and (max-width: 570px) {
+    .secondPhoto {
+        width: 20vh;
+        height: 20vh;
+    }
+
+    .doctorSecond {
+        width: 20vh;
+        height: 20vh;
+    }
+}
+
+.iconsBox {
+    position: absolute;
+    bottom: 5%;
+    padding: 2vh;
+}
+
+.icon {
+    border-radius: 50%;
+}
+.iconLeft {
+    height: 7.5vh;
+    width: 7.5vh;
+}
+
+.iconMid {
+    border: 0.35vh rgb(0,42,66) solid;
+    height: 6.5vh;
+    width: 6.5vh;
+}
+
+.iconRight {
+    height: 7vh;
+    width: 7vh;
+    border: 0.1vh white solid;
+}
+
+.bar {
+    position:absolute;
+    bottom: 4vh;
+    left: 5vh;
+    display: flex;
+    height: 20vh;
+    border-radius: 2vh;
+    background-color: black;
+    width: 2vh;
+    box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.776);
+}

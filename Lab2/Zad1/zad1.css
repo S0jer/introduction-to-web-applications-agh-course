@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+    border: 2px solid black;
+    background-color: rgb(100, 100, 100);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100vh;
+    border: 2px solid black;
+    background-color: white;
+}
+
+footer {
+    border: 2px solid black;
+    background-color: rgb(100, 100, 100);
+}
+
+table {
+    height: 100%;
+    width: 100%;
+}
+
+.trr {
+    height: 100%;
+}
+
+.tdd {
+    height: 100%;
+}
+
+table, tr, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    vertical-align: top;
+    text-align: left;
+}
+
+p {
+    border: 1 px;
+}
