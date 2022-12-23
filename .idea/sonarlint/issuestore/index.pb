@@ -22,8 +22,6 @@ D
 D
 Lab2/Zad13/zad13.css,5\2\52603ed805f23906b45d206a829f4e07f4afd696
 B
-Lab3/Zad1/zad1.css,0\8\08b081d418d47ff5b2c7fc2c8cb9c5311430ddbe
-B
 Lab3/Zad2/zad2.css,c\2\c2be25dadec14522fe9fb25144ce42da9e6bfca5
 B
 Lab3/Zad3/zad3.css,9\8\98bafcf2fd66e3c5a06a972e819f65493c512dd0
