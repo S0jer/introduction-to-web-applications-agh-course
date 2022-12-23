@@ -1,0 +1,5 @@
+<label for="Models"> Models: </label>
+<select *ngIf="models" (click)="getModels()">
+    <option value="0">Model State</option>
+    <option *ngFor="let model of models" value= {{model.id}}>{{model.name}}</option>
+</select>

@@ -1,0 +1,5 @@
+<label for="Brands">Brand: </label>
+<select *ngIf="brands">
+    <option>Select Brand</option>
+    <option *ngFor="let brand of brands" (change)="setBrand(brand.id)">{{brand.name}}</option>
+</select>
