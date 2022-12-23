@@ -1,4 +1,15 @@
 <h1>{{title}}</h1>
-<app-brand></app-brand>
-<app-model></app-model>
-<app-color></app-color>
+<label for="Brands">Brand: </label>
+<select *ngIf="brands"  [(ngModel)]="selectedBrandId" (change)="onSelectBrand($any($event.target).value)"> 
+    <option *ngFor="let brand of brands" value={{brand.id}}>{{brand.name}}</option>
+</select>
+<label for="Models" *ngIf="selectedBrandId"> Models: </label>
+<select *ngIf="selectedBrandId" [(ngModel)]="selectedModelId" (change)="onSelectModel($any($event.target).value)">
+    <option *ngFor="let model of models" value={{model.id}}>{{model.name}}</option>
+</select>
+<label for="Colors" *ngIf="selectedModelId"> Colors: </label>
+<select *ngIf="selectedModelId" [(ngModel)]="selectedColorId" (change)="onSelectColor($any($event.target).value)">
+    <option *ngFor="let color of colors" value={{color.id}}>{{color.name}}</option>
+</select>
+
+<h4 *ngIf="selectedColorId">{{car}}</h4>

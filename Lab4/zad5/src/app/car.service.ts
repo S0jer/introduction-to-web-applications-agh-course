@@ -12,9 +12,7 @@ import { Color } from './interfaces/color';
   providedIn: 'root'
 })
 export class CarService {
-  brand_id = 0;
-  model_id = 0;
-  color_id = 0;
+  car = "";
 
   getBrands(): Observable<Brand[]> {
     const brands = of(BRANDS);
@@ -29,17 +27,5 @@ export class CarService {
   getColors(): Observable<Color[]> {
     const colors = of(COLORS);
     return colors;
-  }
-
-  setBrand(brand_id: number): void {
-    this.brand_id = brand_id;
-  }
-
-  setModel(model_id: number): void {
-    this.model_id = model_id;
-  }
-
-  setColor(color_id: number): void {
-    this.color_id = color_id;
   }
 }
