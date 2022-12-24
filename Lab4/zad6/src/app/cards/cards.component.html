@@ -1,0 +1,16 @@
+<app-card-details [card]="selectedCard"></app-card-details>
+<div class="contentHolder">
+  <h2>Wybierz temat</h2>
+  <ul class="cards">
+    <li *ngFor="let acard of cards">
+      <div class="cardHolder">
+        <h3>{{acard.title}}</h3>
+        <div><p>{{acard.description}}</p></div>
+        <button class="btn" [class.selected]="acard === selectedCard" type="button" (click)="onSelect(acard)">
+          <span class="badge">Learn</span>
+          <span class="badge">More</span>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
