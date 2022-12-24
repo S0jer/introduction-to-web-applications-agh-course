@@ -181,3 +181,7 @@ C
 Lab4/zad6/README.md,d\2\d200856fd155141a4d0c4c1cbbdb0c314b42b85b
 E
 Lab4/zad6/src/test.ts,5\c\5c2bc2c9e0abd4befa32a45c934654b8a921476e
+S
+#Lab4/zad5/src/app/app.component.css,8\4\844e548c8be822c6204bd25370c49d8c8de84ad5
+R
+"Lab4/zad5/src/app/app.component.ts,0\d\0d2872350da316482733c5a394855ee1fb9b1820
