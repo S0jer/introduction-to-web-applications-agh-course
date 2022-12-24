@@ -28,7 +28,7 @@ export class AppComponent {
   onSelectBrand(selectedBrandId: number) {
     this.selectedBrandId = selectedBrandId;
     this.getModels();
-    this.car += this.brands.find(brand => brand.id == selectedBrandId)?.name + " ";
+    this.car = this.brands.find(brand => brand.id == selectedBrandId)?.name + " ";
   }
 
   onSelectModel(selectedModelId: number) {

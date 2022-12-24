@@ -125,8 +125,6 @@ E
 Lab2/Zad13/zad13.html,e\3\e322c23940cac836ae962a9e270b51ddeef8abad
 A
 Lab3/Zad6/zad6.js,e\2\e28b95087f58c337c3eba5b80b264cedb53275e2
-B
-Lab3/Zad1/zad1.css,0\8\08b081d418d47ff5b2c7fc2c8cb9c5311430ddbe
 M
 Lab4/zad6/src/assets/.gitkeep,6\3\6349d3851552ef8351902be431d68f5172838a0e
 S
@@ -158,13 +156,9 @@ D
 G
 Lab4/zad6/.editorconfig,9\5\9576b049f9822ab8940e54648cb9fdc1b15b0fd4
 T
-$Lab4/zad5/src/app/app.component.html,0\e\0ec0e42b89adcd7c8555a0dc0e73d52cc98d98b4
-T
 $Lab4/zad6/src/app/app.component.html,9\5\9597fbed18a86efc3ebf448133ea7102c693c9a3
 W
 'Lab4/zad6/src/app/app.component.spec.ts,8\a\8a6142896c0fcaf8341d9d957684dfe9d6fd17d8
-R
-"Lab4/zad5/src/app/app.component.ts,0\d\0d2872350da316482733c5a394855ee1fb9b1820
 R
 "Lab4/zad6/src/app/app.component.ts,6\c\6c22612e7ddf36911f2015f8136778e6224a70e0
 O
@@ -187,10 +181,3 @@ C
 Lab4/zad6/README.md,d\2\d200856fd155141a4d0c4c1cbbdb0c314b42b85b
 E
 Lab4/zad6/src/test.ts,5\c\5c2bc2c9e0abd4befa32a45c934654b8a921476e
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-Y
-)Lab4/zad6/src/environments/environment.ts,0\3\03356b1c0a93387bd02be5e4ecc9519bf2a28179
