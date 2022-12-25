@@ -59,7 +59,7 @@
 
 .feedback {
   max-width: 360px;
-  background-color: #fff;
+  opacity: 1;
   width: 100%;
   padding: 30px;
   border-radius: 8px;

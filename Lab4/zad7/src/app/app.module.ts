@@ -9,6 +9,8 @@ import { TravelManagementComponent } from './travel-management/travel-management
 import { AppRoutingModule } from './app-routing.module';
 import { AddTravelComponent } from './add-travel/add-travel.component';
 import { StarsComponent } from './stars/stars.component';
+import { TravelsFilterComponent } from './travels-filter/travels-filter.component';
+import { FilterPipePipe } from './filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { StarsComponent } from './stars/stars.component';
     TravelDetailsComponent,
     TravelManagementComponent,
     AddTravelComponent,
-    StarsComponent
+    StarsComponent,
+    TravelsFilterComponent,
+    FilterPipePipe
   ],
   imports: [
     BrowserModule,

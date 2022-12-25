@@ -5,6 +5,8 @@
         <div><label for="travel-name">Travel To: {{travel.destination | uppercase}} </label></div>
         <div>Price per Person: {{travel.unitPrice}}</div>
         <p>{{travel.description}}</p>
+        <div *ngIf="travel.ratings.length == 0">Ratings: None</div>
+        <div *ngIf="travel.ratings.length > 0">Ratings: {{getRating()}}</div>
     </div>
 </div>
 

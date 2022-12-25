@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Travel } from './../mock-data/travel';
 
 @Component({
   selector: 'app-stars',
@@ -7,30 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarsComponent implements OnInit {
 
+  @Input('travel') travel!: Travel;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  stars: number[] = [1, 2, 3, 4, 5];
-  selectedValue: number = 0;
-  isMouseover = true;
-
-  countStar(star: number) {
-    this.isMouseover = false;
-    this.selectedValue = star;
+  addRating( value: number ): void {
+    this.travel.ratings.push( value );
   }
-
-  addClass(star: number) {
-  if (this.isMouseover) {
-    this.selectedValue = star;
-  }
-  }
-
-  removeClass() {
-    if (this.isMouseover) {
-      this.selectedValue = 0;
-    }
-  }
-
 }

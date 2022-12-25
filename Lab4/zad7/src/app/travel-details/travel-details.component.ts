@@ -8,11 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TravelDetailsComponent implements OnInit {
 
-  @Input('travel') travel?: Travel;
+  @Input('travel') travel!: Travel;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  getRating(): number {
+    const ratingSum = this.travel.ratings.reduce((accumulator, current) => {
+      return accumulator + current;}, 0);
+    return Math.round((ratingSum / this.travel.ratings.length) * 10) / 10;
+  }
 }

@@ -1,0 +1,93 @@
+#filterMenu{
+    width: 70%;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+@media (max-width: 900px) {
+  #filterMenu{
+    width: 99%;
+  }
+}
+
+.filtersOn{
+  display: grid;
+  font-size: 14px;
+  grid-template-columns: repeat(4,24%);
+  align-items: center;
+  text-align:center;
+  color: white;
+}
+
+span{
+    cursor: pointer;
+    font-size: 16px;
+}
+
+ol {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    background-color:#FFF;
+    font-size:18px;
+    height: fit-content;
+    line-height:2em;
+    text-align:center;
+}
+
+ol span {
+  display:block;
+  text-decoration:none;
+  color:rgb(135, 147, 253);
+  padding:0 5px;
+}
+
+ol > li {
+  float:left;
+  width:24%;
+  margin-left:1px;
+  background-color:#272727b9;
+  height:fit-content;
+}
+
+ol > li:first-child {
+  margin-left:0;
+}
+
+ol > li:hover > span {
+  color:rgb(85, 46, 255);
+}
+
+ol > li:hover > ul {
+  height: fit-content;
+  max-height: 500px;
+}
+
+
+ol > li > ul {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s;
+  transition-timing-function: ease-in-out;
+  list-style-type:none;
+  padding:0;
+  margin:0;
+}
+
+ol > li > ul > li {
+  position:relative;
+  background-color:#272727b9;
+}
+
+ol > li > ul > li > span {
+  border-top:1px solid #FFF;
+}
+
+ol > li > ul > li:hover {
+  background-color:#DDD;
+}
+
+ol > li > ul > li:hover > span {
+  color:darkblue;
+}
