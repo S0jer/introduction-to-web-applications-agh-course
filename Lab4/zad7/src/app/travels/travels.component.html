@@ -1,1 +1,9 @@
-<p>travels works!</p>
+<h1>Travels</h1>
+<ul class="travels">
+    <li *ngFor="let travel of travels">
+        <div class="travelHolder">
+            <app-travel-details [travel]="travel"></app-travel-details>
+            <app-travel-management [travel]="travel"></app-travel-management>
+        </div>
+    </li>
+</ul>

@@ -1,1 +1,13 @@
-<p>travel-management works!</p>
+<div *ngIf="travel" id="wrapper">
+    <div *ngIf="cnt < travel.peopleLimit" id="availableCommunicate">Dostępnych miejsc: {{travel.peopleLimit - cnt}}</div>
+    <div *ngIf="cnt >= travel.peopleLimit" id="unavailableCommunicate">Brak miejsc</div>
+    <div id="mainDiv">
+        <button id="minus" (click)="decrement()" >-</button>
+        <span id="numberPlace">{{cnt}}</span>
+        <button *ngIf="cnt < travel.peopleLimit" id="plus" (click)="increment()">+</button>
+        <div class="btnDelWrapper">
+            <button id="deleteButton" (click)="deleteTravel()"> Delete Travel </button>
+        </div>
+    </div>
+</div>
+  

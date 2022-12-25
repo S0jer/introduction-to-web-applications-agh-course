@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TravelService } from '../travel.service';
+import { Travel } from '../mock-data/travel';
 
 @Component({
   selector: 'app-travels',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TravelsComponent implements OnInit {
 
-  constructor() { }
+
+  travels: Travel[] = [];
+
+  constructor(private travelService: TravelService) { }
 
   ngOnInit(): void {
+    this.getTravels();
   }
 
+  getTravels(): void {
+    this.travelService.getTravels().subscribe({
+      next: travels => this.travels = travels,
+      error: error => console.log(error)
+    });
+  }
 }

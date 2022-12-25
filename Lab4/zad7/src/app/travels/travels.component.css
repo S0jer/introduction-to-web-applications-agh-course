@@ -1,0 +1,64 @@
+.travels {
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+  }
+
+.travels {
+    -moz-column-count: 3;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 20px;
+    column-count: 3;
+    column-gap: 20px;
+}
+
+
+@media (max-width: 1700px){
+  .travels {
+       -moz-column-count: 2;
+       -webkit-column-count: 2;
+       column-count: 2;
+     }
+}
+
+@media (max-width: 1150px){
+   .travels {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+      }
+}
+
+
+.travels li {
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  }
+
+.travels a:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  }
+
+.travelHolder {
+  box-shadow: 0.1rem 0.1rem 0.8rem rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+  text-align: center;
+  width: auto;
+  }
+
+h1 {
+  text-align: center;
+  padding-top: 1em;
+  margin-bottom: 3em;
+}

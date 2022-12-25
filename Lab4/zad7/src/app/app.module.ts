@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { TravelsComponent } from './travels/travels.component';
 import { TravelDetailsComponent } from './travel-details/travel-details.component';
 import { TravelManagementComponent } from './travel-management/travel-management.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TravelManagementComponent } from './travel-management/travel-management
     TravelManagementComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

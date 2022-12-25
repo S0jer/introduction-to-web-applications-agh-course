@@ -1,0 +1,64 @@
+
+#mainDiv {
+    margin-top:2%;
+    padding-bottom: 10px;
+}
+
+#minus , #plus{
+    height:25px;
+    width:25px;
+    border:1px black solid;
+    border-radius:50%;
+}
+
+#minus:hover{
+    background-color:red;    
+    border:none;
+}
+
+#plus:hover{
+    background-color:green;
+    border:none;
+}
+
+#numberPlace {
+    margin-left:5px;
+    margin-right:5px;
+}
+
+#submit {
+    border:none;
+    height:25px;
+}
+
+#bottom{
+    margin-top: 90%;
+}
+
+
+#deleteButton {
+    display: inline-flex;
+    justify-self: right;
+    width: 100px;
+    height: 45px;
+    cursor: pointer;
+    bottom: 0px;
+    right: 0px;
+    margin-right: 0;
+    background-color: red;
+    border: 2px solid black;
+    font-weight: 900;
+    color: white;
+    border-radius: 100px;
+}
+
+#deleteButton:hover{
+    background-color: #f84848;
+}
+
+
+.btnDelWrapper {
+    display: inline-flex;
+    justify-content: right;
+    width: 100%;
+}

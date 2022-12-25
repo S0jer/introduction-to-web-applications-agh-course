@@ -1,1 +1,11 @@
-<p>travel-details works!</p>
+<div *ngIf="travel" class="travelHolder">
+    <div class="detailsHolder">
+        <img class="imgCircle" src="{{travel.imgPath}}" alt="City">
+        <h2>{{travel.name | uppercase}} </h2>
+        <div><label for="travel-name">Travel To: {{travel.destination | uppercase}} </label></div>
+        <div>Price per Person: {{travel.unitPrice}}</div>
+        <p>{{travel.description}}</p>
+    </div>
+</div>
+
+<!-- <button type="button" (click)="goBack()">Go back</button> -->
