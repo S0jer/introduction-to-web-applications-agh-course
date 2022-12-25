@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Travel } from './../mock-data/travel';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-travel-details',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./travel-details.component.css']
 })
 export class TravelDetailsComponent implements OnInit {
+
+  @Input('travel') travel?: Travel;
 
   constructor() { }
 
