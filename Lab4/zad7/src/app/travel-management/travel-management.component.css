@@ -60,5 +60,6 @@
 .btnDelWrapper {
     display: inline-flex;
     justify-content: right;
+    padding-bottom: 20px;
     width: 100%;
 }

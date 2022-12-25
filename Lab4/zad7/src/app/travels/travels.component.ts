@@ -1,3 +1,4 @@
+import { TravelData } from './../mock-data/travelData';
 import { Component, OnInit } from '@angular/core';
 import { TravelService } from '../travel.service';
 import { Travel } from '../mock-data/travel';
@@ -23,5 +24,9 @@ export class TravelsComponent implements OnInit {
       next: travels => this.travels = travels,
       error: error => console.log(error)
     });
+  }
+
+  put($event: TravelData){
+    this.travelService.push($event);
   }
 }

@@ -1,24 +1,14 @@
-import { Travel } from './travel';
+import { TravelData } from './travelData';
 
-export const TRAVELS: Travel[] = [ 
-    { id: 0, name: 'Ancient Weekend', destination: 'Italy, Rome', startDate: new Date(), endDate: new Date(),
-unitPrice: 100, peopleLimit: 15, description: 'Ancient Weekend', imgPath: '../../assets/img/cities/rome.jpg'},
-    { id: 1, name: 'German Classic', destination: 'German, Berlin', startDate: new Date(), endDate: new Date(),
-unitPrice: 100, peopleLimit: 15, description: 'Ancient Weekend', imgPath: '../../assets/img/cities/berlin.jpg'},
-    { id: 2, name: 'Postwar Warsaw', destination: 'Poland, Warsaw', startDate: new Date(), endDate: new Date(),
-unitPrice: 100, peopleLimit: 15, description: 'Ancient Weekend', imgPath: '../../assets/img/cities/warsaw.jpg'},
-    { id: 3, name: 'Romantic Weekend', destination: 'France, Paris', startDate: new Date(), endDate: new Date(),
-unitPrice: 100, peopleLimit: 15, description: 'Ancient Weekend', imgPath: '../../assets/img/cities/paris.jpg'},
-    { id: 4, name: 'Lovely Europe', destination: 'Czech Republic, Prague', startDate: new Date(), endDate: new Date(),
-unitPrice: 100, peopleLimit: 15, description: 'Ancient Weekend', imgPath: '../../assets/img/cities/prague.jpg'},
-    { id: 5, name: 'Modern Japan', destination: 'Japan, Tokyo', startDate: new Date(), endDate: new Date(),
-unitPrice: 100, peopleLimit: 15, description: 'Ancient Weekend', imgPath: '../../assets/img/cities/tokyo.jpg'},
-    { id: 6, name: 'Wonderful Beaches of Rio', destination: 'Brazil, Rio De Janeiro', startDate: new Date(), endDate: new Date(),
-unitPrice: 100, peopleLimit: 15, description: 'Ancient Weekend', imgPath: '../../assets/img/cities/rio.jpg'},
-    { id: 7, name: 'Beautiful and Austere Scandinavia', destination: 'Norway, Oslo', startDate: new Date(), endDate: new Date(),
-unitPrice: 100, peopleLimit: 15, description: 'Ancient Weekend', imgPath: '../../assets/img/cities/oslo.jpg'},
-    { id: 8, name: 'As if Time Had Stopped', destination: 'Cuba, Havana', startDate: new Date(), endDate: new Date(),
-unitPrice: 100, peopleLimit: 15, description: 'Ancient Weekend', imgPath: '../../assets/img/cities/havana.jpg'},
-    { id: 9, name: 'City of Art', destination: 'Austria, Vienna', startDate: new Date(), endDate: new Date(),
-unitPrice: 100, peopleLimit: 15, description: 'Ancient Weekend', imgPath: '../../assets/img/cities/vienna.jpg'}
+export const TRAVELS: TravelData[] = [ 
+    new TravelData('Ancient Weekend', 'Italy, Rome', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/rome.jpg'),
+    new TravelData('German Classic', 'German, Berlin', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/berlin.jpg'),
+    new TravelData('Postwar Warsaw', 'Poland, Warsaw', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/warsaw.jpg'),
+    new TravelData('Romantic Weekend', 'France, Paris', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/paris.jpg'),
+    new TravelData('Lovely Europe', 'Czech Republic, Prague', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/prague.jpg'),
+    new TravelData('Modern Japan', 'Japan, Tokyo', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/tokyo.jpg'),
+    new TravelData('Wonderful Beaches of Rio', 'Brazil, Rio De Janeiro', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/rio.jpg'),
+    new TravelData('Beautiful and Austere Scandinavia', 'Norway, Oslo', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/oslo.jpg'),
+    new TravelData('As if Time Had Stopped', 'Cuba, Havana', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/havana.jpg'),
+    new TravelData('City of Art', 'Austria, Vienna', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/vienna.jpg')
 ];

@@ -5,9 +5,10 @@
         <button id="minus" (click)="decrement()" >-</button>
         <span id="numberPlace">{{cnt}}</span>
         <button *ngIf="cnt < travel.peopleLimit" id="plus" (click)="increment()">+</button>
-        <div class="btnDelWrapper">
-            <button id="deleteButton" (click)="deleteTravel()"> Delete Travel </button>
-        </div>
+    </div>
+    <app-stars></app-stars><br>
+    <div class="btnDelWrapper">
+        <button id="deleteButton" (click)="deleteTravel()"> Delete Travel </button>
     </div>
 </div>
   
