@@ -28,6 +28,7 @@ export class FilterPipePipe implements PipeTransform {
         return ( travel.country.toLowerCase().includes(country)
         && (days[0] <= travel.startDate && travel.endDate <= days[1])); 
       });
-    } else return travelList;
+    } else return travelList.filter(travel => {
+      return ( travel.country.toLowerCase().includes(country))});
   }
 }
