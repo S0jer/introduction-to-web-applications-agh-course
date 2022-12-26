@@ -7,22 +7,22 @@ import { Data } from '@angular/router';
 export class FilterPipePipe implements PipeTransform {
 
 
-  transform(dishlist: Data[], country:string, type:string, price:number[], rating:number): Data[] { 
-    if (!dishlist) return []; 
+  transform(travelList: Data[], country:string, type:string, price:number[], rating:number): Data[] { 
+    if (!travelList) return []; 
     if (rating!=0){
-      dishlist = dishlist.filter(dish => {
-      return ( dish['rating']==rating ); 
+      travelList = travelList.filter(travel => {
+      return ( travel['rating']==rating ); 
     });}
 
     if (price[1]!=0){
-      dishlist = dishlist.filter(dish => {
-      return (  dish['price']>=price[0] && dish['price']<=price[1] ); 
+      travelList = travelList.filter(travel => {
+      return (  travel['price']>=price[0] && travel['price']<=price[1] ); 
     });}
 
     country=country.toLowerCase();
     type=type.toLocaleLowerCase();
-    return dishlist.filter(dish => {
-        return ( dish['country'].toLowerCase().includes(country) && dish['type'].toLowerCase().includes(type) ); 
+    return travelList.filter(travel => {
+        return ( travel['country'].toLowerCase().includes(country) && travel['type'].toLowerCase().includes(type) ); 
       });
   }
 

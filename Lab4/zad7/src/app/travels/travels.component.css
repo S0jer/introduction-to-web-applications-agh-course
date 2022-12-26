@@ -14,8 +14,8 @@
     -webkit-column-gap: 20px;
     column-count: 3;
     column-gap: 20px;
+    margin-top: 200px;
 }
-
 
 @media (max-width: 1700px){
   .travels {
@@ -56,12 +56,6 @@
   text-align: center;
   width: auto;
   }
-
-h1 {
-  text-align: center;
-  padding-top: 1em;
-  margin-bottom: 3em;
-}
 
 
 .backgroundConf {

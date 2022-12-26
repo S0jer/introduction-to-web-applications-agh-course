@@ -16,7 +16,8 @@ export class AddTravelComponent implements OnInit {
   constructor(private travelService: TravelService, private formBuilder : FormBuilder) {
     this.modelForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
-    destination: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
+    country: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
+    city: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
     startDate:  ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
     endDate:  [[''], [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
     unitPrice:  ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
@@ -28,7 +29,8 @@ export class AddTravelComponent implements OnInit {
   send(){
     let newTravel : TravelData = new TravelData(
     this.modelForm.value.name,
-    this.modelForm.value.destination,
+    this.modelForm.value.country,
+    this.modelForm.value.city,
     this.modelForm.value.startDate,
     this.modelForm.value.endDate,
     this.modelForm.value.unitPrice,
@@ -48,8 +50,12 @@ export class AddTravelComponent implements OnInit {
     return this.modelForm.get('name');
   }
 
-  get destination(){
-    return this.modelForm.get('destination');
+  get country(){
+    return this.modelForm.get('country');
+  }
+
+  get city(){
+    return this.modelForm.get('city');
   }
 
   get startDate(){

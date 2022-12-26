@@ -1,6 +1,7 @@
 export interface Travel {
     name: string;
-    destination: string;
+    country: string;
+    city: string;
     startDate: Date;
     endDate: Date;
     unitPrice: number;

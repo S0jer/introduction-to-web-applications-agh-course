@@ -10,7 +10,9 @@
     font-style: italic;
     box-sizing: border-box;
     font-weight: 700;
-    background-color: rgba(238, 236, 236, 0.945);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: #fff;
+    background-color: rgba(238, 236, 236, 0);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     align-items: center;
     justify-content: center;
@@ -36,9 +38,11 @@
 
 .btn{
     border: none;
-    background-color: black;
+    background-color: rgba(6, 116, 226, 0.782);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     color: white;
-    font-weight: 900;
+    padding: 7px;
+    font-weight: 800;
     border-radius: 20px;
     font-size: 20px;
     cursor: pointer;
@@ -64,3 +68,12 @@ span{
     height: 30px;
     border-radius: 20px;
 }
+
+.backgroundConf {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/img/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }

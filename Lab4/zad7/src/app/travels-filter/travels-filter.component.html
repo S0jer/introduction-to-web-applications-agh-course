@@ -1,36 +1,36 @@
 <div id="filterMenu">
     <div class="filtersOn">
-      <div>Kuchnia: {{country}}</div>
-      <div>Typ: {{type}}</div>
-      <div>Cena: {{price}}</div>
-      <div>Ocena: {{rating}}</div>
+      <div>Country: {{country}}</div>
+      <div>Days: {{days}}</div>
+      <div>Price: {{price}}</div>
+      <div>Rating: {{rating}}</div>
     </div>
       <ol>
-          <li><span >Kuchnia</span>
+          <li><span >Country</span>
             <ul>
-              <li *ngFor="let c of countrylist" (click)="setCountry(c)"><span>{{c}}</span></li> 
+              <li *ngFor="let c of countryList" (click)="setCountry(c)"><span>{{c}}</span></li> 
             </ul>
           </li>
     
-          <li><span >Typ</span>
+          <li><span >Days</span>
             <ul>
-              <li *ngFor="let t of typelist" (click)="setType(t)"><span>{{t}}</span></li> 
+              <li *ngFor="let t of daysList" (click)="setDays(t)"><span>{{t}}</span></li> 
               </ul>
           </li>
   
-          <li><span >Cena</span>
+          <li><span >Price</span>
               <ul>
-                <li *ngFor="let p of pricelist" (click)="setPrice(p[0],p[1])"><span>{{p[0]}} - {{p[1]}}</span></li> 
+                <li *ngFor="let p of priceList" (click)="setPrice(p[0],p[1])"><span>{{p[0]}} - {{p[1]}}</span></li> 
                 </ul>
             </li>
     
-          <li><span >Ocena</span>
+          <li><span >Rating</span>
             <ul>
-              <li (click)="setRating(1)"><span >1-gwiazdka</span></li>
-              <li (click)="setRating(2)"><span >2-gwiazdki</span></li>
-              <li (click)="setRating(3)"><span >3-gwiazdki</span></li>
-              <li (click)="setRating(4)"><span >4-gwiazdki</span></li>
-              <li (click)="setRating(5)"><span >5-gwiazdek</span></li>
+              <li (click)="setRating(1)"><span >1-star</span></li>
+              <li (click)="setRating(2)"><span >2-star</span></li>
+              <li (click)="setRating(3)"><span >3-star</span></li>
+              <li (click)="setRating(4)"><span >4-star</span></li>
+              <li (click)="setRating(5)"><span >5-star</span></li>
             </ul>
           </li>
         </ol>

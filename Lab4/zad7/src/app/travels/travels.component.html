@@ -1,14 +1,12 @@
 <body class="backgroundConf">
-    <h1>Travels</h1>
-<nav>    
-    <a routerLink="/addTravel">Add Travel </a>
-</nav>
-<ul class="travels">
-    <li *ngFor="let travel of travels">
-        <div class="travelHolder">
-            <app-travel-details [travel]="travel"></app-travel-details>
-            <app-travel-management [travel]="travel"></app-travel-management>
-        </div>
-    </li>
-</ul>
+    <app-nav-bar></app-nav-bar>
+    <app-travels-filter></app-travels-filter>
+    <ul class="travels">
+        <li *ngFor="let travel of travels">
+            <div class="travelHolder">
+                <app-travel-details [travel]="travel"></app-travel-details>
+                <app-travel-management [travel]="travel"></app-travel-management>
+            </div>
+        </li>
+    </ul>
 </body>

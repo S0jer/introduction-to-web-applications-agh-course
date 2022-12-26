@@ -6,50 +6,50 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./travels-filter.component.css']
 })
 export class TravelsFilterComponent implements OnInit {
-  @Input() countrylist:string[]=[];
-  @Input() typelist:string[]=[];
-  @Input() pricelist:[number[]]=[[]];
+  @Input() countryList:string[]=[];
+  @Input() daysList:string[]=[];
+  @Input() priceList:[number[]]=[[]];
   @Output() newItemEvent = new EventEmitter<number>();
   @Output() newItemEvent4 = new EventEmitter<number[]>();
   @Output() newItemEvent3 = new EventEmitter<string>();
   @Output() newItemEvent2 = new EventEmitter<string>();
 
-  type='-';
+  days='-';
   country='-';
   rating='-';
   price='-';
 
-  ratingflag='';
+  ratingFlag='';
   setRating(q:number){
     this.rating=q.toString();
-    if(this.ratingflag==q.toString()){ this.newItemEvent.emit(0); this.rating='-';}
+    if(this.ratingFlag==q.toString()){ this.newItemEvent.emit(0); this.rating='-';}
     else{ this.newItemEvent.emit(q)}
-    this.ratingflag=this.rating;
+    this.ratingFlag=this.rating;
   }
-  countryflag='';
+  countryFlag='';
   setCountry(q:string){
     this.country=q;
-    if(this.countryflag==q.toString()){ this.newItemEvent2.emit(''); this.country='-';}
+    if(this.countryFlag==q.toString()){ this.newItemEvent2.emit(''); this.country='-';}
     else{ this.newItemEvent2.emit(q); }
-    this.countryflag=this.country;
+    this.countryFlag=this.country;
   }
-  typeflag='';
-  setType(q:string){
-    this.type=q;
-    if(this.typeflag==q){ this.newItemEvent3.emit(''); this.type='--';}
-    else{ this.newItemEvent3.emit(q); }
-    this.typeflag=this.type;
+  daysFlag='';
+  setDays(q:string){
+    // this.type=q;
+    // if(this.typeFlag==q){ this.newItemEvent3.emit(''); this.type='--';}
+    // else{ this.newItemEvent3.emit(q); }
+    // this.typeFlag=this.type;
   }
-  priceflag='';
+  
+  priceFlag='';
   setPrice(q:number,p:number){
     this.price=q.toString()+'-'+p.toString();
-    if(this.priceflag==q.toString()+'-'+p.toString()){ this.newItemEvent4.emit([0,0]); this.price='-';}
+    if(this.priceFlag==q.toString()+'-'+p.toString()){ this.newItemEvent4.emit([0,0]); this.price='-';}
     else{ this.newItemEvent4.emit([q,p]); }
-    this.priceflag=this.price;
+    this.priceFlag=this.price;
   }
 
   constructor() { }
   ngOnInit(): void {}
-
 
 }

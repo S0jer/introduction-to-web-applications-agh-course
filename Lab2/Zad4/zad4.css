@@ -84,7 +84,6 @@ body {
     font-weight: bold;
     color: white;
     cursor: pointer;
-    border: 0;
     border-radius: 20px;
     border: 1px white solid;
     padding: 6px;
@@ -104,7 +103,6 @@ body {
     font-weight: bold;
     color: rgb(98, 180, 227);
     cursor: pointer;
-    border: 0;
     border-radius: 20px;
     border: 1px white solid;
     padding: 6px;
@@ -251,5 +249,32 @@ ol > li > ul > li:hover > span {
   .signUpButton, .logInButton {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    .midButton {
+      font-size: 7px;
+    }
+  
+    .middleButtons {
+      padding-left: 0px;
+    }
+  
+    .rightButtons {
+      padding-right: 0;
+    }
+  
+    .logInButton {
+      font-size: 7px;
+    }
+  
+    .signUpButton {
+      font-size: 7px;
+    }
+  
+    .signUpButton, .logInButton {
+      padding-left: 7px;
+      padding-right: 7px;
+    }
   }
 }

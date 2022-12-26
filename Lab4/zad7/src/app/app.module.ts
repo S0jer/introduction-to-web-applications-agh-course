@@ -11,6 +11,7 @@ import { AddTravelComponent } from './add-travel/add-travel.component';
 import { StarsComponent } from './stars/stars.component';
 import { TravelsFilterComponent } from './travels-filter/travels-filter.component';
 import { FilterPipePipe } from './filter-pipe.pipe';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FilterPipePipe } from './filter-pipe.pipe';
     AddTravelComponent,
     StarsComponent,
     TravelsFilterComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
