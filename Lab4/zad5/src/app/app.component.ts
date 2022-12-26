@@ -28,18 +28,21 @@ export class AppComponent {
   onSelectBrand(selectedBrandId: number) {
     this.selectedBrandId = selectedBrandId;
     this.getModels();
-    this.car = this.brands.find(brand => brand.id == selectedBrandId)?.name + " ";
+    this.carService.setBrand(this.brands.find(brand => brand.id == selectedBrandId)?.name);
+    this.carService.setModel("");
+    this.carService.setColor("");
   }
 
   onSelectModel(selectedModelId: number) {
     this.selectedModelId = selectedModelId;
     this.getColors();
-    this.car += this.models.find(model => model.id == selectedModelId)?.name + " ";
+    this.carService.setModel(this.models.find(model => model.id == selectedModelId)?.name);
+    this.carService.setColor("");
   }
 
   onSelectColor(selectedColorId: number) {
       this.selectedColorId = selectedColorId;
-      this.car += this.colors.find(color => color.id == selectedColorId)?.name + " ";
+      this.carService.setColor(this.colors.find(color => color.id == selectedColorId)?.name);
   }
 
   getBrands(): void {
@@ -54,6 +57,10 @@ export class AppComponent {
   getColors(): void {
     this.carService.getColors().subscribe((colors) => this.colors = colors
     .filter((color) => {return color.model_id == this.selectedModelId;}));
+  }
+
+  getCar(): string {
+    return this.carService.getCar();
   }
 
   title = 'zad5';

@@ -55,20 +55,21 @@ export class TravelsComponent implements OnInit {
   tab:number[]=[];
   tab2:number[]=[];
   findMinMax(){ 
-    this.maxPrice=Math.max.apply(Math, this.travelList.map(function(o) { return o.unitPrice; }))
-    this.minPrice=Math.min.apply(Math, this.travelList.map(function(o) { return o.unitPrice; }))
+    this.maxPrice=Math.max.apply(Math, this.travelList.map(function(o) { return o.unitPrice; }).filter(o => typeof o === 'number'));
+    this.minPrice=Math.min.apply(Math, this.travelList.map(function(o) { return o.unitPrice; }).filter(o => typeof o === 'number'));
   }
 
   countryList:string[]=[];
   findCountry(){
     this.countryList=[];
     for(const element of this.travelList){
+      if (element instanceof TravelData) {
       let q = element.country;
       q = q[0].toUpperCase() + q.substring(1);
 
       if(!this.countryList.includes(q)) {
         this.countryList.push(q);
-      }
+      }}
     }
   }
 
@@ -78,6 +79,7 @@ export class TravelsComponent implements OnInit {
   findDays(){
     this.dataDays = [];
     for(const element of this.travelList){
+      if (element instanceof TravelData) {
       let startDate: Date = element.startDate;
       let endDate: Date = element.endDate;
       let firstDay = new Date(startDate.getFullYear(), startDate.getMonth(), 1);
@@ -91,27 +93,31 @@ export class TravelsComponent implements OnInit {
           }
         }
       }
-      if(checkIfExists) this.dataDaysList.push([firstDay, lastDay]);
+      if(checkIfExists) this.dataDaysList.push([firstDay, lastDay]); this.dataDaysList.sort((a, b) => {
+        if(a[0] instanceof Date && b[0] instanceof Date) return a[0].getTime() - b[0].getTime(); 
+      else return 1;})
+      }
     }
   }
 
   prices:number[]=[];
   priceList:[number[]]=[[]];
   findPrice(){
-    console.log(this.maxPrice);
-    console.log(this.minPrice);
     this.prices=[];
     this.priceList=[[]];
     if(this.maxPrice!=0){
       let delta = this.maxPrice - this.minPrice;
       let m = this.minPrice;
+      this.prices.push(0);
       this.prices.push(m);
       for(let i=1; i<5; i++){
-        if(delta > i*20){
+        console.log(this.prices[this.prices.length - 1]);
+        if(delta > i*20 && this.prices[this.prices.length - 1] < +m + +(i*300) && +m + +(i*300) < this.maxPrice){
           this.prices.push( +m + +(i*300) );
         }
       }
       this.prices.push(+this.maxPrice + +1);
+      this.prices.push(1000000);
       for(let i=1; i<this.prices.length; i++){
         let x = this.prices[i-1];
         let y = this.prices[i]-1;

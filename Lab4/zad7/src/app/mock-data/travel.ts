@@ -9,4 +9,5 @@ export interface Travel {
     description: string;
     imgPath: string;
     ratings: number[];
+    reservationsCnt: number;
 }

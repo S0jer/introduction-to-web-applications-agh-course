@@ -163,8 +163,6 @@ O
 Lab4/zad5/src/app/app.module.ts,6\c\6cd90b7f8624f2bbd353e57a279b9a6ecb63f9bc
 O
 Lab4/zad6/src/app/app.module.ts,b\8\b8fcbbffd0d2c5848a65c6447c122b1d28246dc8
-P
- Lab4/zad5/src/app/car.service.ts,0\0\00fda9d935b7caad9365b024b4d40e80025f18a0
 ^
 .Lab4/zad6/src/environments/environment.prod.ts,6\3\630d050871dde8a1bd54e0c9ad8db4990439205d
 H
@@ -181,8 +179,6 @@ E
 Lab4/zad6/src/test.ts,5\c\5c2bc2c9e0abd4befa32a45c934654b8a921476e
 S
 #Lab4/zad5/src/app/app.component.css,8\4\844e548c8be822c6204bd25370c49d8c8de84ad5
-R
-"Lab4/zad5/src/app/app.component.ts,0\d\0d2872350da316482733c5a394855ee1fb9b1820
 L
 Lab4/zad7/tsconfig.spec.json,e\e\ee23e6defbac4e2f0e1f12ed8c2aba132cc383fd
 J
@@ -235,8 +231,6 @@ i
 9Lab4/zad7/src/app/add-travel/add-travel.component.spec.ts,d\f\dfffee20ccac858a1788ac29e5393bcb9d62ff7b
 T
 $Lab4/zad7/src/app/app.component.html,2\a\2a523f5e251d867b0ab668eae672336e61f0cc03
-W
-'Lab4/zad7/src/app/app-routing.module.ts,d\f\dffd33fa7c8cf3be54045ab8bfd203400b69c1ee
 _
 /Lab4/zad7/src/app/stars/stars.component.spec.ts,2\2\2238d25f5a7ac9a191cddad5fd6f9521f68735bb
 Z
@@ -247,13 +241,33 @@ q
 ALab4/zad7/src/app/travels-filter/travels-filter.component.spec.ts,8\3\83e177ee97bf6b8fc0df500c2bc3ccde2c0c100c
 m
 =Lab4/zad7/src/app/travels-filter/travels-filter.component.css,e\0\e01046d0925291fdb1c8f6cfdcdea6884ff9d5c8
-O
-Lab4/zad7/src/app/app.module.ts,e\4\e41e067f480199b5f94344222b589143d33daf58
 c
 3Lab4/zad7/src/app/nav-bar/nav-bar.component.spec.ts,4\d\4db95ea0b243aa2a4377ef34696512aedb66f92e
 \
 ,Lab4/zad7/src/app/stars/stars.component.html,1\4\140664c2c194daf692aafd20e8966b4bced98d11
+e
+5Lab4/zad7/src/app/add-travel/add-travel.component.css,6\7\67549231407af96d2fd07f219a8757f480df820c
+f
+6Lab4/zad7/src/app/add-travel/add-travel.component.html,0\b\0b9d0001726e45c5c2f93c3f7be641276f6598e7
+l
+<Lab4/zad7/src/app/travel-details/travel-details.component.ts,5\a\5a40eb9a0d8db9fbe5168534f5af4e3822cc7540
+_
+/Lab4/zad7/src/app/nav-bar/nav-bar.component.css,6\5\65f31232701c013ec61707c89251d3291ead4ee9
+m
+=Lab4/zad7/src/app/travel-details/travel-details.component.css,f\9\f9878e34e87c014688bfb81ca7c7b1be96a6984b
+[
++Lab4/zad7/src/app/stars/stars.component.css,a\f\af98fcb1cf6b39ae5679b4f800e97cd8bd9417fa
+s
+CLab4/zad7/src/app/travel-management/travel-management.component.css,7\e\7e5ef539dddcc682d228abbd57cca54164f78f48
+[
++Lab4/zad7/src/app/mock-data/mock-travels.ts,8\0\8078ce979a49c211b2c1c5aad79df46d424b9c48
+^
+.Lab4/zad7/src/app/nav-bar/nav-bar.component.ts,0\e\0e13f217619cb689d491fb93b8d60332736d0a82
+S
+#Lab4/zad7/src/app/travel.service.ts,8\0\8091f0ca25fa7a09cf395d75453e100d88c23479
+`
+0Lab4/zad7/src/app/travels/travels.component.html,1\7\17f41999b7bdd22c619df78fa574af9764f531b4
+n
+>Lab4/zad7/src/app/travels-filter/travels-filter.component.html,9\0\90d43a4df99e80176935884dfaa4dbcc02ed54cd
 U
-%Lab4/zad7/src/app/mock-data/travel.ts,5\b\5b52a2988352c4d0fc777d346d23c4ee57ebcb67
-Y
-)Lab4/zad7/src/app/mock-data/travelData.ts,8\2\8204b1084513e9e8107b6c04a74381845dc48f55
+%Lab4/zad7/src/app/filter-pipe.pipe.ts,8\f\8f220660ed4b3748df1ae05f41709dd879c89476

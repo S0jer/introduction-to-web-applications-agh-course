@@ -12,7 +12,11 @@ import { Color } from './interfaces/color';
   providedIn: 'root'
 })
 export class CarService {
-  car = "";
+  colorName = '';
+  brandName = '';
+  modelName = '';
+
+
 
   getBrands(): Observable<Brand[]> {
     const brands = of(BRANDS);
@@ -27,5 +31,20 @@ export class CarService {
   getColors(): Observable<Color[]> {
     const colors = of(COLORS);
     return colors;
+  }
+
+  setColor(color: any): void {
+    this.colorName = color;
+  }
+
+  setBrand(brand: any): void {
+    this.brandName = brand;
+  }
+  setModel(model: any): void {
+    this.modelName = model;
+  }
+
+  getCar(): string{ 
+    return this.brandName + " " + this.modelName + " " + this.colorName;
   }
 }

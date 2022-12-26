@@ -10,7 +10,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TravelManagementComponent implements OnInit {
 
   @Input('travel') travel!: TravelData;
-  cnt: number = 0;
 
   constructor(private travelService:TravelService) {   }
 
@@ -18,21 +17,25 @@ export class TravelManagementComponent implements OnInit {
   }
 
   increment() {
-    if(this.travel.peopleLimit > this.cnt) {
+    if(this.travel.peopleLimit > this.travel.reservationsCnt) {
       this.travelService.reserveTravel();
-      this.cnt += 1;
+      this.travel.reservationsCnt += 1;
     }
   }
 
   decrement() {
-    if(this.cnt > 0) {
+    if(this.travel.reservationsCnt > 0) {
       this.travelService.deleteReserveTravel(1);
-      this.cnt -= 1;
+      this.travel.reservationsCnt -= 1;
     }
   }
 
   deleteTravel() {
-    this.travelService.deleteReserveTravel(this.cnt);
+    this.travelService.deleteReserveTravel(this.travel.reservationsCnt);
     this.travelService.deleteTravel(this.travel)
+  }
+
+  getReservationsCnt(): number {
+    return this.travel.reservationsCnt;
   }
 }

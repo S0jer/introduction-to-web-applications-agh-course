@@ -12,6 +12,7 @@ import { StarsComponent } from './stars/stars.component';
 import { TravelsFilterComponent } from './travels-filter/travels-filter.component';
 import { FilterPipePipe } from './filter-pipe.pipe';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { TravelsBasketComponent } from './travels-basket/travels-basket.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     StarsComponent,
     TravelsFilterComponent,
     FilterPipePipe,
-    NavBarComponent
+    NavBarComponent,
+    TravelsBasketComponent
   ],
   imports: [
     BrowserModule,

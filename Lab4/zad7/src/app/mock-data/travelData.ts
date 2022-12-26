@@ -11,6 +11,7 @@ export class TravelData implements Travel {
     description: string;
     imgPath: string;
     ratings: any[];
+    reservationsCnt: number;
 
     constructor(name: string, country: string, city: string, startDate: Date, endDate: Date, unitPrice: number, peopleLimit: number, description: string, imgPath: string){
         this.name = name;
@@ -23,5 +24,6 @@ export class TravelData implements Travel {
         this.description = description;
         this.imgPath = imgPath;
         this.ratings = [];
+        this.reservationsCnt = 0;
     }
 }
