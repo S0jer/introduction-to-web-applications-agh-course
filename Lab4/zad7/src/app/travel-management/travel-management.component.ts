@@ -1,6 +1,6 @@
+import { TravelData } from './../mock-data/travelData';
 import { TravelService } from './../travel.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { Travel } from '../mock-data/travel';
 
 @Component({
   selector: 'app-travel-management',
@@ -9,7 +9,7 @@ import { Travel } from '../mock-data/travel';
 })
 export class TravelManagementComponent implements OnInit {
 
-  @Input('travel') travel!: Travel;
+  @Input('travel') travel!: TravelData;
   cnt: number = 0;
 
   constructor(private travelService:TravelService) {   }

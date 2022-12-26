@@ -11,16 +11,17 @@ export class TravelService {
 
   constructor() { }
 
-  getTravels(): Observable<Travel[]> {
+  getTravels(): Observable<TravelData[]> {
     const travels = of(TRAVELS);
     return travels;
     }
 
-  deleteTravel(travel: Travel): void {
+  deleteTravel(travel: TravelData): void {
     delete TRAVELS[TRAVELS.indexOf(travel)];
   }
 
   push($event: TravelData) {
-    TRAVELS.push($event);
+    const travel: TravelData = $event;
+    TRAVELS.push(travel);
   }
 }

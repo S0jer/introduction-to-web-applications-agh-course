@@ -7,17 +7,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class TravelsFilterComponent implements OnInit {
   @Input() countryList:string[]=[];
-  @Input() daysList:string[]=[];
+  @Input() daysList:number[]=[];
   @Input() priceList:[number[]]=[[]];
   @Output() newItemEvent = new EventEmitter<number>();
   @Output() newItemEvent4 = new EventEmitter<number[]>();
-  @Output() newItemEvent3 = new EventEmitter<string>();
+  @Output() newItemEvent3 = new EventEmitter<number>();
   @Output() newItemEvent2 = new EventEmitter<string>();
 
   days='-';
   country='-';
   rating='-';
   price='-';
+  
+  constructor() { }
+  ngOnInit(): void { }
 
   ratingFlag='';
   setRating(q:number){
@@ -34,11 +37,11 @@ export class TravelsFilterComponent implements OnInit {
     this.countryFlag=this.country;
   }
   daysFlag='';
-  setDays(q:string){
-    // this.type=q;
-    // if(this.typeFlag==q){ this.newItemEvent3.emit(''); this.type='--';}
-    // else{ this.newItemEvent3.emit(q); }
-    // this.typeFlag=this.type;
+  setDays(q:number){
+    this.days=q.toString();
+    if(this.daysFlag == q.toString()){ this.newItemEvent3.emit(500); this.daysFlag='--';}
+    else{ this.newItemEvent3.emit(q); }
+    this.daysFlag=this.days;
   }
   
   priceFlag='';
@@ -48,8 +51,4 @@ export class TravelsFilterComponent implements OnInit {
     else{ this.newItemEvent4.emit([q,p]); }
     this.priceFlag=this.price;
   }
-
-  constructor() { }
-  ngOnInit(): void {}
-
 }

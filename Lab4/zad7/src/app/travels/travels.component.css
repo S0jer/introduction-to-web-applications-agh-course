@@ -5,6 +5,7 @@
     padding: 0;
     width: fit-content;
     height: fit-content;
+    min-height: 100vh;
   }
 
 .travels {

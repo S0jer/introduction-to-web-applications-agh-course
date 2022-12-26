@@ -15,14 +15,14 @@ export class AddTravelComponent implements OnInit {
   modelForm: FormGroup;
   constructor(private travelService: TravelService, private formBuilder : FormBuilder) {
     this.modelForm = this.formBuilder.group({
-    name: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
+    name: ['', [Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
     country: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
     city: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
-    startDate:  ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
-    endDate:  [[''], [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
+    startDate:  new Date(),
+    endDate:  new Date(),
     unitPrice:  ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
     peopleLimit: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-    description:  ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
+    description:  ['', [Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
     counter: 0
     });
   }
@@ -31,8 +31,8 @@ export class AddTravelComponent implements OnInit {
     this.modelForm.value.name,
     this.modelForm.value.country,
     this.modelForm.value.city,
-    this.modelForm.value.startDate,
-    this.modelForm.value.endDate,
+    new Date(this.modelForm.value.startDate),
+    new Date(this.modelForm.value.endDate),
     this.modelForm.value.unitPrice,
     this.modelForm.value.peopleLimit,
     this.modelForm.value.description,

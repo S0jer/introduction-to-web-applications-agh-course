@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+form {
+    margin-top: 250px;
+    margin-bottom: auto;
+}
 .content{
     width: 98vw;
     display: inline-block;

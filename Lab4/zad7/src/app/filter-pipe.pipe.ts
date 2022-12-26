@@ -1,28 +1,31 @@
+import { TravelData } from './mock-data/travelData';
 import { Pipe, PipeTransform } from '@angular/core';
-import { Data } from '@angular/router';
 
 @Pipe({
-  name: 'filterPipe'
+  name: 'filterPipe',
+  pure: false
 })
 export class FilterPipePipe implements PipeTransform {
 
 
-  transform(travelList: Data[], country:string, type:string, price:number[], rating:number): Data[] { 
-    if (!travelList) return []; 
+  transform(travelList: TravelData[], country:string, days:number, price:number[], rating:number): TravelData[] { 
+    if (!travelList) return [];
     if (rating!=0){
       travelList = travelList.filter(travel => {
-      return ( travel['rating']==rating ); 
+        const ratingSum = travel['ratings'].reduce((accumulator: any, current: any) => {
+          return accumulator + current;}, 0);
+      return ( Math.floor((ratingSum / travel['ratings'].length)) == rating ); 
     });}
 
     if (price[1]!=0){
       travelList = travelList.filter(travel => {
-      return (  travel['price']>=price[0] && travel['price']<=price[1] ); 
+      return (  travel.unitPrice >=price[0] && travel.unitPrice <=price[1] ); 
     });}
 
     country=country.toLowerCase();
-    type=type.toLocaleLowerCase();
     return travelList.filter(travel => {
-        return ( travel['country'].toLowerCase().includes(country) && travel['type'].toLowerCase().includes(type) ); 
+        return ( travel.country.toLowerCase().includes(country) )
+        // && ((travel.endDate - travel.startDate) == days )); 
       });
   }
 

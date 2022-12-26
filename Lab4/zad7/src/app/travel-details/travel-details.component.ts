@@ -1,4 +1,4 @@
-import { Travel } from './../mock-data/travel';
+import { TravelData } from './../mock-data/travelData';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TravelDetailsComponent implements OnInit {
 
-  @Input('travel') travel!: Travel;
+  @Input('travel') travel!: TravelData;
 
   constructor() { }
 

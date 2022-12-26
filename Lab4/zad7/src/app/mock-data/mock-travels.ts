@@ -1,7 +1,7 @@
 import { TravelData } from './travelData';
 
 export const TRAVELS: TravelData[] = [ 
-    new TravelData('Ancient Weekend', 'Italy', 'Rome', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/rome.jpg'),
+    new TravelData('Ancient Weekend', 'Italy', 'Rome', new Date(), new Date(), 1500, 15, 'Ancient Weekend', '../../assets/img/cities/rome.jpg'),
     new TravelData('German Classic', 'Germany', 'Berlin', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/berlin.jpg'),
     new TravelData('Postwar Warsaw', 'Poland', 'Warsaw', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/warsaw.jpg'),
     new TravelData('Romantic Weekend', 'France', 'Paris', new Date(), new Date(), 100, 15, 'Ancient Weekend', '../../assets/img/cities/paris.jpg'),

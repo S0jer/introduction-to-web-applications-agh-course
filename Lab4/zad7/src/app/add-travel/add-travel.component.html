@@ -22,14 +22,12 @@
         
             <div class = "line">
             <label class="col-form-label">Start date: </label><br>
-            <input class="form-control" name="startDate" formControlName="startDate" placeholder="e.g. 2022.04.25">
-            <span *ngIf="startDate && startDate.invalid && startDate.touched">To pole nie może być puste</span>
+            <input type="date" class="form-control" name="startDate" formControlName="startDate" placeholder="e.g. 2022.04.25">
             </div>
             
             <div class = "line">
             <label class="col-form-label">End date: </label><br>
-            <input class="form-control" name="endDate" formControlName="endDate" placeholder="e.g. 2022.09.24">
-            <span *ngIf="endDate && endDate.invalid && endDate.touched">To pole nie może być puste</span>
+            <input type="date" class="form-control" name="endDate" formControlName="endDate" placeholder="e.g. 2022.09.24">
             </div>
         
             <div class = "line">
