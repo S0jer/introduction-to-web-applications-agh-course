@@ -14,7 +14,7 @@
     
           <li><span >Days</span>
             <ul>
-              <li *ngFor="let t of daysList" (click)="setDays(t)"><span>{{t}}</span></li> 
+              <li *ngFor="let t of daysList" (click)="setDays(t[0],t[1])"><span *ngIf="isDateType(t[0]) && isDateType(t[1])">{{t[0].toLocaleDateString()}} - {{t[1].toLocaleDateString()}}</span></li> 
               </ul>
           </li>
   

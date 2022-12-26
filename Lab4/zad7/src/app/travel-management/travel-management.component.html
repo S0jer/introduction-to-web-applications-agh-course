@@ -1,9 +1,10 @@
 <div *ngIf="travel" id="wrapper">
-    <div class="commentSettings" *ngIf="cnt < travel.peopleLimit" id="availableCommunicate">Dostępnych miejsc: {{travel.peopleLimit - cnt}}</div>
-    <div class="commentSettings" *ngIf="cnt >= travel.peopleLimit" id="unavailableCommunicate">Brak miejsc</div>
+    <div class="commentSettings" *ngIf="cnt < travel.peopleLimit && (travel.peopleLimit - cnt) > 3" id="availableCommunicate">Dostępnych miejsc: {{travel.peopleLimit - cnt}}</div>
+    <div class="commentSettingsRed" *ngIf="cnt < travel.peopleLimit && (travel.peopleLimit - cnt) <= 3" id="availableCommunicate">Dostępnych miejsc: {{travel.peopleLimit - cnt}}</div>
+    <div class="commentSettingsRed" *ngIf="cnt >= travel.peopleLimit" id="unavailableCommunicate">Brak miejsc</div>
     <div id="mainDiv">
         <button id="minus" (click)="decrement()" >-</button>
-        <span class="commentSettings" id="numberPlace">{{cnt}}</span>
+        <span class="commentSettingsWhite" id="numberPlace">{{cnt}}</span>
         <button *ngIf="cnt < travel.peopleLimit" id="plus" (click)="increment()">+</button>
     </div>
     <app-stars [travel]="travel"></app-stars><br>

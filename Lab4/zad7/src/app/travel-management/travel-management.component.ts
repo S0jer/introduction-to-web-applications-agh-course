@@ -19,17 +19,20 @@ export class TravelManagementComponent implements OnInit {
 
   increment() {
     if(this.travel.peopleLimit > this.cnt) {
+      this.travelService.reserveTravel();
       this.cnt += 1;
     }
   }
 
   decrement() {
     if(this.cnt > 0) {
+      this.travelService.deleteReserveTravel(1);
       this.cnt -= 1;
     }
   }
 
   deleteTravel() {
+    this.travelService.deleteReserveTravel(this.cnt);
     this.travelService.deleteTravel(this.travel)
   }
 }

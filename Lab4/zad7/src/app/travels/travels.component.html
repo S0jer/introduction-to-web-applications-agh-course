@@ -4,7 +4,11 @@
 [countryList]="countryList" [daysList]="dataDaysList" [priceList]="priceList"></app-travels-filter>
     <ul class="travels">
         <li *ngFor="let travel of (travelList | filterPipe :searchCountry: searchDays: searchPrice: searchRating)">
-            <div class="travelHolder">
+            <div *ngIf="travel && travel.unitPrice > 1500" class="travelHolder" id="redBorder">
+                <app-travel-details [travel]="travel"></app-travel-details>
+                <app-travel-management [travel]="travel"></app-travel-management>
+            </div>
+            <div *ngIf="travel && travel.unitPrice <= 1500" class="travelHolder">
                 <app-travel-details [travel]="travel"></app-travel-details>
                 <app-travel-management [travel]="travel"></app-travel-management>
             </div>

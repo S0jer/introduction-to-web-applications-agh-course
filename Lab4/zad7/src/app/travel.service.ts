@@ -9,6 +9,8 @@ import { TravelData } from './mock-data/travelData';
 })
 export class TravelService {
 
+  travelReservations: number= 0;
+
   constructor() { }
 
   getTravels(): Observable<TravelData[]> {
@@ -24,4 +26,16 @@ export class TravelService {
     const travel: TravelData = $event;
     TRAVELS.push(travel);
   }
+
+  reserveTravel(): void {
+    this.travelReservations = this.travelReservations + 1;
+  }
+
+  deleteReserveTravel(value: number): void {
+    if (this.travelReservations > 0) this.travelReservations = this.travelReservations - value;
+  }
+
+  getReservations(): number {
+      return this.travelReservations;
+    }
 }

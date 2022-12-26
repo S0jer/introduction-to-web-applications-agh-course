@@ -8,7 +8,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipePipe implements PipeTransform {
 
 
-  transform(travelList: TravelData[], country:string, days:number, price:number[], rating:number): TravelData[] { 
+  transform(travelList: TravelData[], country:string, days:Date[], price:number[], rating:number): TravelData[] { 
     if (!travelList) return [];
     if (rating!=0){
       travelList = travelList.filter(travel => {
@@ -21,12 +21,13 @@ export class FilterPipePipe implements PipeTransform {
       travelList = travelList.filter(travel => {
       return (  travel.unitPrice >=price[0] && travel.unitPrice <=price[1] ); 
     });}
-
+    
     country=country.toLowerCase();
-    return travelList.filter(travel => {
-        return ( travel.country.toLowerCase().includes(country) )
-        // && ((travel.endDate - travel.startDate) == days )); 
+    if (days[0].getTime() !== days[1].getTime()) {
+      return travelList.filter(travel => {
+        return ( travel.country.toLowerCase().includes(country)
+        && (days[0] <= travel.startDate && travel.endDate <= days[1])); 
       });
+    } else return travelList;
   }
-
 }

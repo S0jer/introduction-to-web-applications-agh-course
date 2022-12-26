@@ -5,19 +5,22 @@
 }
 
 #minus , #plus{
-    height:25px;
-    width:25px;
-    border:1px black solid;
+    height:45px;
+    width:45px;
+    font-size: 25px;
+    font-weight: 700;
+    border: 1px black solid;
     border-radius:50%;
+    background-color: rgba(6, 116, 226, 0.582);
 }
 
 #minus:hover{
-    background-color:red;    
+    background-color:rgba(255, 0, 0, 0.753);    
     border:none;
 }
 
 #plus:hover{
-    background-color:green;
+    background-color:rgba(0, 128, 0, 0.719);
     border:none;
 }
 
@@ -66,5 +69,17 @@
 
 .commentSettings {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    color: #fff;
+    color: green;
+}
+
+.commentSettingsRed {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: red;
+}
+
+.commentSettingsWhite{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
 }

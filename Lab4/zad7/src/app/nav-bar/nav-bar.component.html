@@ -2,6 +2,8 @@
     <div class="navbar">
         <div class="leftButtons">
             <button class="leftButton" type="button" onclick="location.href='#'"> <strong>KOL</strong>TRAVELS</button>
+            <div class="reservationsInfo" *ngIf="getReservations() <= 10">{{getReservations()}}</div>
+            <div class="reservationsInfo" id="backRed" *ngIf="getReservations() > 10">{{getReservations()}}</div>
         </div>
         <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
         <label for="checkbox1">

@@ -1,3 +1,4 @@
+import { TravelService } from './../travel.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private travelService: TravelService) { 
+    this.travelService = travelService;
+  }
 
   ngOnInit(): void {
+  }
+
+  getReservations(): number {
+    return this.travelService.getReservations();
   }
 
 }

@@ -7,11 +7,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class TravelsFilterComponent implements OnInit {
   @Input() countryList:string[]=[];
-  @Input() daysList:number[]=[];
+  @Input() daysList:[Date[]]=[[]];
   @Input() priceList:[number[]]=[[]];
   @Output() newItemEvent = new EventEmitter<number>();
   @Output() newItemEvent4 = new EventEmitter<number[]>();
-  @Output() newItemEvent3 = new EventEmitter<number>();
+  @Output() newItemEvent3 = new EventEmitter<Date[]>();
   @Output() newItemEvent2 = new EventEmitter<string>();
 
   days='-';
@@ -20,6 +20,7 @@ export class TravelsFilterComponent implements OnInit {
   price='-';
   
   constructor() { }
+
   ngOnInit(): void { }
 
   ratingFlag='';
@@ -37,10 +38,10 @@ export class TravelsFilterComponent implements OnInit {
     this.countryFlag=this.country;
   }
   daysFlag='';
-  setDays(q:number){
-    this.days=q.toString();
-    if(this.daysFlag == q.toString()){ this.newItemEvent3.emit(500); this.daysFlag='--';}
-    else{ this.newItemEvent3.emit(q); }
+  setDays(q:Date, p:Date){
+    this.days = q.toLocaleDateString()+'-'+p.toLocaleDateString();
+    if(this.daysFlag == q.toLocaleDateString()+'-'+p.toLocaleDateString()){ this.newItemEvent3.emit([new Date(), new Date()]); this.days='-';}
+    else{ this.newItemEvent3.emit([q,p]); }
     this.daysFlag=this.days;
   }
   
@@ -50,5 +51,9 @@ export class TravelsFilterComponent implements OnInit {
     if(this.priceFlag==q.toString()+'-'+p.toString()){ this.newItemEvent4.emit([0,0]); this.price='-';}
     else{ this.newItemEvent4.emit([q,p]); }
     this.priceFlag=this.price;
+  }
+
+  isDateType(value: any): boolean {
+      return value instanceof Date;
   }
 }

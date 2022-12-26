@@ -29,7 +29,7 @@ export class TravelsComponent implements OnInit {
     this.findPrice();
   }
 
-  searchDays=0;
+  searchDays= [new Date(), new Date()];
   searchCountry='';
   searchRating=0;
   searchPrice=[0,0];
@@ -43,7 +43,7 @@ export class TravelsComponent implements OnInit {
   setCountry(q:string){
     this.searchCountry=q;
   }
-  setDays(q:number){
+  setDays(q:Date[]){
     this.searchDays=q;
   }
   
@@ -72,17 +72,26 @@ export class TravelsComponent implements OnInit {
     }
   }
 
-  dataDays: number = 0;
-  dataDaysList: number[] = [];
+
+  dataDays: Date[] = [];
+  dataDaysList: [Date[]] = [[]];
   findDays(){
-    this.dataDays = 0;
+    this.dataDays = [];
     for(const element of this.travelList){
       let startDate: Date = element.startDate;
       let endDate: Date = element.endDate;
-      // let travelDays: number = endDate. - startDate.getDate();
+      let firstDay = new Date(startDate.getFullYear(), startDate.getMonth(), 1);
+      let lastDay = new Date(endDate.getFullYear(), endDate.getMonth() + 1, 1);
+      let checkIfExists = true;
 
-
-      // if(!this.dataDaysList.includes(travelDays)) this.dataDaysList.push(travelDays);
+      for(const dates of this.dataDaysList){
+        if(this.isDateType(dates[0]) && this.isDateType(dates[1])){
+          if(dates[0].getTime() === firstDay.getTime() && dates[1].getTime() === lastDay.getTime()) {
+            checkIfExists =  false;
+          }
+        }
+      }
+      if(checkIfExists) this.dataDaysList.push([firstDay, lastDay]);
     }
   }
 
@@ -99,7 +108,7 @@ export class TravelsComponent implements OnInit {
       this.prices.push(m);
       for(let i=1; i<5; i++){
         if(delta > i*20){
-          this.prices.push( +m + +(i*20) );
+          this.prices.push( +m + +(i*300) );
         }
       }
       this.prices.push(+this.maxPrice + +1);
@@ -114,6 +123,9 @@ export class TravelsComponent implements OnInit {
 
 
   ratingUpdate(tab: number[]){
-    // this.dishlist[tab[0]].rating=tab[1];
+  }
+
+  isDateType(value: any): boolean {
+    return value instanceof Date;
   }
 }
