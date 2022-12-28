@@ -1,4 +1,5 @@
-<h1>{{title}}</h1>
+<div class="backgroundConf">
+    <h1>{{title}}</h1>
 <div class="listHolder">
     <label for="standard-select">Brand: </label>
     <div class="select">
@@ -9,18 +10,18 @@
     </div>
 </div>
 <div class="listHolder">
-    <label for="standard-select" *ngIf="selectedBrandId"> Models: </label>
+    <label for="standard-select" *ngIf="selectedBrandId != 0"> Models: </label>
     <div class="select">
-        <select id="standard-select" *ngIf="selectedBrandId" [(ngModel)]="selectedModelId" (change)="onSelectModel($any($event.target).value)">
+        <select id="standard-select" *ngIf="selectedBrandId != 0" [(ngModel)]="selectedModelId" (change)="onSelectModel($any($event.target).value)">
             <option *ngFor="let model of models" value={{model.id}}>{{model.name}}</option>
         </select>
         <span class="focus"></span>
     </div>
 </div>
 <div class="listHolder">
-    <label for="standard-select" *ngIf="selectedModelId"> Colors: </label>
+    <label for="standard-select" *ngIf="selectedModelId != 0"> Colors: </label>
     <div class="select">
-        <select id="standard-select" *ngIf="selectedModelId" [(ngModel)]="selectedColorId" (change)="onSelectColor($any($event.target).value)">
+        <select id="standard-select" *ngIf="selectedModelId != 0" [(ngModel)]="selectedColorId" (change)="onSelectColor($any($event.target).value)">
             <option *ngFor="let color of colors" [ngStyle]="{backgroundColor: color.name}" value={{color.id}}>{{color.name}}</option>
         </select>
         <span class="focus"></span>
@@ -28,4 +29,6 @@
 </div>
 
 
-<h4 *ngIf="selectedColorId">{{getCar()}}</h4>
+<h4 *ngIf="selectedColorId" [style.color]="this.selectedColor" [style.border-color]="this.selectedColor" id="car">{{getCar()}}</h4>
+
+</div>

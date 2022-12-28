@@ -1,8 +1,8 @@
-import { Color } from './../interfaces/color';
+import { Color } from '../interfaces/color';
 
-export const COLORS: Color[] = [ 
+export const COLORS: Color[] = [
     { id: 1, model_id: 1, name: 'Red' },
-    { id: 2, model_id: 1, name: 'White' },
+    { id: 2, model_id: 1, name: 'Lavender' },
     { id: 3, model_id: 1, name: 'Blue' },
     { id: 4, model_id: 1, name: 'Green' },
     { id: 5, model_id: 2, name: 'Purple' },

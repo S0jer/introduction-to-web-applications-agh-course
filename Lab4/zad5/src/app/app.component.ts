@@ -17,6 +17,7 @@ export class AppComponent {
   selectedBrandId: number = 0;
   selectedModelId: number = 0;
   selectedColorId: number = 0;
+  selectedColor: string = "white";
   car = "\n";
 
   constructor(private carService: CarService) { }
@@ -27,6 +28,8 @@ export class AppComponent {
 
   onSelectBrand(selectedBrandId: number) {
     this.selectedBrandId = selectedBrandId;
+    this.selectedModelId = 0;
+    this.selectedColorId = 0;
     this.getModels();
     this.carService.setBrand(this.brands.find(brand => brand.id == selectedBrandId)?.name);
     this.carService.setModel("");
@@ -35,6 +38,7 @@ export class AppComponent {
 
   onSelectModel(selectedModelId: number) {
     this.selectedModelId = selectedModelId;
+    this.selectedColorId = 0;
     this.getColors();
     this.carService.setModel(this.models.find(model => model.id == selectedModelId)?.name);
     this.carService.setColor("");
@@ -42,7 +46,8 @@ export class AppComponent {
 
   onSelectColor(selectedColorId: number) {
       this.selectedColorId = selectedColorId;
-      this.carService.setColor(this.colors.find(color => color.id == selectedColorId)?.name);
+      this.selectedColor = this.colors.find(color => color.id == selectedColorId)!.name;
+      this.carService.setColor(this.selectedColor);
   }
 
   getBrands(): void {

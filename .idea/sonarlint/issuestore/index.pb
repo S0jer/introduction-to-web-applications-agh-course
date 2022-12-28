@@ -177,8 +177,6 @@ C
 Lab4/zad6/README.md,d\2\d200856fd155141a4d0c4c1cbbdb0c314b42b85b
 E
 Lab4/zad6/src/test.ts,5\c\5c2bc2c9e0abd4befa32a45c934654b8a921476e
-S
-#Lab4/zad5/src/app/app.component.css,8\4\844e548c8be822c6204bd25370c49d8c8de84ad5
 L
 Lab4/zad7/tsconfig.spec.json,e\e\ee23e6defbac4e2f0e1f12ed8c2aba132cc383fd
 J
@@ -271,3 +269,39 @@ n
 >Lab4/zad7/src/app/travels-filter/travels-filter.component.html,9\0\90d43a4df99e80176935884dfaa4dbcc02ed54cd
 U
 %Lab4/zad7/src/app/filter-pipe.pipe.ts,8\f\8f220660ed4b3748df1ae05f41709dd879c89476
+Y
+)Lab4/zad6/src/environments/environment.ts,0\3\03356b1c0a93387bd02be5e4ecc9519bf2a28179
+n
+>Lab4/zad7/src/app/travel-details/travel-details.component.html,4\d\4dd4bd96123c537dbbf9c9ba130929b726e81564
+_
+/Lab4/zad7/src/app/travels/travels.component.css,8\4\84570074fbb96dcddf6615bf5f437a7b8b209a2f
+d
+4Lab4/zad7/src/app/add-travel/add-travel.component.ts,1\e\1ea40af465ee50e813b1c220e031756c4dbfd233
+[
++Lab4/zad6/src/app/cards/cards.component.css,3\f\3f396a94475dad9281eaad00703e24efe1996537
+m
+=Lab4/zad7/src/app/travels-basket/travels-basket.component.css,0\a\0af57716a2aec101efd6e2891a6a609932f0e508
+O
+Lab4/zad7/src/app/app.module.ts,e\4\e41e067f480199b5f94344222b589143d33daf58
+W
+'Lab4/zad7/src/app/app-routing.module.ts,d\f\dffd33fa7c8cf3be54045ab8bfd203400b69c1ee
+P
+ Lab4/zad5/src/app/car.service.ts,0\0\00fda9d935b7caad9365b024b4d40e80025f18a0
+`
+0Lab4/zad7/src/app/nav-bar/nav-bar.component.html,3\8\38230c8b8d81893a56bdfb8bd07e18624be1f1ff
+U
+%Lab4/zad7/src/app/mock-data/travel.ts,5\b\5b52a2988352c4d0fc777d346d23c4ee57ebcb67
+t
+DLab4/zad7/src/app/travel-management/travel-management.component.html,e\2\e27e1479787abb41a1bbdcfaa6b5b3978fdaceaa
+r
+BLab4/zad7/src/app/travel-management/travel-management.component.ts,d\f\dfc5e9dbca2bde0f0f8f7b36424e6ab36a573ff1
+Y
+)Lab4/zad7/src/app/mock-data/travelData.ts,8\2\8204b1084513e9e8107b6c04a74381845dc48f55
+n
+>Lab4/zad7/src/app/travels-basket/travels-basket.component.html,a\a\aab912ab5b9e2bdb1657b5414b09e9fdcb27508f
+q
+ALab4/zad7/src/app/travels-basket/travels-basket.component.spec.ts,a\e\ae658666c3771de14b9e2ee3035e38d6b4a04955
+l
+<Lab4/zad7/src/app/travels-basket/travels-basket.component.ts,8\2\827cac14710fb2c3f2c1a241e3c880f7ba22c27e
+^
+.Lab4/zad7/src/app/travels/travels.component.ts,9\a\9a38ec9f7621a38e494816254e98a261726c5040

@@ -1,6 +1,9 @@
-import { Model } from './../interfaces/model';
+import { Model } from '../interfaces/model';
 
-export const MODELS: Model[] = [ 
+export const MODELS: Model[] = [
+    { id: 0, brand_id: 1, name: '-' },
+    { id: 0, brand_id: 2, name: '-' },
+    { id: 0, brand_id: 3, name: '-' },
     { id: 1, brand_id: 1, name: 'Focus' },
     { id: 2, brand_id: 1, name: 'GT' },
     { id: 3, brand_id: 2, name: 'A1' },

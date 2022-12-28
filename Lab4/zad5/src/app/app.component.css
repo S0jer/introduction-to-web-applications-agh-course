@@ -73,3 +73,12 @@ h4 {
   margin-left: 5%;
   margin-top: 50px;
 }
+
+
+#car {
+  border: 2px solid black;
+  box-shadow: 0.1rem 0.1rem 0.8rem rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  padding: 10px;
+  border-radius: 20px;
+}
