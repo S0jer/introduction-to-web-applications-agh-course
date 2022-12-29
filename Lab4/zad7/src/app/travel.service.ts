@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Travel } from './mock-data/travel';
 import { TRAVELS } from './mock-data/mock-travels';
 import { Observable, of } from 'rxjs';
 import { TravelData } from './mock-data/travelData';
@@ -18,8 +17,16 @@ export class TravelService {
     return travels;
     }
 
+  getTravel(name: string): TravelData {
+    let travel = TRAVELS.find(t => t.name === name)!;
+    return travel;
+    }
+
   deleteTravel(travel: TravelData): void {
-    delete TRAVELS[TRAVELS.indexOf(travel)];
+    let toDeleteIndex = TRAVELS.indexOf(travel);
+    let deleted = TRAVELS.splice(toDeleteIndex, 1);
+    console.log(deleted);
+    console.log(TRAVELS);
   }
 
   push($event: TravelData) {

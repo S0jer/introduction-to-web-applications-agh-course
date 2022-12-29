@@ -74,6 +74,11 @@ h4 {
   margin-top: 50px;
 }
 
+h3 {
+  margin-left: 5%;
+  margin-top: 10px;
+  font-weight: 400;
+}
 
 #car {
   border: 2px solid black;

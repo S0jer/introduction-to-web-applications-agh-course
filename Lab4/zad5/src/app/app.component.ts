@@ -1,8 +1,8 @@
+import { ColorData } from './interfaces/colorData';
+import { BrandData } from './interfaces/brandData';
+import { ModelData } from './interfaces/modelData';
 import { Component } from '@angular/core';
 import { CarService } from './car.service';
-import { Model } from './interfaces/model';
-import { Color } from './interfaces/color';
-import { Brand } from './interfaces/brand';
 
 
 @Component({
@@ -11,12 +11,13 @@ import { Brand } from './interfaces/brand';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  models: Model[] = [];
-  brands: Brand[] = [];
-  colors: Color[] = [];
+  models: ModelData[] = [];
+  brands: BrandData[] = [];
+  colors: ColorData[] = [];
   selectedBrandId: number = 0;
   selectedModelId: number = 0;
   selectedColorId: number = 0;
+  selectedModel!: ModelData;
   selectedColor: string = "white";
   car = "\n";
 
@@ -39,8 +40,9 @@ export class AppComponent {
   onSelectModel(selectedModelId: number) {
     this.selectedModelId = selectedModelId;
     this.selectedColorId = 0;
+    this.selectedModel = this.models.find(model => model.id == selectedModelId)!;
     this.getColors();
-    this.carService.setModel(this.models.find(model => model.id == selectedModelId)?.name);
+    this.carService.setModel(this.selectedModel.name);
     this.carService.setColor("");
   }
 

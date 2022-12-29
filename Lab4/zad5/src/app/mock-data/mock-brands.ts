@@ -1,6 +1,6 @@
-import { Brand } from '../interfaces/brand';
+import { BrandData } from '../interfaces/brandData';
 
-export const BRANDS: Brand[] = [
+export const BRANDS: BrandData[] = [
     { id: 0, name: '-' },
     { id: 1, name: 'Ford' },
     { id: 2, name: 'Audi' },

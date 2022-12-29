@@ -1,0 +1,8 @@
+{
+    "brands": [
+        { "id": 0, "name": "-" },
+        { "id": 2, "name": "Audi" },
+        { "id": 1, "name": "Ford" },
+        { "id": 3, "name": "Citroen" }
+    ]
+}

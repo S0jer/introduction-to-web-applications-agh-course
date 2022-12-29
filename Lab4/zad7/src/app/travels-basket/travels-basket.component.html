@@ -1,4 +1,17 @@
 <body class="backgroundConf">
     <app-nav-bar></app-nav-bar>
-    <h1 class="header">TODO! :D</h1>
+    <div class="basketHolder">
+        <div class="basketHeader"> <div class="title">Basket</div> </div>
+        <ul class="basketItems">
+            <li *ngFor="let basketItem of basketList">
+                <div *ngIf="basketItem" class="basketItemHolder">
+                    <div class="column">{{basketItem.name}}</div>
+                    <div class="column">{{basketItem.quantity}}</div>
+                    <div class="column">{{basketItem.price}} $</div>
+                    <button id="minus" (click)="deleteBasketTravel(basketItem)" >-</button>
+                </div>
+            </li>
+        </ul>
+        <div class="priceHolder"> Total price: {{sumPrice}}$</div>
+    </div>
 </body>

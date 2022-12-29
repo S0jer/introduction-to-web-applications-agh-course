@@ -9,11 +9,25 @@
     opacity: 0.75;
 }
 
+@media (max-width: 700px){
+    .imgCircle {
+         width: 400px;
+       }
+ }
+ 
+
 .detailsHolder {
+    text-align: center;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     color: #fff;
 }
 
 .margin {
     margin-top: 7px;
+}
+
+.description {
+    display: inline-block;
+    text-align: center;
+    width: 70%;
 }

@@ -1,5 +1,7 @@
-import { TravelData } from './../mock-data/travelData';
-import { TravelService } from './../travel.service';
+import { BasketData } from '../mock-data/basketData';
+import { BasketService } from '../basket.service';
+import { TravelData } from '../mock-data/travelData';
+import { TravelService } from '../travel.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -11,7 +13,7 @@ export class TravelManagementComponent implements OnInit {
 
   @Input('travel') travel!: TravelData;
 
-  constructor(private travelService:TravelService) {   }
+  constructor(private travelService:TravelService, private basketService: BasketService) {   }
 
   ngOnInit(): void {
   }
@@ -20,6 +22,7 @@ export class TravelManagementComponent implements OnInit {
     if(this.travel.peopleLimit > this.travel.reservationsCnt) {
       this.travelService.reserveTravel();
       this.travel.reservationsCnt += 1;
+      this.basketService.addBasketItem(new BasketData(this.travel.name, 1, this.travel.unitPrice));
     }
   }
 
@@ -27,12 +30,14 @@ export class TravelManagementComponent implements OnInit {
     if(this.travel.reservationsCnt > 0) {
       this.travelService.deleteReserveTravel(1);
       this.travel.reservationsCnt -= 1;
+      this.basketService.deleteBasketItem(new BasketData(this.travel.name, 1, this.travel.unitPrice), 1);
     }
   }
 
   deleteTravel() {
+    this.basketService.deleteBasketItem(new BasketData(this.travel.name, 1, this.travel.unitPrice), this.travel.reservationsCnt);
     this.travelService.deleteReserveTravel(this.travel.reservationsCnt);
-    this.travelService.deleteTravel(this.travel)
+    this.travelService.deleteTravel(this.travel);
   }
 
   getReservationsCnt(): number {

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { BRANDS } from './mock-data/mock-brands';
-import { MODELS } from './mock-data/mock-models';
-import { COLORS } from './mock-data/mock-colors';
-import { Brand } from './interfaces/brand';
-import { Model } from './interfaces/model';
-import { Color } from './interfaces/color';
+import { ColorData } from './interfaces/colorData';
+import { ModelData } from './interfaces/modelData';
+import { BrandData } from './interfaces/brandData';
 
+import { default as BRANDS } from './mock-data/mock-brandsY.json';
+import { default as MODELS } from './mock-data/mock-modelsY.json';
+import { default as COLORS } from './mock-data/mock-colorsY.json';
 
 @Injectable({
   providedIn: 'root'
@@ -17,19 +17,18 @@ export class CarService {
   modelName = '';
 
 
-
-  getBrands(): Observable<Brand[]> {
-    const brands = of(BRANDS);
+  getBrands(): Observable<BrandData[]> {
+    const brands = of(BRANDS.brands);
     return brands;
   }
 
-  getModels(): Observable<Model[]> {
-      const models = of(MODELS);
+  getModels(): Observable<ModelData[]> {
+      const models = of(MODELS.models);
       return models;
   }
 
-  getColors(): Observable<Color[]> {
-    const colors = of(COLORS);
+  getColors(): Observable<ColorData[]> {
+    const colors = of(COLORS.colors);
     return colors;
   }
 
