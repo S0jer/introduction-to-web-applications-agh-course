@@ -48,7 +48,6 @@ export class TravelsFilterComponent implements OnInit {
   priceFlag='';
   setPrice(q:number,p:number){
     this.price=q.toString()+'-'+p.toString();
-    console.log(this.price);
     if(this.priceFlag==q.toString()+'-'+p.toString()){ this.newItemEvent4.emit([0,0]); this.price='-';}
     else{ this.newItemEvent4.emit([q,p]); }
     this.priceFlag=this.price;

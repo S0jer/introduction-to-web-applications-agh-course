@@ -53,7 +53,7 @@
 
 .travelHolder {
   box-shadow: 0.1rem 0.1rem 0.8rem rgba(0, 0, 0, 0.2);
-  border: 2px solid green;
+  border: 2px solid red;
   background-color: rgba(58, 79, 113, 0.505);
   border-radius: 10px;
   margin-left: auto;
@@ -63,8 +63,8 @@
   width: auto;
   }
 
-#redBorder {
-  border: 2px solid red;
+#greenBorder {
+  border: 2px solid green;
 }
 
 .backgroundConf {

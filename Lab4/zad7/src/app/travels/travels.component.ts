@@ -111,7 +111,6 @@ export class TravelsComponent implements OnInit {
       this.prices.push(0);
       this.prices.push(m);
       for(let i=1; i<5; i++){
-        console.log(this.prices[this.prices.length - 1]);
         if(delta > i*20 && this.prices[this.prices.length - 1] < +m + +(i*300) && +m + +(i*300) < this.maxPrice){
           this.prices.push( +m + +(i*300) );
         }

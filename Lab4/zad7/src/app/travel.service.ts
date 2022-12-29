@@ -24,9 +24,7 @@ export class TravelService {
 
   deleteTravel(travel: TravelData): void {
     let toDeleteIndex = TRAVELS.indexOf(travel);
-    let deleted = TRAVELS.splice(toDeleteIndex, 1);
-    console.log(deleted);
-    console.log(TRAVELS);
+    TRAVELS.splice(toDeleteIndex, 1);
   }
 
   push($event: TravelData) {
