@@ -8,7 +8,8 @@
                     <div class="column">{{basketItem.name}}</div>
                     <div class="column">{{basketItem.quantity}}</div>
                     <div class="column">{{basketItem.price}} $</div>
-                    <button id="minus" (click)="deleteBasketTravel(basketItem)" >-</button>
+                    <button id="minus" (click)="deleteBasketTravel(basketItem, 1)" >-</button>
+                    <button id="buyButton" (click)="buyTravel(basketItem)" >Buy</button>
                 </div>
             </li>
         </ul>

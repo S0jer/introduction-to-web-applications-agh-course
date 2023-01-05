@@ -1,5 +1,5 @@
-import { BasketData } from '../mock-data/basketData';
-import { BasketItem } from '../mock-data/basket';
+import { MyTravelsService } from './../my-travels.service';
+import { TruncatedTravelData } from './../mock-data/truncatedTravelData';
 import { TravelService } from '../travel.service';
 import { BasketService } from '../basket.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,10 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TravelsBasketComponent implements OnInit {
 
-  basketList: BasketItem[] = [];
+  basketList: TruncatedTravelData[] = [];
   sumPrice: number = 0;
 
-  constructor(private basketService: BasketService, private travelService: TravelService) { }
+  constructor(private basketService: BasketService, private travelService: TravelService, private myTravelsService: MyTravelsService) { }
 
   ngOnInit(): void {
     this.getBasket();
@@ -32,11 +32,17 @@ export class TravelsBasketComponent implements OnInit {
     this.sumPrice = this.basketService.countPrice();
   }
 
-  deleteBasketTravel(basketData: BasketData) {
+  deleteBasketTravel(basketData: TruncatedTravelData, deletedTravels: number) {
     let travel = this.travelService.getTravel(basketData.name);
-    travel.reservationsCnt = travel.reservationsCnt - 1;
-    this.basketService.deleteBasketItem(basketData, 1);
-    this.travelService.deleteReserveTravel(1);
+    travel.reservationsCnt = travel.reservationsCnt - deletedTravels;
+    this.basketService.deleteBasketItem(basketData, deletedTravels);
+    this.travelService.deleteReserveTravel(deletedTravels);
     this.countPrice();
+  }
+
+  buyTravel(myTravel: TruncatedTravelData) {
+    let travel = this.travelService.getTravel(myTravel.name);
+    this.deleteBasketTravel(myTravel, travel.reservationsCnt);
+    this.myTravelsService.buyTravel(myTravel);
   }
 }

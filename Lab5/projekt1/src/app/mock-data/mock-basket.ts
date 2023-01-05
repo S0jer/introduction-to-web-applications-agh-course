@@ -1,3 +1,3 @@
-import { BasketData } from './basketData';
+import { TruncatedTravelData } from './truncatedTravelData';
 
-export const BASKET: BasketData[] = []
+export const BASKET: TruncatedTravelData[] = [];

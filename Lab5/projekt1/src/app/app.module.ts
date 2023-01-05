@@ -20,6 +20,8 @@ import { TravelsFilterComponent } from './travels-filter/travels-filter.componen
 import { FilterPipePipe } from './filter-pipe.pipe';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TravelsBasketComponent } from './travels-basket/travels-basket.component';
+import { HomeComponent } from './home/home.component';
+import { MyTravelsHistoryComponent } from './my-travels-history/my-travels-history.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { TravelsBasketComponent } from './travels-basket/travels-basket.componen
     TravelsFilterComponent,
     FilterPipePipe,
     NavBarComponent,
-    TravelsBasketComponent
+    TravelsBasketComponent,
+    HomeComponent,
+    MyTravelsHistoryComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig), 

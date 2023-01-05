@@ -96,3 +96,24 @@
   display: table;
   clear: both;
 }
+
+#buyButton {
+  display: inline-block;
+  position: relative;
+  right: 20px;
+  height:45px;
+  margin: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width:70px;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px black solid;
+  border-radius:50%;
+  background-color: rgba(6, 116, 226, 0.582);
+}
+
+#buyButton:hover{
+  background-color:rgba(0, 255, 98, 0.753);    
+  border:none;
+}

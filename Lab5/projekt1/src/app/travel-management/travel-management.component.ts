@@ -1,4 +1,5 @@
-import { BasketData } from '../mock-data/basketData';
+import { MyTravelsService } from './../my-travels.service';
+import { TruncatedTravelData } from '../mock-data/truncatedTravelData';
 import { BasketService } from '../basket.service';
 import { TravelData } from '../mock-data/travelData';
 import { TravelService } from '../travel.service';
@@ -22,7 +23,7 @@ export class TravelManagementComponent implements OnInit {
     if(this.travel.peopleLimit > this.travel.reservationsCnt) {
       this.travelService.reserveTravel();
       this.travel.reservationsCnt += 1;
-      this.basketService.addBasketItem(new BasketData(this.travel.name, 1, this.travel.unitPrice));
+      this.basketService.addBasketItem(new TruncatedTravelData(this.travel.name, 1, this.travel.unitPrice, this.travel.startDate, this.travel.endDate, this.travel.imgPath));
     }
   }
 
@@ -30,12 +31,12 @@ export class TravelManagementComponent implements OnInit {
     if(this.travel.reservationsCnt > 0) {
       this.travelService.deleteReserveTravel(1);
       this.travel.reservationsCnt -= 1;
-      this.basketService.deleteBasketItem(new BasketData(this.travel.name, 1, this.travel.unitPrice), 1);
+      this.basketService.deleteBasketItem(new TruncatedTravelData(this.travel.name, 1, this.travel.unitPrice, this.travel.startDate, this.travel.endDate, this.travel.imgPath), 1);
     }
   }
 
   deleteTravel() {
-    this.basketService.deleteBasketItem(new BasketData(this.travel.name, 1, this.travel.unitPrice), this.travel.reservationsCnt);
+    this.basketService.deleteBasketItem(new TruncatedTravelData(this.travel.name, 1, this.travel.unitPrice, this.travel.startDate, this.travel.endDate, this.travel.imgPath), this.travel.reservationsCnt);
     this.travelService.deleteReserveTravel(this.travel.reservationsCnt);
     this.travelService.deleteTravel(this.travel);
   }

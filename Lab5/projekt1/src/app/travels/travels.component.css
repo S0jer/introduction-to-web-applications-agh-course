@@ -12,7 +12,7 @@
     -webkit-column-gap: 20px;
     column-count: 3;
     column-gap: 20px;
-    margin-top: 200px;
+    margin-top: 400px;
   }
 
 @media (max-width: 1700px){

@@ -135,7 +135,7 @@ ol > li:hover > span {
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
         .ol {
             display: flex;
             flex-direction: column;

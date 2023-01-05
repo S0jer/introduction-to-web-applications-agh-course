@@ -5,7 +5,7 @@
     margin-right: auto;
     overflow: hidden;
     position: relative;
-    top: 100px;
+    top: 225px;
 }
 @media (max-width: 900px) {
   #filterMenu{

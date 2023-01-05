@@ -1,4 +1,4 @@
-import { BasketData } from './mock-data/basketData';
+import { TruncatedTravelData } from './mock-data/truncatedTravelData';
 import { BASKET } from './mock-data/mock-basket';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
@@ -10,12 +10,12 @@ export class BasketService {
 
   constructor() { }
 
-  getBasket(): Observable<BasketData[]> {
+  getBasket(): Observable<TruncatedTravelData[]> {
     const basket = of(BASKET);
     return basket;
   }
 
-  deleteBasketItem(basketItem: BasketData, deletedNumber: number): void {
+  deleteBasketItem(basketItem: TruncatedTravelData, deletedNumber: number): void {
     let itemFromBasketIfExists = BASKET.find(item => item.name === basketItem.name);
     
     if (itemFromBasketIfExists && itemFromBasketIfExists.quantity - deletedNumber <= 0){
@@ -25,7 +25,7 @@ export class BasketService {
     } else if (itemFromBasketIfExists) itemFromBasketIfExists.quantity = itemFromBasketIfExists.quantity - deletedNumber;
   }
 
-  addBasketItem(basketItem: BasketData): void { 
+  addBasketItem(basketItem: TruncatedTravelData): void { 
     let itemFromBasketIfExists = BASKET.find(item => item.name === basketItem.name);
     if (itemFromBasketIfExists) itemFromBasketIfExists.quantity = itemFromBasketIfExists.quantity + 1;
     else BASKET.push(basketItem);
