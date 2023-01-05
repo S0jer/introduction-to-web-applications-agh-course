@@ -1,0 +1,7 @@
+<body class="backgroundConf">
+    <app-nav-bar></app-nav-bar>
+    <div class="center">
+        <h1 *ngIf="!photoUrl">Loading...</h1>
+        <img src={{photoUrl}} alt="Photo">
+    </div>
+</body>

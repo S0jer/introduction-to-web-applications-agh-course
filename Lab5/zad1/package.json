@@ -1,5 +1,5 @@
 {
-  "name": "zad7",
+  "name": "zad1",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -14,12 +14,10 @@
     "@angular/common": "^14.0.0",
     "@angular/compiler": "^14.0.0",
     "@angular/core": "^14.0.0",
-    "@angular/fire": "^7.5.0",
     "@angular/forms": "^14.0.0",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "firebase": "^9.15.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

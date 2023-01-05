@@ -1,0 +1,9 @@
+.backgroundConf {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/img/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+  }

@@ -1,0 +1,38 @@
+<div id="filterMenu">
+    <div class="filtersOn">
+      <div>Country: {{country}}</div>
+      <div>Days: {{days}}</div>
+      <div>Price: {{price}}</div>
+      <div>Rating: {{rating}}</div>
+    </div>
+      <ol>
+          <li><span >Country</span>
+            <ul>
+              <li *ngFor="let c of countryList" (click)="setCountry(c)"><span>{{c}}</span></li> 
+            </ul>
+          </li>
+    
+          <li><span >Days</span>
+            <ul>
+              <li *ngFor="let t of daysList" (click)="setDays(t[0],t[1])"><span *ngIf="isDateType(t[0]) && isDateType(t[1])">{{t[0].toLocaleDateString()}} - {{t[1].toLocaleDateString()}}</span></li> 
+              </ul>
+          </li>
+  
+          <li><span >Price</span>
+              <ul>
+                <li *ngFor="let p of priceList" (click)="setPrice(p[0],p[1])"><span>{{p[0]}} - {{p[1]}}</span></li> 
+                </ul>
+            </li>
+    
+          <li><span >Rating</span>
+            <ul>
+              <li (click)="setRating(1)"><span >1-star</span></li>
+              <li (click)="setRating(2)"><span >2-star</span></li>
+              <li (click)="setRating(3)"><span >3-star</span></li>
+              <li (click)="setRating(4)"><span >4-star</span></li>
+              <li (click)="setRating(5)"><span >5-star</span></li>
+            </ul>
+          </li>
+        </ol>
+  </div>
+  

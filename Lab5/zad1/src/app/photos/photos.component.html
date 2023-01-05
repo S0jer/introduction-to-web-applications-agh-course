@@ -1,0 +1,18 @@
+<body class="backgroundConf">
+    <app-nav-bar></app-nav-bar>
+    <h1>Photos</h1>
+    <h3>(showing only 25 images)</h3>
+    <h1 *ngIf="photos.length==0">Loading...</h1>
+    <div *ngIf="photos!=undefined" class="holder">
+        <div *ngFor="let photo of photos">
+            <div *ngIf="photo.id<=25">
+                <div class="photo">
+                    <h3>AlbumID: {{photo.albumId}}, ImageID:{{photo.id}}</h3>
+                    <p>Naciśnij na obrazek aby odtworzyć pełne zdjęcie</p>
+                    <a routerLink="/photos/{{photo.id}}"><img src={{photo.thumbnailUrl}} alt="Photo"></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
