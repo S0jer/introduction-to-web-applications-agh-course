@@ -42,7 +42,8 @@ export class TravelsBasketComponent implements OnInit {
 
   buyTravel(myTravel: TruncatedTravelData) {
     let travel = this.travelService.getTravel(myTravel.name);
+    this.myTravelsService.buyTravel(myTravel,  travel.reservationsCnt);
+    this.travelService.buyTravel(travel, travel.reservationsCnt);
     this.deleteBasketTravel(myTravel, travel.reservationsCnt);
-    this.myTravelsService.buyTravel(myTravel);
   }
 }

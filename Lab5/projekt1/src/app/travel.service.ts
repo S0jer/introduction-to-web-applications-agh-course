@@ -43,4 +43,8 @@ export class TravelService {
   getReservations(): number {
       return this.travelReservations;
     }
+
+  buyTravel(travel: TravelData, value: number): void {
+    travel.peopleLimit -= value;
+  }
 }

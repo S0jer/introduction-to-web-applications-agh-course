@@ -344,8 +344,6 @@ Z
 *Lab4/zad5/src/app/mock-data/mock-models.ts,0\8\08ebfe15e128d22755e904a4ab9cfa238cf833c6
 r
 BLab4/zad7/src/app/travel-management/travel-management.component.ts,d\f\dfc5e9dbca2bde0f0f8f7b36424e6ab36a573ff1
-S
-#Lab4/zad7/src/app/basket.service.ts,5\c\5cf488b77685cf73f49468d3d213c4a72f681c11
 M
 Lab5/projekt1/.browserslistrc,5\0\5009bd6abb8536a0cf25b34cb867965bc1e03130
 K
@@ -397,8 +395,6 @@ X
 Q
 !Lab5/Studenci_Firebase/.gitignore,6\8\6887dfca3e6f7883d2f8242f7f254afd03bd6695
 S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-S
 #Lab5/Studenci_Firebase/package.json,d\2\d2a66e3647ad1237e9715fa6dc31e94730c51529
 T
 $Lab5/Studenci_Firebase/tsconfig.json,4\4\443741b8db2e9c30b27f46d86e46c01fad50aba1
@@ -434,8 +430,6 @@ Q
 SLab5/Studenci_Firebase/src/app/students/create-student/create-student.component.css,6\9\6972947f1b990160f5c7d523016b8fd9a7283e5f
 c
 3Lab5/projekt1/src/app/nav-bar/nav-bar.component.css,0\0\00c583ebafa32c4a06fc3ab331da4b774a78b606
-…
-ULab5/Studenci_Firebase/src/app/students/student-details/student-details.component.css,5\0\5033a6f503d1403831e2a506980d6b430f6d743c
 _
 /Lab5/zad1/src/app/nav-bar/nav-bar.component.css,5\2\52180360836d640ca82f0af759417f8d92b24119
 _
@@ -466,8 +460,6 @@ j
 :Lab5/projekt1/src/app/add-travel/add-travel.component.html,4\d\4da805c7e68c8359b1d1b5283c0596e91bbe2333
 m
 =Lab5/projekt1/src/app/add-travel/add-travel.component.spec.ts,d\3\d372cb87994d497bad0b87d9e9119eb7daeb8f7e
-h
-8Lab5/projekt1/src/app/add-travel/add-travel.component.ts,d\6\d612c0709510752ffb78842e3c74621e86a324d9
 X
 (Lab5/projekt1/src/app/app.component.html,7\5\75f22602b7a2a68248bb496ca88a431c82c6c094
 a
@@ -484,8 +476,6 @@ _
 /Lab5/Studenci_Firebase/src/app/app.component.ts,3\9\39250b933202a47311f36b32d93147a14116adb7
 R
 "Lab5/zad1/src/app/app.component.ts,7\b\7bae1e5ef582c1d226faf6b93f9f8b16ec232943
-O
-Lab4/zad7/src/app/app.module.ts,e\4\e41e067f480199b5f94344222b589143d33daf58
 S
 #Lab5/projekt1/src/app/app.module.ts,2\c\2c68aa4be3933db9675bb0cf5b98921486362236
 \
@@ -502,10 +492,6 @@ W
 ,Lab5/projekt1/src/app/basket.service.spec.ts,3\4\34a54b770b8efb13b583d16fcf9ddc8ea894a5bf
 W
 'Lab5/projekt1/src/app/basket.service.ts,9\6\9672352b2604f915aab95181a8e72fc09d731e5f
-Y
-)Lab5/projekt1/src/app/mock-data/basket.ts,9\1\91fde81f16d224e284d72e1f74496e8c50e889a2
-]
--Lab5/projekt1/src/app/mock-data/basketData.ts,4\d\4d75ff0ab5a30562947eafef333972dfba0c6aee
 „
 TLab5/Studenci_Firebase/src/app/students/create-student/create-student.component.html,0\7\072edf6cfaa9a1fb53a1246917820027dd3c1e97
 ‡
@@ -514,8 +500,6 @@ WLab5/Studenci_Firebase/src/app/students/create-student/create-student.component
 RLab5/Studenci_Firebase/src/app/students/create-student/create-student.component.ts,2\7\2751dcd06fe518e1c10d372c4e2604a9b397b8e7
 Z
 *Lab5/zad1/src/app/download.service.spec.ts,c\a\ca210652e2ca6ee115056303ef879d70f2e43caf
-U
-%Lab5/zad1/src/app/download.service.ts,b\7\b756bbf1e54774c3af0db57499d3266d3803be81
 ^
 .Lab5/projekt1/src/app/filter-pipe.pipe.spec.ts,f\9\f9c6124372468379cf02e17f37f3714c916f6836
 Y
@@ -546,8 +530,6 @@ E
 Lab5/zad1/src/main.ts,2\3\23ae2468ece934cb5a986cb3a8bae788e836c541
 ^
 .Lab5/projekt1/src/app/mock-data/mock-basket.ts,e\a\ea097a6b4a9170bca5db88b2cf22e28eec31bb1a
-_
-/Lab5/projekt1/src/app/mock-data/mock-travels.ts,1\e\1e8d508e87f228c663065ebf1d9d22d808a29443
 d
 4Lab5/projekt1/src/app/nav-bar/nav-bar.component.html,7\9\79a88b6ed6c3bdc8a7b620dc65baf4f3791e7fa5
 `
@@ -596,8 +578,6 @@ c
 3Lab5/projekt1/src/app/stars/stars.component.spec.ts,8\1\81fd8a651f7533888c5209fab674ed01f7bc9d1c
 ^
 .Lab5/projekt1/src/app/stars/stars.component.ts,0\3\039abb5b13b8ae53d34c4ad9dabb0cbe14ee3ddb
-j
-:Lab5/Studenci_Firebase/src/app/services/student.service.ts,9\1\9112412e8f2e9d1bfd2c3f6e6e29a33631e13997
 b
 2Lab5/Studenci_Firebase/src/app/students/student.ts,c\f\cf766635b27301a95137321c68beedec4bf0a2f2
 †
@@ -618,8 +598,6 @@ E
 Lab5/zad1/src/test.ts,4\a\4ab4faf377c14772fc5bc4881d606c4b9b3a7e75
 \
 ,Lab5/projekt1/src/app/travel.service.spec.ts,2\4\24c3a5bfa20f0602e36381c8a915fd8901ac6052
-W
-'Lab5/projekt1/src/app/travel.service.ts,4\f\4fbade19fbf189b541a945f6cad71f4f32ff99e2
 Y
 )Lab5/projekt1/src/app/mock-data/travel.ts,c\1\c1ee27f7c5ce8edfa906e37e8ca3286f6a1099b5
 r
@@ -646,13 +624,9 @@ r
 BLab5/projekt1/src/app/travels-basket/travels-basket.component.html,c\0\c021260dfe89ed527b9048e789e5443f88364723
 u
 ELab5/projekt1/src/app/travels-basket/travels-basket.component.spec.ts,7\1\713ec4c4ed8fcb69b48f634814518d286e716463
-p
-@Lab5/projekt1/src/app/travels-basket/travels-basket.component.ts,b\6\b65a59715108285c70cd244f175b68d6d4364fc1
 r
 BLab5/projekt1/src/app/travels-filter/travels-filter.component.html,a\3\a35486ba3471332a0edf762a86709171eeec1d75
 u
 ELab5/projekt1/src/app/travels-filter/travels-filter.component.spec.ts,8\0\808a49496d171f2738d926034bc40760a975a643
 p
 @Lab5/projekt1/src/app/travels-filter/travels-filter.component.ts,a\2\a2ad1bf7f209118eaa35206eeeca980a849dc872
-€
-PLab5/Studenci_Firebase/src/app/students/students-list/students-list.component.ts,e\3\e3334cd0d7dc5b3943e141ddc2ab14cc4369a97b

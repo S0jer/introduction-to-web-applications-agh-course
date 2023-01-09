@@ -8,32 +8,31 @@ import { Observable, of } from 'rxjs';
 })
 export class MyTravelsService {
 
-  myTravelsActive: TruncatedTravelData[] = [];
-  myTravelsHistory: TruncatedTravelData[] = [];
+  myTravels: TruncatedTravelData[] = [];
 
   constructor() { }
 
 
-  getMyTravelsActive(): Observable<TruncatedTravelData[]> {
-    const myTravelsActive = of(this.myTravelsActive);
-    return myTravelsActive;
+  getMyTravels(): Observable<TruncatedTravelData[]> {
+    const myTravels = of(this.myTravels);
+    return myTravels;
   }
 
-  getMyTravelsHistory(): Observable<TruncatedTravelData[]> {
-    const myTravelsHistory = of(this.myTravelsHistory);
-    return myTravelsHistory;
-  }
-
-  buyTravel(myTravelsData: TruncatedTravelData) {
-    this.myTravelsActive.push(myTravelsData);
+  buyTravel(myTravelsData: TruncatedTravelData,  reservationsCnt: number) {
+    let getIfExists = this.myTravels.find(x => x.name === myTravelsData.name);
+    if(getIfExists) {
+      getIfExists.quantity += reservationsCnt;
+    } else {
+      this.myTravels.push(new TruncatedTravelData(myTravelsData.name, reservationsCnt, myTravelsData.price, myTravelsData.startDate, myTravelsData.endDate, myTravelsData.imgPath));
+    }
   }
 
   markTravelAsCompleted(myTravelsData: TruncatedTravelData) {
-    let checkIfItemExists = this.myTravelsActive.find(item => item.name === myTravelsData.name);
+    let checkIfItemExists = this.myTravels.find(item => item.name === myTravelsData.name);
     if (checkIfItemExists) {
-      let itemIndex = this.myTravelsActive.indexOf(checkIfItemExists);
-      this.myTravelsActive.splice(itemIndex, 1);
-      this.myTravelsHistory.push(myTravelsData);
+      let itemIndex = this.myTravels.indexOf(checkIfItemExists);
+      this.myTravels.splice(itemIndex, 1);
+      this.myTravels.push(myTravelsData);
     }
   }
 }

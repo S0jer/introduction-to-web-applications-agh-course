@@ -8,4 +8,113 @@
   background-attachment: fixed;
   background-position: center;
 }
-  
+
+.header {
+text-align: center;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+color: white;
+}
+
+#minus {
+display: inline-block;
+position: relative;
+right: 20px;
+height:30px;
+width:30px;
+font-size: 20px;
+font-weight: 700;
+border: 1px black solid;
+border-radius:50%;
+background-color: rgba(6, 116, 226, 0.582);
+}
+
+#minus:hover{
+background-color:rgba(255, 0, 0, 0.753);    
+border:none;
+}
+
+.myTravelsItems {
+display:inline-block;
+align-items: center;
+vertical-align:middle;
+list-style-type: none;
+margin-left: auto;
+margin-right: auto;
+padding: 0;
+width: 90vw;
+}
+
+.myTravelsItems li {
+background-color: rgba(255, 255, 255, 0.5);
+box-shadow: 0.1rem 0.1rem 0.8rem rgba(0, 0, 0, 0.2);
+margin-left: auto;
+margin-right: auto;
+}
+
+.myTravelsHolder {
+display: block;
+width: 100vw;
+margin-left: auto;
+margin-right: auto;
+font-size: 25px;
+text-align: center;
+}
+
+.myTravelsHeader {
+width: 100vw;
+background-color: rgba(255, 255, 255, 0.75);
+border-bottom: 1px solid black;
+font-size: 40px;
+}
+
+
+.priceHolder {
+background-color: rgba(255, 255, 255, 0.75);
+border-top: 1px solid black;
+width: 100vw;
+}
+
+.buttonHolder {
+display: flex;
+}
+
+.myTravelsItemHolder{
+display: flex;
+align-items: center;
+vertical-align:middle;
+justify-content: center;
+height: fit-content;
+}
+
+
+.column {
+float: left;
+width: 33.33%;
+}
+
+.columns:after {
+content: "";
+display: table;
+clear: both;
+}
+
+#buyButton {
+display: inline-block;
+position: relative;
+right: 20px;
+height:45px;
+margin: 5px;
+margin-left: 15px;
+margin-right: 15px;
+width:70px;
+font-size: 20px;
+font-weight: 700;
+border: 1px black solid;
+border-radius:50%;
+background-color: rgba(6, 116, 226, 0.582);
+}
+
+#buyButton:hover{
+background-color:rgba(0, 255, 98, 0.753);    
+border:none;
+}
