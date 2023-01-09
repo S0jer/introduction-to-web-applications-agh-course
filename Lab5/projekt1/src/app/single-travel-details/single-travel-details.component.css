@@ -1,0 +1,61 @@
+.backgroundConf {
+    min-height: 100vh;
+    max-width: 100%;
+    width: 100vw;
+    height: 100%;
+    background-image: url(../../assets/img/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  .travels {
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 95vw;
+    height: fit-content;
+    min-height: 100vh;
+    -moz-column-count: 1;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 1;
+    -webkit-column-gap: 20px;
+    column-count: 1;
+    column-gap: 20px;
+    margin-top: 150px;
+  }
+
+
+@media (max-width: 700px){
+  .travels {
+       width: 450px;
+     }
+}
+
+
+
+.travels li {
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  }
+
+.travels a:hover {
+  color: #2c3a41;
+  }
+
+.travelHolder {
+  box-shadow: 0.1rem 0.1rem 0.8rem rgba(0, 0, 0, 0.2);
+  border: 2px solid rgb(0, 81, 255);
+  background-color: rgba(58, 79, 113, 0.505);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+  text-align: center;
+  width: auto;
+  }
+

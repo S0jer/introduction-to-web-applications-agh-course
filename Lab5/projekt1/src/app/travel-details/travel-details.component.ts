@@ -12,12 +12,15 @@ export class TravelDetailsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   getRating(): number {
     const ratingSum = this.travel.ratings.reduce((accumulator, current) => {
       return accumulator + current;}, 0);
     return Math.round((ratingSum / this.travel.ratings.length) * 10) / 10;
+  }
+
+  getRatingsQuantity(): number {
+    return this.travel.ratings.length;
   }
 }

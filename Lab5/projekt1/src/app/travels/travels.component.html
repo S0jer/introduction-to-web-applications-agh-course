@@ -6,11 +6,11 @@
         <li *ngFor="let travel of (travelList | filterPipe :searchCountry: searchDays: searchPrice: searchRating)">
             <div *ngIf="travel && travel.unitPrice > 1500" class="travelHolder" id="greenBorder">
                 <app-travel-details [travel]="travel"></app-travel-details>
-                <app-travel-management [travel]="travel"></app-travel-management>
+                <app-travel-management [travel]="travel" [rating]="false"></app-travel-management>
             </div>
             <div *ngIf="travel && travel.unitPrice <= 1500" class="travelHolder">
                 <app-travel-details [travel]="travel"></app-travel-details>
-                <app-travel-management [travel]="travel"></app-travel-management>
+                <app-travel-management [travel]="travel" [rating]="false"></app-travel-management>
             </div>
         </li>
     </ul>

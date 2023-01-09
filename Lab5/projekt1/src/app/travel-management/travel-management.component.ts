@@ -1,4 +1,3 @@
-import { MyTravelsService } from './../my-travels.service';
 import { TruncatedTravelData } from '../mock-data/truncatedTravelData';
 import { BasketService } from '../basket.service';
 import { TravelData } from '../mock-data/travelData';
@@ -13,6 +12,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TravelManagementComponent implements OnInit {
 
   @Input('travel') travel!: TravelData;
+
+  @Input('rating') rating!: boolean;
 
   constructor(private travelService:TravelService, private basketService: BasketService) {   }
 

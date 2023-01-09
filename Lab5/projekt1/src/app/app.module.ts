@@ -22,6 +22,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TravelsBasketComponent } from './travels-basket/travels-basket.component';
 import { HomeComponent } from './home/home.component';
 import { MyTravelsHistoryComponent } from './my-travels-history/my-travels-history.component';
+import { SingleTravelDetailsComponent } from './single-travel-details/single-travel-details.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MyTravelsHistoryComponent } from './my-travels-history/my-travels-histo
     NavBarComponent,
     TravelsBasketComponent,
     HomeComponent,
-    MyTravelsHistoryComponent
+    MyTravelsHistoryComponent,
+    SingleTravelDetailsComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig), 

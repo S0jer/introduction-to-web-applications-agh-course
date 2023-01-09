@@ -1,3 +1,4 @@
+import { SingleTravelDetailsComponent } from './single-travel-details/single-travel-details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'myTravelsHistory', component: MyTravelsHistoryComponent},
   { path: 'travels', component: TravelsComponent },
   { path: 'addTravel', component: AddTravelComponent },
-  { path: 'basket', component: TravelsBasketComponent}
+  { path: 'basket', component: TravelsBasketComponent},
+  { path: 'travel/:name', component: SingleTravelDetailsComponent }
 ];
 
 @NgModule({

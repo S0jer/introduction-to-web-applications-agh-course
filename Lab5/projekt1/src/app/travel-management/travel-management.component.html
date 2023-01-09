@@ -7,7 +7,7 @@
         <span class="commentSettingsWhite" id="numberPlace">{{getReservationsCnt()}}</span>
         <button *ngIf="getReservationsCnt() < travel.peopleLimit" id="plus" (click)="increment()">+</button>
     </div>
-    <app-stars [travel]="travel"></app-stars><br>
+    <app-stars *ngIf="rating" [travel]="travel"></app-stars><br>
     <div class="btnDelWrapper">
         <button id="deleteButton" (click)="deleteTravel()"> Delete Travel </button>
     </div>

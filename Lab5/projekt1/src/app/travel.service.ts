@@ -22,6 +22,11 @@ export class TravelService {
     return travel;
     }
 
+  getTravelById(id: number): TravelData {
+    let travel = TRAVELS[id];
+    return travel;
+    }
+
   deleteTravel(travel: TravelData): void {
     let toDeleteIndex = TRAVELS.indexOf(travel);
     TRAVELS.splice(toDeleteIndex, 1);
