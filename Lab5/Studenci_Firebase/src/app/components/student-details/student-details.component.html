@@ -1,0 +1,29 @@
+<div *ngIf="currentStudent" class="edit-form">
+    <h4>Student</h4>
+    <form>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control"
+          id="name" [(ngModel)]="currentStudent.name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control"
+          id="age" [(ngModel)]="currentStudent.age" name="age">
+      </div>
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteStudent()">
+      Delete
+    </button>
+
+    <button type="submit" class="badge badge-success" (click)="updateStudent()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  <div *ngIf="!currentStudent">
+    <br>
+    <p>Cannot access this Student...</p>
+  </div>

@@ -1,0 +1,28 @@
+<div class="list row">
+    <div class="col-md-6">
+      <h4>Students List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let student of students; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveStudent(student, i)"
+        >
+          {{ student.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentStudent">
+        <app-student-details
+          (refreshList)="refreshList()"
+          [student]="currentStudent"
+        ></app-student-details>
+      </div>
+
+      <div *ngIf="!currentStudent">
+        <br>
+        <p>Please click on a Student...</p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+apiKey: "AIzaSyAzRLjLbLOgnpn-gnHH-L2B0mBnoWlw5tg",
+  authDomain: "zad05wdaimarcinmikula.firebaseapp.com",
+  projectId: "zad05wdaimarcinmikula",
+  storageBucket: "zad05wdaimarcinmikula.appspot.com",
+  messagingSenderId: "949955970788",
+  appId: "1:949955970788:web:22c9a439fdf950ed1a0ef1"
+
+
+  const firebaseConfig = {
+  apiKey: "AIzaSyAzRLjLbLOgnpn-gnHH-L2B0mBnoWlw5tg",
+  authDomain: "zad05wdaimarcinmikula.firebaseapp.com",
+  projectId: "zad05wdaimarcinmikula",
+  storageBucket: "zad05wdaimarcinmikula.appspot.com",
+  messagingSenderId: "949955970788",
+  appId: "1:949955970788:web:22c9a439fdf950ed1a0ef1"
+};
