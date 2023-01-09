@@ -1,28 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../../services/student.service';
 import { map } from 'rxjs/operators';
-
+import { Student } from 'src/app/models/student.model';
+import { StudentService } from 'src/app/services/student.service';
 @Component({
-  selector: 'app-student-list',
+  selector: 'app-students-list',
   templateUrl: './students-list.component.html',
   styleUrls: ['./students-list.component.css']
 })
 export class StudentsListComponent implements OnInit {
 
-  students: any;
+  students?: Student[];
 
   constructor(private studentService: StudentService) { }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
+    this.getStudents();
   }
 
-  getStudentsList() {
- 
+  getStudents(): void {
+    this.studentService.getStudentsList().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.students = data;
+    });
   }
-
-  deleteStudents() {
-
+  deleteStudents():void{
+    this.studentService.deleteAll();
   }
-
 }

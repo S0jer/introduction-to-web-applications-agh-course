@@ -1,11 +1,15 @@
 #student {
-
-    border: 2px solid green;
+  border: 2px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding:5px;
 }
 
 .button {
-    padding: 5px;
-   margin-left: 5px;
-   margin-right: 5px;
-}
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;;
 
+}
