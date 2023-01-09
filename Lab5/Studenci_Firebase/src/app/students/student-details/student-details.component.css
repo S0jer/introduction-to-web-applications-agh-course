@@ -8,8 +8,16 @@
 }
 
 .button {
+  cursor: pointer;
   padding: 5px;
   margin-left: 5px;
-  margin-right: 5px;;
+  margin-right: 5px;
+}
 
+.updateButton {
+  background-color: rgb(1, 184, 1);
+}
+
+.updateButton:hover {
+  background-color: green;
 }
