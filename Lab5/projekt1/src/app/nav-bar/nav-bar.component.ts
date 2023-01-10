@@ -24,10 +24,14 @@ export class NavBarComponent implements OnInit {
   }
 
   getUpcomingTravel(): string {
-    this.myTravelsService.getMyTravels().subscribe({
-      next: travels => this.upcomingTravelName = travels[0].name,
-      error: error => console.log(error)
-    });
+    let len = 0
+    this.myTravelsService.getMyTravels().subscribe(travels => len = travels.length);
+    if(length > 0) {
+      this.myTravelsService.getMyTravels().subscribe({
+        next: travels => this.upcomingTravelName = travels[0].name,
+        error: error => console.log(error)
+      });
+    }
     return this.upcomingTravelName;
   }
 

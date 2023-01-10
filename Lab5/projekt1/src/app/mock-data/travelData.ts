@@ -4,8 +4,8 @@ export class TravelData implements Travel {
     name: string;
     country: string;
     city: string;
-    startDate: Date;
-    endDate: Date;
+    startDate: string;
+    endDate: string;
     unitPrice: number;
     peopleLimit: number;
     description: string;
@@ -13,7 +13,7 @@ export class TravelData implements Travel {
     ratings: any[];
     reservationsCnt: number;
 
-    constructor(name: string, country: string, city: string, startDate: Date, endDate: Date, unitPrice: number, peopleLimit: number, description: string, imgPath: string){
+    constructor(name: string, country: string, city: string, startDate: string, endDate: string, unitPrice: number, peopleLimit: number, description: string, imgPath: string){
         this.name = name;
         this.country = country;
         this.city = city;

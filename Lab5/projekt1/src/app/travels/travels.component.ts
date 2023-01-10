@@ -1,4 +1,5 @@
 import { TravelData } from './../mock-data/travelData';
+import { Travel } from './../mock-data/travel';
 import { Component, OnInit } from '@angular/core';
 import { TravelService } from '../travel.service';
 
@@ -10,23 +11,24 @@ import { TravelService } from '../travel.service';
 export class TravelsComponent implements OnInit {
 
 
-  travelList: TravelData[] = [];
+  travelList: Travel[] = [];
 
-  constructor(private travelService: TravelService) { }
+  constructor(private travelService: TravelService) {
+    this.getTravels();
+   }
 
   ngOnInit(): void {
     this.getTravels();
   }
 
   getTravels(): void {
-    this.travelService.getTravels().subscribe({
-      next: travels => this.travelList = travels,
-      error: error => console.log(error)
+    this.travelService.getTravels().subscribe(travels =>{
+      this.findMinMax();
+      this.findCountry();
+      this.findDays();
+      this.findPrice();
+      this.travelList=travels
     });
-    this.findMinMax();
-    this.findCountry();
-    this.findDays();
-    this.findPrice();
   }
 
   searchDays= [new Date(), new Date()];
@@ -63,13 +65,12 @@ export class TravelsComponent implements OnInit {
   findCountry(){
     this.countryList=[];
     for(const element of this.travelList){
-      if (element instanceof TravelData) {
       let q = element.country;
       q = q[0].toUpperCase() + q.substring(1);
 
       if(!this.countryList.includes(q)) {
         this.countryList.push(q);
-      }}
+      }
     }
   }
 
@@ -79,9 +80,8 @@ export class TravelsComponent implements OnInit {
   findDays(){
     this.dataDays = [];
     for(const element of this.travelList){
-      if (element instanceof TravelData) {
-      let startDate: Date = element.startDate;
-      let endDate: Date = element.endDate;
+      let startDate: Date = new Date(element.startDate);
+      let endDate: Date = new Date(element.endDate);
       let firstDay = new Date(startDate.getFullYear(), startDate.getMonth(), 1);
       let lastDay = new Date(endDate.getFullYear(), endDate.getMonth() + 1, 1);
       let checkIfExists = true;
@@ -96,7 +96,6 @@ export class TravelsComponent implements OnInit {
       if(checkIfExists) this.dataDaysList.push([firstDay, lastDay]); this.dataDaysList.sort((a, b) => {
         if(a[0] instanceof Date && b[0] instanceof Date) return a[0].getTime() - b[0].getTime(); 
       else return 1;})
-      }
     }
   }
 

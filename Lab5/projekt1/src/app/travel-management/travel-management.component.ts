@@ -1,6 +1,7 @@
 import { TruncatedTravelData } from '../mock-data/truncatedTravelData';
 import { BasketService } from '../basket.service';
 import { TravelData } from '../mock-data/travelData';
+import { Travel } from '../mock-data/travel';
 import { TravelService } from '../travel.service';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -11,7 +12,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TravelManagementComponent implements OnInit {
 
-  @Input('travel') travel!: TravelData;
+  @Input('travel') travel!: Travel;
 
   @Input('rating') rating!: boolean;
 
@@ -20,26 +21,26 @@ export class TravelManagementComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  increment() {
-    if(this.travel.peopleLimit > this.travel.reservationsCnt) {
+  increment(travel: Travel) {
+    if(travel.peopleLimit > travel.reservationsCnt) {
       this.travelService.reserveTravel();
-      this.travel.reservationsCnt += 1;
-      this.basketService.addBasketItem(new TruncatedTravelData(this.travel.name, 1, this.travel.unitPrice, this.travel.startDate, this.travel.endDate, this.travel.imgPath));
+      travel.reservationsCnt += 1;
+      this.basketService.addBasketItem(new TruncatedTravelData(travel.name, 1, travel.unitPrice, travel.startDate, travel.endDate, travel.imgPath));
     }
   }
 
-  decrement() {
-    if(this.travel.reservationsCnt > 0) {
+  decrement(travel: Travel) {
+    if(travel.reservationsCnt > 0) {
       this.travelService.deleteReserveTravel(1);
-      this.travel.reservationsCnt -= 1;
-      this.basketService.deleteBasketItem(new TruncatedTravelData(this.travel.name, 1, this.travel.unitPrice, this.travel.startDate, this.travel.endDate, this.travel.imgPath), 1);
+      travel.reservationsCnt -= 1;
+      this.basketService.deleteBasketItem(new TruncatedTravelData(travel.name, 1, travel.unitPrice, travel.startDate, travel.endDate, travel.imgPath), 1);
     }
   }
 
-  deleteTravel() {
-    this.basketService.deleteBasketItem(new TruncatedTravelData(this.travel.name, 1, this.travel.unitPrice, this.travel.startDate, this.travel.endDate, this.travel.imgPath), this.travel.reservationsCnt);
-    this.travelService.deleteReserveTravel(this.travel.reservationsCnt);
-    this.travelService.deleteTravel(this.travel);
+  deleteTravel(travel: Travel) {
+    this.basketService.deleteBasketItem(new TruncatedTravelData(travel.name, 1, travel.unitPrice, travel.startDate, travel.endDate, travel.imgPath), travel.reservationsCnt);
+    this.travelService.deleteReserveTravel(travel.reservationsCnt);
+    this.travelService.deleteTravel(travel);
   }
 
   getReservationsCnt(): number {

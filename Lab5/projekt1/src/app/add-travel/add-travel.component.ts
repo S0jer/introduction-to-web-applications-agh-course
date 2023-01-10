@@ -2,6 +2,8 @@ import { TravelService } from './../travel.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TravelData } from '../mock-data/travelData';
+import { Travel } from '../mock-data/travel';
+
 
 @Component({
   selector: 'app-add-travel',
@@ -31,8 +33,8 @@ export class AddTravelComponent implements OnInit {
     this.modelForm.value.name,
     this.modelForm.value.country,
     this.modelForm.value.city,
-    new Date(this.modelForm.value.startDate),
-    new Date(this.modelForm.value.endDate),
+    this.modelForm.value.startDate,
+    this.modelForm.value.endDate,
     this.modelForm.value.unitPrice,
     this.modelForm.value.peopleLimit,
     this.modelForm.value.description,
@@ -83,7 +85,20 @@ export class AddTravelComponent implements OnInit {
   }
 
   put(newTravel: TravelData){
-    this.travelService.push(newTravel);
+    const travel = {
+      name:newTravel.name,
+      country:newTravel.country,
+      city:newTravel.city,
+      startDate: newTravel.startDate,
+      endDate: newTravel.endDate,
+      unitPrice: newTravel.unitPrice,
+      peopleLimit: newTravel.peopleLimit,
+      description: newTravel.description,
+      imgPath: newTravel.imgPath,
+      ratings: newTravel.ratings,
+      reservationsCnt: newTravel.reservationsCnt,
+    }
+    this.travelService.push(travel);
   }
 
 }

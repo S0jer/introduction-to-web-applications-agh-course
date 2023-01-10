@@ -4,11 +4,11 @@
         <div class="myTravelsHeader"> <div class="title">My Travels</div> </div>
         <ul class="myTravelsItems">
             <li *ngFor="let travel of myTravels">
-                <div *ngIf="travel" class="myTravelsItemHolder" [ngStyle]="{'background-color': (currentDate > travel.endDate)? 'rgba(189, 0, 0, 0.400)' : 'rgba(0, 189, 0, 0.400)'}">
+                <div *ngIf="travel" class="myTravelsItemHolder" [ngStyle]="{'background-color': (currentDate > getEndDate(travel))? 'rgba(189, 0, 0, 0.400)' : 'rgba(0, 189, 0, 0.400)'}">
                         <div class="column">{{travel.name}}</div>
                         <div class="column">{{travel.quantity}}</div>
-                        <div class="column">{{travel.startDate.toLocaleDateString()}}</div>
-                        <div class="column">{{travel.endDate.toLocaleDateString()}}</div>
+                        <div class="column">{{travel.startDate}}</div>
+                        <div class="column">{{travel.endDate}}</div>
                         <div class="column">{{travel.price * travel.quantity}}</div>
                 </div>
             </li>

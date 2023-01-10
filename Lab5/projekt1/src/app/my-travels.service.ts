@@ -15,7 +15,7 @@ export class MyTravelsService {
 
   getMyTravels(): Observable<TruncatedTravelData[]> {
     this.myTravels.sort((a, b) => {
-      if(a.startDate instanceof Date && b.startDate instanceof Date) return a.startDate.getTime() - b.startDate.getTime(); 
+      if(new Date(a.startDate) instanceof Date && new Date(b.startDate) instanceof Date) return new Date(a.startDate).getTime() - new Date(b.startDate).getTime(); 
     else return 1;})
     const myTravels = of(this.myTravels);
     return myTravels;

@@ -1,3 +1,5 @@
+import { TruncatedTravel } from './../mock-data/truncatedTravel';
+import { Travel } from '../mock-data/travel';
 import { TruncatedTravelData } from '../mock-data/truncatedTravelData';
 import { MyTravelsService } from '../my-travels.service';
 import { BasketService } from '../basket.service';
@@ -15,6 +17,8 @@ export class MyTravelsHistoryComponent implements OnInit {
 
   currentDate = new Date();
 
+  endDate = new Date();
+
 
   
   constructor(private basketService: BasketService, private travelService: TravelService, private myTravelsService: MyTravelsService) { }
@@ -24,5 +28,9 @@ export class MyTravelsHistoryComponent implements OnInit {
       next: travels => this.myTravels = travels,
       error: error => console.log(error)
     });
+  }
+
+  getEndDate(travel: TruncatedTravel): Date {
+    return new Date(travel.endDate);
   }
 }

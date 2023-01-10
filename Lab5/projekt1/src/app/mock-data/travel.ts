@@ -2,8 +2,8 @@ export interface Travel {
     name: string;
     country: string;
     city: string;
-    startDate: Date;
-    endDate: Date;
+    startDate: string;
+    endDate: string;
     unitPrice: number;
     peopleLimit: number;
     description: string;

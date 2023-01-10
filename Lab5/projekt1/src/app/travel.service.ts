@@ -1,40 +1,60 @@
+import { Travel } from './mock-data/travel';
 import { Injectable } from '@angular/core';
-import { TRAVELS } from './mock-data/mock-travels';
-import { Observable, of } from 'rxjs';
-import { TravelData } from './mock-data/travelData';
+import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
+import { BehaviorSubject, map, Observable, of } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TravelService {
+  private dbPath = '/travels';
+
+  travelsList: Travel[];
+  travels : AngularFirestoreCollection<Travel>;
+  travelsSubject:BehaviorSubject<Travel[]>;
 
   travelReservations: number= 0;
 
-  constructor() { }
-
-  getTravels(): Observable<TravelData[]> {
-    const travels = of(TRAVELS);
-    return travels;
-    }
-
-  getTravel(name: string): TravelData {
-    let travel = TRAVELS.find(t => t.name === name)!;
-    return travel;
-    }
-
-  getTravelById(id: number): TravelData {
-    let travel = TRAVELS[id];
-    return travel;
-    }
-
-  deleteTravel(travel: TravelData): void {
-    let toDeleteIndex = TRAVELS.indexOf(travel);
-    TRAVELS.splice(toDeleteIndex, 1);
+  constructor(private db: AngularFirestore) {
+    this.travelsList = [];
+    this.travelsSubject = new BehaviorSubject<Travel[]>(this.travelsList);
+    this.travels = db.collection(this.dbPath);
+    this.getTravelsFromFire();
   }
 
-  push($event: TravelData) {
-    const travel: TravelData = $event;
-    TRAVELS.push(travel);
+
+  getTravelsFromFire(): void {
+    this.travels.snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.travelsList = data;
+      this.travelsSubject.next(this.travelsList);
+    }); 
+  }
+
+
+  getTravels(): Observable<Travel[]> {
+    return this.travelsSubject.asObservable();
+    }
+
+  getTravel(name: string): Travel {
+    let travel = this.travelsList.find(travel => travel.name === name)!;
+    return travel;
+    }
+
+  deleteTravel(travel: any): void {
+    this.travels.doc(travel.id).delete();
+    this.getTravelsFromFire();
+  }
+
+  push($event: Travel) {
+    const travel: Travel = $event;
+    this.travels.add(travel);
   }
 
   reserveTravel(): void {
@@ -49,7 +69,7 @@ export class TravelService {
       return this.travelReservations;
     }
 
-  buyTravel(travel: TravelData, value: number): void {
+  buyTravel(travel: Travel, value: number): void {
     travel.peopleLimit -= value;
   }
 }
