@@ -1,0 +1,13 @@
+<div *ngIf="travel" class="travelHolder">
+    <div class="detailsHolder">
+        <a routerLink="/travel/{{travel.name}}"><img class="imgCircle margin" src="{{travel.imgPath}}" alt="City"></a>
+        <h2 class="margin">{{travel.name | uppercase}} </h2>
+        <div class="margin"><label for="travel-name">Travel To: {{travel.country + ", " + travel.city | uppercase}} </label></div>
+        <div class="margin">From: {{travel.startDate}}</div>
+        <div class="margin">To: {{travel.endDate}}</div>
+        <div class="margin">Price per Person: {{travel.unitPrice}}$</div>
+        <p class="margin description">{{travel.description}}</p>
+        <div class="margin" *ngIf="travel.ratings.length == 0">Ratings: None</div>
+        <div class="margin" *ngIf="travel.ratings.length > 0">Ratings: {{getRating()}} ({{getRatingsQuantity()}})</div>
+    </div>
+</div>

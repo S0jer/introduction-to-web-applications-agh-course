@@ -1,0 +1,18 @@
+<body class="backgroundConf">
+    <app-nav-bar></app-nav-bar>
+    <div class="basketHolder">
+        <div class="basketHeader"> <div class="title">Basket</div> </div>
+        <ul class="basketItems">
+            <li *ngFor="let basketItem of basketList">
+                <div *ngIf="basketItem" class="basketItemHolder">
+                    <div class="column">{{basketItem.name}}</div>
+                    <div class="column">{{basketItem.quantity}}</div>
+                    <div class="column">{{basketItem.price}} $</div>
+                    <button id="minus" (click)="deleteBasketTravel(basketItem, 1)" >-</button>
+                    <button id="buyButton" (click)="buyTravel(basketItem)" >Buy</button>
+                </div>
+            </li>
+        </ul>
+        <div class="priceHolder"> Total price: {{sumPrice}}$</div>
+    </div>
+</body>

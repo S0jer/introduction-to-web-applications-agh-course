@@ -1,0 +1,136 @@
+.backgroundConf {
+  min-height: 100vh;
+  max-width: 100%;
+  width: 100vw;
+  height: 100%;
+  background-image: url(../../assets/img/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+  .logo{
+    font-size: 9vw;
+    font-weight: bold;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 120px;
+    cursor: default;
+    color:rgb(6, 116, 226);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    -webkit-box-reflect: below 0px linear-gradient(transparent,rgba(0, 0, 0, 0.116));
+    line-height: 0.7em;
+    outline: none;
+}
+
+
+h4{
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.glass{
+    background-color: rgba(255, 255, 255, 0.048);
+    border-radius: 50px;
+    padding: 30px;
+    width: 70%;
+    margin: 30px auto 0 auto;
+    position: relative;
+    backdrop-filter: blur(3px);
+}
+
+
+.map {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 16px 14px 20px #0000008c;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.map::before{
+    content: "";
+    background-image: conic-gradient(
+      rgb(6, 116, 226) 20deg,
+        transparent 120deg
+    );
+    width: 250%;
+    height: 150%;
+    position: absolute;
+    animation: rotate 3s linear infinite;
+}
+.map::after{
+    width: 490px;
+    height: 390px;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(6, 116, 226);
+    font-size: larger;
+    letter-spacing: 5px;
+    box-shadow: inset 10px 10px 10px #0000008c;
+}
+.mapImg{
+    width: 490px;
+    height: 390px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 10px;
+}
+@media (max-width: 900px) {
+    .map {
+        width: 400px;
+        height: 300px;
+    }
+    .map::after{
+        width: 390px;
+        height: 290px;
+    }
+    .mapImg{
+        width: 390px;
+        height: 290px;
+    }
+}
+@media (max-width: 650px) {
+    .map {
+        width: 280px;
+        height: 180px;
+    }
+    .map::after{
+        width: 270px;
+        height: 170px;
+    }
+    .mapImg{
+        width: 270px;
+        height: 170px;
+    }
+}
+
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}

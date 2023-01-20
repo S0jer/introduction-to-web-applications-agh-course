@@ -1,0 +1,56 @@
+<body class="backgroundConf">
+    <app-nav-bar></app-nav-bar>
+    <form [formGroup]="modelForm">
+        <div class = "content">
+            <div class = "line">
+            <label class="col-form-label">Name: </label><br>
+            <input class="form-control" name="name" formControlName="name" placeholder="e.g. Amazing Trip">
+            <span *ngIf="name && name.invalid && name.touched">To pole nie może być puste</span>
+            </div> 
+            
+            <div class = "line">
+            <label class="col-form-label">Country: </label><br>
+            <input class="form-control" name="country" formControlName="country" placeholder="e.g. Poland">
+            <span *ngIf="country && country.invalid && country.touched">To pole nie może być puste</span>
+            </div>
+
+            <div class = "line">
+                <label class="col-form-label">City: </label><br>
+                <input class="form-control" name="city" formControlName="city" placeholder="e.g. Przeworsk">
+                <span *ngIf="city && city.invalid && city.touched">To pole nie może być puste</span>
+            </div>
+        
+            <div class = "line">
+            <label class="col-form-label">Start date: </label><br>
+            <input type="date" class="form-control" name="startDate" formControlName="startDate" placeholder="e.g. 2022.04.25">
+            </div>
+            
+            <div class = "line">
+            <label class="col-form-label">End date: </label><br>
+            <input type="date" class="form-control" name="endDate" formControlName="endDate" placeholder="e.g. 2022.09.24">
+            </div>
+        
+            <div class = "line">
+            <label class="col-form-label">Price: </label><br>
+            <input class="form-control" name="unitPrice" formControlName="unitPrice" placeholder="e.g. 1500">
+            <span *ngIf="unitPrice && unitPrice.invalid && unitPrice.touched">To pole nie może być puste i może zawierac tylko cyfry!</span>
+            </div>
+        
+            <div class = "line">
+            <label class="col-form-label">People limit: </label><br>
+            <input class="form-control" name="peopleLimit" formControlName="peopleLimit" placeholder="e.g. 7">
+            <span *ngIf="peopleLimit && peopleLimit.invalid && peopleLimit.touched">To pole nie może być puste i może zawierac tylko cyfry!</span>
+            </div>
+        
+            <div class = "line">
+            <label class="col-2 col-form-label">Description: </label><br>
+            <input class="form-control" name="description" formControlName="description" placeholder="e.g. An amazing trip to a small Polish town.">
+            <span *ngIf="description && description.invalid && description.touched">To pole nie może być puste</span>
+            </div>
+                
+            <div class = "btn-class">
+            <button [disabled]="modelForm.invalid" class = "btn" type="submit" (click)="send()" >Send</button>
+            </div>
+            </div>
+            </form>
+</body>

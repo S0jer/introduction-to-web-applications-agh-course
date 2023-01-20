@@ -1,0 +1,15 @@
+<div *ngIf="travel" id="wrapper">
+    <div class="commentSettings" *ngIf="getReservationsCnt() < travel.peopleLimit && (travel.peopleLimit - getReservationsCnt()) > 3" id="availableCommunicate">Dostępnych miejsc: {{travel.peopleLimit - getReservationsCnt()}}</div>
+    <div class="commentSettingsRed" *ngIf="getReservationsCnt() < travel.peopleLimit && (travel.peopleLimit - getReservationsCnt()) <= 3" id="availableCommunicate">Dostępnych miejsc: {{travel.peopleLimit - getReservationsCnt()}}</div>
+    <div class="commentSettingsRed" *ngIf="getReservationsCnt() >= travel.peopleLimit" id="unavailableCommunicate">Brak miejsc</div>
+    <div id="mainDiv">
+        <button id="minus" (click)="decrement(travel)" >-</button>
+        <span class="commentSettingsWhite" id="numberPlace">{{getReservationsCnt()}}</span>
+        <button *ngIf="getReservationsCnt() < travel.peopleLimit" id="plus" (click)="increment(travel)">+</button>
+    </div>
+    <app-stars *ngIf="rating" [travel]="travel"></app-stars><br>
+    <div class="btnDelWrapper">
+        <button id="deleteButton" (click)="deleteTravel(travel)"> Delete Travel </button>
+    </div>
+</div>
+  

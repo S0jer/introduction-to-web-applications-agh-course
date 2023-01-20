@@ -1,0 +1,29 @@
+<body>
+    <div class="navbar">
+        <div class="leftButtons">
+            <button class="leftButton" type="button" onclick="location.href='#'"> <strong>KOL</strong>TRAVELS</button>
+            <div class="reservationsInfo" id="backRed" *ngIf="getReservations() < 10">{{getReservations()}}</div>
+            <div class="reservationsInfo" *ngIf="getReservations() >= 10">{{getReservations()}}</div>
+            <div class="upcomingTravelInfo" *ngIf="getUpcomingTravel().length > 0">Upcoming Travel: {{getUpcomingTravel()}}</div>
+        </div>
+        <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
+        <label for="checkbox1">
+            <div class="hamburger hamburger1">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+                <span class="bar bar4"></span>
+                <span class="bar bar5"></span>
+            </div>
+        </label>
+        <div class="menu">
+            <ol>
+                <li><span class="midButton" routerLink="/home">Home</span></li>
+                <li><span class="midButton" routerLink="/travels">Travels</span></li>
+                <li><span class="midButton" routerLink="/myTravelsHistory">My Travels</span></li>
+                <li><span class="midButton" routerLink="/basket">Basket</span></li>
+                <li><span class="midButton" routerLink="/addTravel">Add Travel</span></li>
+              </ol>
+        </div>
+    </div>
+</body>
