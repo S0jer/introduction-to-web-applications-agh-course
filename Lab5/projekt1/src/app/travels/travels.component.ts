@@ -1,4 +1,3 @@
-import { TravelData } from './../mock-data/travelData';
 import { Travel } from './../mock-data/travel';
 import { Component, OnInit } from '@angular/core';
 import { TravelService } from '../travel.service';
@@ -48,7 +47,7 @@ export class TravelsComponent implements OnInit {
   setDays(q:Date[]){
     this.searchDays=q;
   }
-  
+
 
 
 
@@ -56,9 +55,9 @@ export class TravelsComponent implements OnInit {
   minPrice=0;
   tab:number[]=[];
   tab2:number[]=[];
-  findMinMax(){ 
-    this.maxPrice=Math.max.apply(Math, this.travelList.map(function(o) { return o.unitPrice; }).filter(o => typeof o === 'number'));
-    this.minPrice=Math.min.apply(Math, this.travelList.map(function(o) { return o.unitPrice; }).filter(o => typeof o === 'number'));
+  findMinMax(){
+    this.maxPrice=Math.max.apply(Math, this.travelList.map(function(o) { return o.unitPrice; }));
+    this.minPrice=Math.min.apply(Math, this.travelList.map(function(o) { return o.unitPrice; }));
   }
 
   countryList:string[]=[];
@@ -94,7 +93,7 @@ export class TravelsComponent implements OnInit {
         }
       }
       if(checkIfExists) this.dataDaysList.push([firstDay, lastDay]); this.dataDaysList.sort((a, b) => {
-        if(a[0] instanceof Date && b[0] instanceof Date) return a[0].getTime() - b[0].getTime(); 
+        if(a[0] instanceof Date && b[0] instanceof Date) return a[0].getTime() - b[0].getTime();
       else return 1;})
     }
   }
@@ -115,7 +114,7 @@ export class TravelsComponent implements OnInit {
         }
       }
       this.prices.push(+this.maxPrice + +1);
-      this.prices.push(1000000);
+      this.prices.push(Number.POSITIVE_INFINITY);
       for(let i=1; i<this.prices.length; i++){
         let x = this.prices[i-1];
         let y = this.prices[i]-1;
@@ -123,10 +122,6 @@ export class TravelsComponent implements OnInit {
       }
     }
     this.priceList.splice(0,1);
-  }
-
-
-  ratingUpdate(tab: number[]){
   }
 
   isDateType(value: any): boolean {
