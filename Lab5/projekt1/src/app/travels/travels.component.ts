@@ -1,4 +1,4 @@
-import { Travel } from './../mock-data/travel';
+import { Travel } from '../mock-data/travel';
 import { Component, OnInit } from '@angular/core';
 import { TravelService } from '../travel.service';
 
@@ -48,13 +48,8 @@ export class TravelsComponent implements OnInit {
     this.searchDays=q;
   }
 
-
-
-
   maxPrice=0;
   minPrice=0;
-  tab:number[]=[];
-  tab2:number[]=[];
   findMinMax(){
     this.maxPrice=Math.max.apply(Math, this.travelList.map(function(o) { return o.unitPrice; }));
     this.minPrice=Math.min.apply(Math, this.travelList.map(function(o) { return o.unitPrice; }));
