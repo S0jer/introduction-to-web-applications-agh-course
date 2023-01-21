@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
@@ -23,6 +23,9 @@ import { TravelsBasketComponent } from './travels-basket/travels-basket.componen
 import { HomeComponent } from './home/home.component';
 import { MyTravelsHistoryComponent } from './my-travels-history/my-travels-history.component';
 import { SingleTravelDetailsComponent } from './single-travel-details/single-travel-details.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,12 +41,16 @@ import { SingleTravelDetailsComponent } from './single-travel-details/single-tra
     TravelsBasketComponent,
     HomeComponent,
     MyTravelsHistoryComponent,
-    SingleTravelDetailsComponent
+    SingleTravelDetailsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig), 
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
+    FormsModule,
     ReactiveFormsModule,
     FirestoreModule
   ],

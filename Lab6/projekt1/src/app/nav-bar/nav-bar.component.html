@@ -1,7 +1,7 @@
 <body>
     <div class="navbar">
         <div class="leftButtons">
-            <button class="leftButton" type="button" onclick="location.href='#'"> <strong>KOL</strong>TRAVELS</button>
+            <button class="leftButton" type="button" onclick="location.href='/home'"> <strong>KOL</strong>TRAVELS</button>
             <div class="reservationsInfo" id="backRed" *ngIf="getReservations() < 10">{{getReservations()}}</div>
             <div class="reservationsInfo" *ngIf="getReservations() >= 10">{{getReservations()}}</div>
             <div class="upcomingTravelInfo" *ngIf="getUpcomingTravel().length > 0">Upcoming Travel: {{getUpcomingTravel()}}</div>
