@@ -1,4 +1,5 @@
 export interface Travel {
+    id?: string;
     name: string;
     country: string;
     city: string;

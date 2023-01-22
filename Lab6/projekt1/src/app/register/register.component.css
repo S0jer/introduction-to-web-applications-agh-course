@@ -78,7 +78,7 @@ input:focus + label, input:not(:placeholder-shown) + label{
 }
 
 
-button{
+.buttonDefault {
   background-color: rgb(6, 116, 226);
   border: 2px solid white;
   color: white;
@@ -89,6 +89,23 @@ button{
   cursor: pointer;
 }
 
-button:hover {
+.buttonDefault:hover {
+  background-color: rgb(10, 103, 196);
+}
+
+
+.buttonBack {
+  background-color: rgb(6, 116, 226);
+  text-align: right;
+  border: 1px solid white;
+  color: white;
+  margin: 5px;
+  font-size: 12px;
+  border-radius: 15px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.buttonBack:hover {
   background-color: rgb(10, 103, 196);
 }

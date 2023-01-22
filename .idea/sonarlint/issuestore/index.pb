@@ -738,8 +738,6 @@ X
 (Lab6/projekt1/src/app/app.component.html,3\8\38ee099894605a249536adf79fdb336d23a92ab3
 [
 +Lab6/projekt1/src/app/app.component.spec.ts,9\7\97f51bd617befb8d34e3c1955362621a3bba8828
-V
-&Lab6/projekt1/src/app/app.component.ts,6\e\6e10dd54e96786d14cba491d3a19486da29319d7
 ^
 .Lab6/projekt1/src/app/guard/auth.guard.spec.ts,d\9\d9c9755dab83f22aeab259f2d477531248acf4f2
 Z
@@ -804,8 +802,6 @@ I
 ,Lab6/projekt1/src/app/travel.service.spec.ts,d\4\d4d36114042fd0c58e31dd5f2b51c66c003b0e87
 W
 'Lab6/projekt1/src/app/travel.service.ts,a\2\a2742ac1b9902dec30b50951b2f308e651e0064e
-Y
-)Lab6/projekt1/src/app/mock-data/travel.ts,c\9\c95cbad8b5c98e5d3473859dae2934c08ad1f883
 r
 BLab6/projekt1/src/app/travel-details/travel-details.component.html,5\e\5ebef88ba3b2fb5335469ff25410337f55e10555
 u
@@ -818,8 +814,6 @@ HLab6/projekt1/src/app/travel-management/travel-management.component.html,2\f\2
 KLab6/projekt1/src/app/travel-management/travel-management.component.spec.ts,c\a\ca125d11e3fe154338569c98edd805b744c25261
 v
 FLab6/projekt1/src/app/travel-management/travel-management.component.ts,f\0\f0876febb188742e2234116bb403e1ddbc4c47df
-]
--Lab6/projekt1/src/app/mock-data/travelData.ts,9\3\9336eea0ecf256efa60d289edfcb2a23ab7d4e04
 d
 4Lab6/projekt1/src/app/travels/travels.component.html,f\2\f233e2c2a6b4703f472cd4ffbd379b04a36af953
 g
@@ -842,3 +836,17 @@ b
 2Lab6/projekt1/src/app/mock-data/truncatedTravel.ts,6\e\6e34570e6f1c676ecdc69572bb054fb61041326f
 f
 6Lab6/projekt1/src/app/mock-data/truncatedTravelData.ts,6\7\672bc31f0e5f58275f9a193ab9f78a8e813e9305
+U
+%Lab5/zad1/src/app/download.service.ts,b\7\b756bbf1e54774c3af0db57499d3266d3803be81
+_
+/Lab5/projekt1/src/app/mock-data/mock-travels.ts,1\e\1e8d508e87f228c663065ebf1d9d22d808a29443
+…
+ULab5/Studenci_Firebase/src/app/students/student-details/student-details.component.css,5\0\5033a6f503d1403831e2a506980d6b430f6d743c
+[
++Lab6/projekt1/src/app/app-routing.module.ts,2\9\29dc5f9b5b69e62cc320b74d67d248f55f93d450
+c
+3Lab6/projekt1/src/app/login/login.component.spec.ts,2\4\24bd061ffedbcf0582fb2abc2edd18a535b1e594
+d
+4Lab6/projekt1/src/app/nav-bar/nav-bar.component.html,d\0\d0951d95b0f6464a28a7558b2ca65c5ec766da3e
+i
+9Lab6/projekt1/src/app/register/register.component.spec.ts,d\5\d5c8ca9cebbb736db451988d5ba895beab9e2494

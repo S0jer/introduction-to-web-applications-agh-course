@@ -15,9 +15,6 @@ export class AuthService {
     this.userData = angularFireAuth.authState;
    }
 
-  isLoggedIn() {
-    return true;
-  }
 
   SignIn(email: string, password: string) {
     this.angularFireAuth.signInWithEmailAndPassword(email, password).then(res => {
@@ -25,17 +22,34 @@ export class AuthService {
     }).catch(err => {
       console.log('Something went wrong:',err.message);
     });
-    this.router.navigate(['menu']);
+    this.router.navigate(['home']);
   }
 
-  SignUp(login: string,password: string,nick: string) {
+  SignUp(email: string, password: string, nick: string) {
+    this.angularFireAuth.createUserWithEmailAndPassword(email, password).then(res => {
+      res.user?.updateProfile({displayName:nick});
 
-  }
+      this.db.collection('/users').doc(`${res.user!.uid}`).set({
+        uid: res.user!.uid,
+        nick: nick,
+        menager: false,
+        admin: false,
+        banned: false
+      });
+
+
+      console.log('You are Successfully signed up!', res);
+    }).catch(error => {
+      console.log('Something is wrong:', error.message);
+    });
+
+    this.router.navigate(['login']); 
+  } 
 
 
   SignOut() {
     this.angularFireAuth.signOut();
-    this.router.navigate(['home']);
+    this.router.navigate(['login']);
     console.log('Logged out');
   }
 }

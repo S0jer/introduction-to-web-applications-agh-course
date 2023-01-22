@@ -8,19 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  login=''
+  email=''
   password=''
   str=''
 
   constructor(private authService: AuthService) { }
   ngOnInit(): void {}
 
-  senditem() {
-    this.authService.SignIn(this.login,this.password);
+  sendItem() {
+    this.authService.SignIn(this.email,this.password);
   }
 
-  newHero() {
-    this.login='';
+  newUser() {
+    this.email='';
     this.password='';
   }
 }

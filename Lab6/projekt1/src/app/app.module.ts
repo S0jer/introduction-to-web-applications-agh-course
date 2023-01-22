@@ -26,6 +26,8 @@ import { SingleTravelDetailsComponent } from './single-travel-details/single-tra
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CommonModule } from '@angular/common';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { CommonModule } from '@angular/common';
     MyTravelsHistoryComponent,
     SingleTravelDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminDashboardComponent,
+    UserDashboardComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig), 
