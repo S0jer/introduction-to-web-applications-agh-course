@@ -1,17 +1,17 @@
+import { StorageService } from '../storage.service';
+import { User } from '../mock-data/user';
 import { AuthService } from '../auth.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { map, Observable } from 'rxjs';
-import { StorageService } from '../storage.service';
-import { User } from '../mock-data/user';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdmGuard implements CanActivate {
+export class MenagoGuard implements CanActivate {
+
   userList: User[]=[];
-  constructor( public authService: AuthService, public router: Router, private storage:StorageService ){
+  constructor( public authService: AuthService, public router: Router, private storage: StorageService ){
     this.getUserList();
   }
 
@@ -25,10 +25,11 @@ export class AdmGuard implements CanActivate {
     return this.authService.authState$.pipe(map(state =>{
       let bool=false;
       this.userList.forEach(x =>{
-        if(x.id === state?.uid && x.admin) bool=true;
+        if(x.id === state?.uid && (x.admin || x.menager)) bool=true;
       });
       if(!bool){ this.router.navigate(['home']); return false;}
       return true;
     }));
   }
+  
 }

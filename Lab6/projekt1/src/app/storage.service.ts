@@ -13,10 +13,10 @@ export class StorageService implements Cobserver {
   travelList:TravelData[];
   travelSubject:BehaviorSubject<TravelData[]>;
 
-  userlist:User[];
+  userList: User[];
   userSubject: BehaviorSubject<User[]>;
 
-  bucketlist:any[];
+  bucketList: any[];
   bucketSubject: BehaviorSubject<any[]>;
 
   bucketsList : AngularFirestoreCollection<any>;
@@ -24,11 +24,11 @@ export class StorageService implements Cobserver {
   usersList : AngularFirestoreCollection<any>;
   constructor(private db: AngularFirestore) {
     this.travelList=[];
-    this.userlist=[];
-    this.bucketlist=[];
-    this.bucketSubject = new BehaviorSubject<any[]>(this.bucketlist);
+    this.userList=[];
+    this.bucketList=[];
+    this.bucketSubject = new BehaviorSubject<any[]>(this.bucketList);
     this.travelSubject = new BehaviorSubject<TravelData[]>(this.travelList);
-    this.userSubject = new BehaviorSubject<User[]>(this.userlist);
+    this.userSubject = new BehaviorSubject<User[]>(this.userList);
     this.bucketsList = this.db.collection('/buckets');
     this.usersList = this.db.collection('/users');
     this.travelsList = this.db.collection('/dishes');
@@ -67,8 +67,8 @@ export class StorageService implements Cobserver {
           })
         ))
     ).subscribe(x =>{
-       this.userlist = x;
-       this.userSubject.next(this.userlist);
+       this.userList = x;
+       this.userSubject.next(this.userList);
       });
   }
 
@@ -83,8 +83,8 @@ export class StorageService implements Cobserver {
           })
         ))
     ).subscribe(x =>{
-       this.bucketlist = x;
-       this.bucketSubject.next(this.bucketlist);
+       this.bucketList = x;
+       this.bucketSubject.next(this.bucketList);
       });
   }
 
@@ -100,25 +100,25 @@ export class StorageService implements Cobserver {
 
   // ------------firebase------------
 
-  public getdishlistSubject(): Observable<TravelData[]>{
+  public getTravelsListSubject(): Observable<TravelData[]>{
     return this.travelSubject.asObservable();
   }
-  public getdishlist(){
+  public getTravelList(){
     return this.travelList;
   }
 
-  public getuserlistSubject(): Observable<User[]>{
+  public getUserListSubject(): Observable<User[]>{
     return this.userSubject.asObservable();
   }
-  public getuserlist(){
-    return this.userlist;
+  public getUserList(){
+    return this.userList;
   }
 
-  public getbucketlistSubject(): Observable<User[]>{
+  public getBucketListSubject(): Observable<User[]>{
     return this.bucketSubject.asObservable();
   }
-  public getbucketlist(){
-    return this.bucketlist;
+  public getBucketList(){
+    return this.bucketList;
   }
 
   public pushTravel(newTravel:TravelData): void{
@@ -144,7 +144,7 @@ export class StorageService implements Cobserver {
   }
 
 
-  public getDichPrice(ix:number){
+  public getTravelPrice(ix:number){
     return this.travelList[ix].unitPrice;
   }
 

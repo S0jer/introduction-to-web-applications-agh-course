@@ -15,7 +15,7 @@
     column-gap: 20px;
     color: white;
     text-align: center;
-    margin: 10px;
+    padding: 10px;
     justify-content: center;
     align-items: center;
 }
@@ -27,20 +27,29 @@ p{
 
 .box{
     width: 90%;
-    margin: 100px auto;
+    /* margin: 100px auto; */
 }
 
 .grid > span{
     display: inline-block;
     padding: 40px;
-    background-color: darkcyan;
+    background-color: rgb(10, 103, 196);
     cursor: pointer;
     transition: all .2s ease-in-out;
 }
+
+.grid > span:hover {
+    background-color: rgba(139, 0, 0, 0.801);
+}
+
 .role:hover{
     transform: scale(1.1);
 }
 
 .clicked{
     background-color: darkred !important;
+}
+
+.upperMargin {
+    padding-top: 10%;
 }

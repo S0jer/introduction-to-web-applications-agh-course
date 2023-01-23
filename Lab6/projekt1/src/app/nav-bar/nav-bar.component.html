@@ -1,7 +1,7 @@
 <body>
     <div class="navbar">
         <div class="leftButtons">
-            <button class="leftButton" type="button" onclick="location.href='/home'"> <strong>KOL</strong>TRAVELS</button>
+            <button class="leftButton" type="button" routerLink="/home"> <strong>KOL</strong>TRAVELS</button>
             <div class="reservationsInfo" id="backRed" *ngIf="getReservations() < 10">{{getReservations()}}</div>
             <div class="reservationsInfo" *ngIf="getReservations() >= 10">{{getReservations()}}</div>
             <div class="upcomingTravelInfo" *ngIf="getUpcomingTravel().length > 0">Upcoming Travel: {{getUpcomingTravel()}}</div>
@@ -14,15 +14,20 @@
                 <span class="bar bar3"></span>
                 <span class="bar bar4"></span>
                 <span class="bar bar5"></span>
+                <span class="bar bar6"></span>
             </div>
         </label>
         <div class="menu">
             <ol>
+                <li *ngIf="!isLoggedIn()"><span class="midButton" routerLink="/login">Login</span></li>
+                <li *ngIf="!isLoggedIn()"><span class="midButton" routerLink="/register">Register</span></li>
                 <li><span class="midButton" routerLink="/home">Home</span></li>
                 <li><span class="midButton" routerLink="/travels">Travels</span></li>
-                <li><span class="midButton" routerLink="/myTravelsHistory">My Travels</span></li>
-                <li><span class="midButton" routerLink="/basket">Basket</span></li>
-                <li><span class="midButton" routerLink="/addTravel">Add Travel</span></li>
+                <li *ngIf="isLoggedIn()"><span class="midButton" routerLink="/myTravelsHistory">My Travels</span></li>
+                <li *ngIf="isLoggedIn()"><span class="midButton" routerLink="/basket">Basket</span></li>
+                <li *ngIf="roles.menager || roles.admin"><span class="midButton" routerLink="/addTravel">Add Travel</span></li>
+                <li *ngIf="roles.admin"><span class="midButton" routerLink="/admin">Admin</span></li>
+                <li *ngIf="isLoggedIn()"><span class="midButton" (click)="logout()" routerLink="/login">Logout</span></li>
               </ol>
         </div>
     </div>

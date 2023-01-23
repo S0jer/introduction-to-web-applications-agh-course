@@ -1,3 +1,4 @@
+import { AuthService } from './../auth.service';
 import { StorageService } from './../storage.service';
 import { User } from '../mock-data/user';
 import { Component, OnInit } from '@angular/core';
@@ -9,18 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
+  currentState: string = 'local';
+
   userlist:User[]=[];
 
   b=true;
 
-  constructor(private storage:StorageService) {
+  constructor(private storage:StorageService, private auth: AuthService) {
     this.getUserlist();
    }
 
    ngOnInit(): void { }
 
   getUserlist(){
-  this.storage.getuserlistSubject().subscribe(u=>{
+  this.storage.getUserListSubject().subscribe(u=>{
     this.userlist=u;
     });
   }
@@ -36,6 +39,11 @@ export class AdminDashboardComponent implements OnInit {
   changeBanned(u:User) {
     if(u.admin) alert("Can't ban ADMIN")
     else this.storage.changeBanned(u);
+  }
+
+  changePersistanceState(state: string) {
+    this.currentState = state;
+    this.auth.changePersistanceState(state);
   }
 
 }

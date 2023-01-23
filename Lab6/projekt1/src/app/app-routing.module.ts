@@ -1,3 +1,7 @@
+import { MenagoGuard } from './guard/menago.guard';
+import { LogGuard } from './guard/log.guard';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdmGuard } from './guard/adm.guard';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './guard/auth.guard';
@@ -13,14 +17,15 @@ import { MyTravelsHistoryComponent } from './my-travels-history/my-travels-histo
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  { path: 'login', component: LoginComponent, canActivate: [LogGuard]},
+  { path: 'register', component: RegisterComponent, canActivate: [LogGuard]},
+  { path: 'home', component: HomeComponent},
   { path: 'myTravelsHistory', component: MyTravelsHistoryComponent, canActivate: [AuthGuard]},
-  { path: 'travels', component: TravelsComponent, canActivate: [AuthGuard]},
-  { path: 'addTravel', component: AddTravelComponent , canActivate: [AuthGuard]},
+  { path: 'travels', component: TravelsComponent},
+  { path: 'addTravel', component: AddTravelComponent , canActivate: [MenagoGuard]},
   { path: 'basket', component: TravelsBasketComponent, canActivate: [AuthGuard]},
-  { path: 'travel/:name', component: SingleTravelDetailsComponent, canActivate: [AuthGuard] }
+  { path: 'travel/:name', component: SingleTravelDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdmGuard]}
 ];
 
 @NgModule({

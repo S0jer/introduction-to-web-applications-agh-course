@@ -1,5 +1,9 @@
-import { MyTravelsService } from './../my-travels.service';
-import { TravelService } from './../travel.service';
+import { Roles } from './../mock-data/roles';
+import { User } from './../mock-data/user';
+import { AuthService } from './../auth.service';
+import { StorageService } from '../storage.service';
+import { MyTravelsService } from '../my-travels.service';
+import { TravelService } from '../travel.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,13 +14,24 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   upcomingTravelName: string = "";
+  userList: User[]=[];
+  roles: Roles;
 
-
-  constructor(private travelService: TravelService, private myTravelsService: MyTravelsService) { 
+  constructor(private travelService: TravelService, private myTravelsService: MyTravelsService, private storage: StorageService, private authService: AuthService) { 
     this.travelService = travelService;
+    this.roles = this.authService.getRolesData();
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.getUserList();
+    this.authService.authState$.subscribe(data => console.log(data?.email))
+    console.log(this.roles)
+  }
+
+  getUserList(){
+    this.storage.getUserListSubject().subscribe(u=>{
+      this.userList=u;
+    });
   }
 
   getReservations(): number {
@@ -35,4 +50,11 @@ export class NavBarComponent implements OnInit {
     return this.upcomingTravelName;
   }
 
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
+  }
+
+  logout() {
+    this.authService.SignOut();
+  }
 }

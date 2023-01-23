@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Roles } from './mock-data/roles';
+import { StorageService } from './storage.service';
+import { Injectable, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
@@ -8,17 +10,39 @@ import { Observable} from 'rxjs';
 })
 export class AuthService {
 
-  userData: Observable<any>;
+  userData: any = null;
   authState$: Observable<firebase.default.User | null> = this.angularFireAuth.authState;
+  userRoles: Roles = {
+    user: true,
+    admin: false,
+    menager: false,
+    banned: false,
+  };
+  persistenceSetting: string = 'local';
 
-  constructor(private angularFireAuth: AngularFireAuth,public router: Router,private db: AngularFirestore) {
-    this.userData = angularFireAuth.authState;
+
+  constructor(private angularFireAuth: AngularFireAuth,public router: Router,private db: AngularFirestore, private storage: StorageService) {
+    angularFireAuth.authState.subscribe(async (ev: any) => {
+      if (ev) {
+        this.userData = ev;
+        this.getRoles();
+      } else {
+        this.userData = null;
+        this.userRoles = {
+          user: true,
+          admin: false,
+          menager: false,
+          banned: false,
+        };
+      }});
    }
 
 
   SignIn(email: string, password: string) {
     this.angularFireAuth.signInWithEmailAndPassword(email, password).then(res => {
       console.log('Youre in!');
+      this.getRoles();
+      this.router.navigate(['home']);
     }).catch(err => {
       console.log('Something went wrong:',err.message);
     });
@@ -51,5 +75,31 @@ export class AuthService {
     this.angularFireAuth.signOut();
     this.router.navigate(['login']);
     console.log('Logged out');
+  }
+
+  changePersistanceState(state: string): void {
+    this.angularFireAuth.setPersistence(state);
+    this.persistenceSetting = state;
+  }
+
+  getRoles() {
+    this.authState$.subscribe(state =>{
+      let userList = this.storage.getUserList();
+      userList.forEach(x =>{ if(x.id === state?.uid) {
+        console.log(x.nick)
+        this.userRoles.admin = x.admin;
+        this.userRoles.menager = x.menager;
+        this.userRoles.banned = x.banned;
+      }});
+    });
+  }
+
+  getRolesData(): Roles {
+    this.getRoles();
+    return this.userRoles;
+  }
+
+  isLoggedIn() {
+    return this.userData != null;
   }
 }

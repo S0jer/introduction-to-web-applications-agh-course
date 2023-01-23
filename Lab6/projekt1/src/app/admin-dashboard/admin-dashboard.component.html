@@ -1,11 +1,18 @@
 <body  class="backgroundConf">
+    <app-nav-bar></app-nav-bar>
     <div class="box">
         <div class="grid" *ngFor="let u of userlist">
             <p>{{u.nick}}</p>
-            <span>User</span>
+            <span class="clicked" >User</span>
             <span class="role" (click)="changeMenager(u)" [ngClass]="{'clicked': u.menager}">Menager</span>
             <span class="role" (click)="changeAdmin(u)" [ngClass]="{'clicked': u.admin }">Admin</span>
             <span class="role" (click)="changeBanned(u)" [ngClass]="{'clicked': u.banned}">Banned</span>
         </div>
-    </div>    
+    </div>
+    <div class="grid upperMargin">
+        <p>State: {{ currentState}}</p>
+        <span class="role" (click)="changePersistanceState('local')">Local</span>
+        <span class="role" (click)="changePersistanceState('session')">Session</span>
+        <span class="role" (click)="changePersistanceState('none')">None</span>
+    </div>
 </body>
