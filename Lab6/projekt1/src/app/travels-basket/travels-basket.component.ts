@@ -1,3 +1,5 @@
+import { AuthService } from './../auth.service';
+import { StorageService } from './../storage.service';
 import { MyTravelsService } from './../my-travels.service';
 import { TruncatedTravelData } from './../mock-data/truncatedTravelData';
 import { TravelService } from '../travel.service';
@@ -14,7 +16,7 @@ export class TravelsBasketComponent implements OnInit {
   basketList: TruncatedTravelData[] = [];
   sumPrice: number = 0;
 
-  constructor(private basketService: BasketService, private travelService: TravelService, private myTravelsService: MyTravelsService) { }
+  constructor(private basketService: BasketService, private travelService: TravelService, private myTravelsService: MyTravelsService, private storage: StorageService , private auth: AuthService) { }
 
   ngOnInit(): void {
     this.getBasket();
@@ -42,8 +44,10 @@ export class TravelsBasketComponent implements OnInit {
 
   buyTravel(myTravel: TruncatedTravelData) {
     let travel = this.travelService.getTravel(myTravel.name);
+    this.storage.pushOrder(this.auth.userId, myTravel);
     this.myTravelsService.buyTravel(myTravel,  travel.reservationsCnt);
     this.travelService.buyTravel(travel, travel.reservationsCnt);
     this.deleteBasketTravel(myTravel, travel.reservationsCnt);
+    this.storage.editTravel(travel.id!, travel);
   }
 }

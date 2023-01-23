@@ -11,6 +11,7 @@ import { Observable} from 'rxjs';
 })
 export class AuthService {
 
+  userId: any = null;
   userData: any = null;
   currentUserName: any = null;
   authState$: Observable<firebase.default.User | null> = this.angularFireAuth.authState;
@@ -87,6 +88,7 @@ export class AuthService {
   getRoles() {
     this.authState$.forEach(state => {
       this.storage.getUserList().subscribe(u => {u.forEach(x =>{ if(x.id === state?.uid) {
+        this.userId = x.id;
         this.currentUserName = x.nick;
         this.userRoles.admin = x.admin;
         this.userRoles.menager = x.menager;

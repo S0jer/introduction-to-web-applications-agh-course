@@ -1,3 +1,4 @@
+import { TruncatedTravelData } from './mock-data/truncatedTravelData';
 import { Injectable, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { BehaviorSubject, map, Observable } from 'rxjs';
@@ -29,14 +30,13 @@ export class StorageService implements Cobserver {
     this.bucketSubject = new BehaviorSubject<any[]>(this.bucketList);
     this.travelSubject = new BehaviorSubject<TravelData[]>(this.travelList);
     this.userSubject = new BehaviorSubject<User[]>(this.userList);
-    this.bucketsList = this.db.collection('/buckets');
+    this.bucketsList = this.db.collection('/orderHistory');
     this.usersList = this.db.collection('/users');
     this.travelsList = this.db.collection('/travels');
     this.getTravelListFromFire();
     this.getUserListFromFire();
     this.getBucketListFromFire();
   }
-
 
 
   // ------------firebase------------
@@ -72,14 +72,18 @@ export class StorageService implements Cobserver {
       });
   }
 
-  getBucketListFromFire(){
+  getBucketListFromFire() {
     this.bucketsList.snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({
-            id: c.payload.doc.id,
-            travel: c.payload.doc.data().travel,
+            userId: c.payload.doc.data().userId,
+            name:  c.payload.doc.data().name,
+            startDate: c.payload.doc.data().startDate,
+            endDate: c.payload.doc.data().endDate,
             quantity: c.payload.doc.data().quantity,
+            price: c.payload.doc.data().price,
+            imgPath: c.payload.doc.data().imgPath,
           })
         ))
     ).subscribe(x =>{
@@ -149,6 +153,19 @@ export class StorageService implements Cobserver {
       reservationsCnt: newTravel.reservationsCnt,
     }
     this.travelsList.add({...travel});
+  }
+
+  public pushOrder(userId: string, newTravel: TruncatedTravelData): void{
+    const travel = {
+      userId: userId,
+      name:newTravel.name,
+      startDate: newTravel.startDate,
+      endDate: newTravel.endDate,
+      quantity: newTravel.quantity,
+      price: newTravel.price,
+      imgPath: newTravel.imgPath,
+    }
+    this.bucketsList.add({...travel});
   }
 
   public editTravel(travelId: string, d:TravelData): void {

@@ -1,6 +1,7 @@
 import { TruncatedTravel } from "./truncatedTravel";
 
 export class TruncatedTravelData implements TruncatedTravel {
+    id?: string;
     name: string;
     quantity: number;
     price: number;

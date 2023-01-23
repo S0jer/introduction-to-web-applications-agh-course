@@ -2,7 +2,7 @@ import { StorageService } from './storage.service';
 import { Travel } from './mock-data/travel';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
-import { BehaviorSubject, map, Observable, of } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 
 @Injectable({

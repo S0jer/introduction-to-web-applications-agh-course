@@ -1,3 +1,6 @@
+import { AuthService } from './../auth.service';
+import { AuthGuard } from './../guard/auth.guard';
+import { StorageService } from './../storage.service';
 import { TruncatedTravel } from './../mock-data/truncatedTravel';
 import { TruncatedTravelData } from '../mock-data/truncatedTravelData';
 import { MyTravelsService } from '../my-travels.service';
@@ -20,13 +23,10 @@ export class MyTravelsHistoryComponent implements OnInit {
 
 
   
-  constructor(private basketService: BasketService, private travelService: TravelService, private myTravelsService: MyTravelsService) { }
+  constructor(private storage: StorageService, private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.myTravelsService.getMyTravels().subscribe({
-      next: travels => this.myTravels = travels,
-      error: error => console.log(error)
-    });
+    this.myTravels = this.storage.getBucketList().filter(bucket =>  bucket.userId === this.auth.userId)
   }
 
   getEndDate(travel: TruncatedTravel): Date {
