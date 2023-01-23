@@ -14,8 +14,7 @@ export class StarsComponent implements OnInit {
 
   constructor(private storage: StorageService, private auth: AuthService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   addRating( value: number ): void {
     this.travel.ratings.push( value );
