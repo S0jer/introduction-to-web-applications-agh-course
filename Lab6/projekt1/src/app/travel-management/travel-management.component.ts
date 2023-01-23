@@ -1,3 +1,7 @@
+import { Roles } from '../mock-data/roles';
+import { AuthService } from '../auth.service';
+import { StorageService } from '../storage.service';
+import { MyTravelsService } from '../my-travels.service';
 import { TruncatedTravelData } from '../mock-data/truncatedTravelData';
 import { BasketService } from '../basket.service';
 import { TravelData } from '../mock-data/travelData';
@@ -16,7 +20,12 @@ export class TravelManagementComponent implements OnInit {
 
   @Input('rating') rating!: boolean;
 
-  constructor(private travelService:TravelService, private basketService: BasketService) {   }
+  roles: Roles;
+
+  constructor(private travelService: TravelService, private basketService: BasketService, private myTravelsService: MyTravelsService, private storage: StorageService, private authService: AuthService) { 
+    this.travelService = travelService;
+    this.roles = this.authService.getRolesData();
+  }
 
   ngOnInit(): void {
   }
@@ -45,5 +54,9 @@ export class TravelManagementComponent implements OnInit {
 
   getReservationsCnt(): number {
     return this.travel.reservationsCnt;
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

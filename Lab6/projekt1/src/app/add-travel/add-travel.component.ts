@@ -2,7 +2,6 @@ import { TravelService } from './../travel.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TravelData } from '../mock-data/travelData';
-import { Travel } from '../mock-data/travel';
 
 
 @Component({

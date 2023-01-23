@@ -31,7 +31,7 @@ export class StorageService implements Cobserver {
     this.userSubject = new BehaviorSubject<User[]>(this.userList);
     this.bucketsList = this.db.collection('/buckets');
     this.usersList = this.db.collection('/users');
-    this.travelsList = this.db.collection('/dishes');
+    this.travelsList = this.db.collection('/travels');
     this.getTravelListFromFire();
     this.getUserListFromFire();
     this.getBucketListFromFire();
@@ -78,7 +78,7 @@ export class StorageService implements Cobserver {
         changes.map(c =>
           ({
             id: c.payload.doc.id,
-            dish: c.payload.doc.data().dish,
+            travel: c.payload.doc.data().travel,
             quantity: c.payload.doc.data().quantity,
           })
         ))
@@ -88,13 +88,13 @@ export class StorageService implements Cobserver {
       });
   }
 
-  deleteDishFromFire(id:string){
+  deleteTravelFromFire(id:string){
     this.travelsList.doc(id).delete();
     this.getTravelListFromFire();
   }
 
-  updateChoosen(id:string,q:number){
-    this.travelsList.doc(id).update({choosen: q});
+  updateChosen(id:string,q:number) {
+    this.travelsList.doc(id).update({chosen: q});
   }
 
 
@@ -104,6 +104,7 @@ export class StorageService implements Cobserver {
     return this.travelSubject.asObservable();
   }
   public getTravelList(){
+    this.getTravelListFromFire();
     return this.travelList;
   }
 
@@ -111,7 +112,18 @@ export class StorageService implements Cobserver {
     return this.userSubject.asObservable();
   }
   public getUserList(){
-    return this.userList;
+    return this.usersList.snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({
+            id: c.payload.doc.id,
+            nick: c.payload.doc.data().nick,
+            admin: c.payload.doc.data().admin,
+            menager: c.payload.doc.data().menager,
+            banned: c.payload.doc.data().banned,
+          })
+        ))
+    )
   }
 
   public getBucketListSubject(): Observable<User[]>{
@@ -139,8 +151,8 @@ export class StorageService implements Cobserver {
     this.travelsList.add({...travel});
   }
 
-  public editDish(d:TravelData): void{
-    this.travelsList.doc(d.id).set(d);
+  public editTravel(travelId: string, d:TravelData): void {
+    this.travelsList.doc(travelId).set(d);
   }
 
 

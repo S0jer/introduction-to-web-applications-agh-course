@@ -2,14 +2,17 @@
     <div class="commentSettings" *ngIf="getReservationsCnt() < travel.peopleLimit && (travel.peopleLimit - getReservationsCnt()) > 3" id="availableCommunicate">Dostępnych miejsc: {{travel.peopleLimit - getReservationsCnt()}}</div>
     <div class="commentSettingsRed" *ngIf="getReservationsCnt() < travel.peopleLimit && (travel.peopleLimit - getReservationsCnt()) <= 3" id="availableCommunicate">Dostępnych miejsc: {{travel.peopleLimit - getReservationsCnt()}}</div>
     <div class="commentSettingsRed" *ngIf="getReservationsCnt() >= travel.peopleLimit" id="unavailableCommunicate">Brak miejsc</div>
-    <div id="mainDiv">
+    <div *ngIf="isLoggedIn()" id="mainDiv">
         <button id="minus" (click)="decrement(travel)" >-</button>
         <span class="commentSettingsWhite" id="numberPlace">{{getReservationsCnt()}}</span>
         <button *ngIf="getReservationsCnt() < travel.peopleLimit" id="plus" (click)="increment(travel)">+</button>
     </div>
-    <app-stars *ngIf="rating" [travel]="travel"></app-stars><br>
-    <div class="btnDelWrapper">
+    <app-stars *ngIf="isLoggedIn() && rating && !roles.admin && !roles.banned" [travel]="travel"></app-stars><br>
+    <div class="btnDelWrapper" *ngIf="isLoggedIn() && (roles.admin || roles.menager)">
         <button id="deleteButton" (click)="deleteTravel(travel)"> Delete Travel </button>
+    </div>
+    <div class="btnDelWrapper" *ngIf="isLoggedIn() && (roles.admin || roles.menager)">
+        <button id="editButton" routerLink="/editTravel/{{travel.name}}">Travel Edition</button>
     </div>
 </div>
   

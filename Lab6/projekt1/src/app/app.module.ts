@@ -28,6 +28,8 @@ import { RegisterComponent } from './register/register.component';
 import { CommonModule } from '@angular/common';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { EditTravelsMenuComponent } from './edit-travels-menu/edit-travels-menu.component';
+import { EditTravelFormComponent } from './edit-travel-form/edit-travel-form.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     LoginComponent,
     RegisterComponent,
     AdminDashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    EditTravelsMenuComponent,
+    EditTravelFormComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig), 

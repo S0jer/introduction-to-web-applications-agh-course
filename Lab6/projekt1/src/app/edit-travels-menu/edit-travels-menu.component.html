@@ -1,0 +1,16 @@
+<body  class="backgroundConf">
+    <app-nav-bar></app-nav-bar>
+    <ul class="travels">
+        <li *ngFor="let travel of travelList">
+            <div *ngIf="travel && travel.unitPrice > 1500" class="travelHolder" id="greenBorder">
+                <app-travel-details [travel]="travel"></app-travel-details>
+                <app-travel-management [travel]="travel" [rating]="false"></app-travel-management>
+            </div>
+            <div *ngIf="travel && travel.unitPrice <= 1500" class="travelHolder">
+                <app-travel-details [travel]="travel"></app-travel-details>
+                <app-travel-management [travel]="travel" [rating]="false"></app-travel-management>
+            </div>
+        </li>
+    </ul>
+    <app-add-travel></app-add-travel>
+</body>

@@ -1,0 +1,25 @@
+{
+    "rules": {
+      ".read": "root.child('users/' + auth.uid + '/roles/admin').val() === true",
+      ".write": "root.child('users/' + auth.uid + '/roles/admin').val() === true",
+      "travels": {
+        ".indexOn": "id",
+        ".read": true,
+        ".write": "root.child('users/' + auth.uid + '/roles/menager').val() === true || root.child('users/' + auth.uid + '/roles/admin').val() === true"
+      },
+      "users": {
+        ".read": "root.child('users/' + auth.uid + '/roles/admin').val() === true",
+        ".write": "root.child('users/' + auth.uid + '/roles/admin').val() === true",
+        "$uid": {
+          ".read": "auth != null && auth.uid == $uid",
+          ".write": "auth != null && auth.uid == $uid"
+          }
+          },
+      "orderHistory":{
+        "$uid": {
+          ".read": "auth != null && auth.uid == $uid",
+          ".write": "auth != null && auth.uid == $uid"
+          }
+      }
+      }
+  }

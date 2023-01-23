@@ -1,3 +1,4 @@
+import { StorageService } from './storage.service';
 import { Travel } from './mock-data/travel';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
@@ -16,7 +17,7 @@ export class TravelService {
 
   travelReservations: number= 0;
 
-  constructor(private db: AngularFirestore) {
+  constructor(private db: AngularFirestore, private storage: StorageService) {
     this.travelsList = [];
     this.travelsSubject = new BehaviorSubject<Travel[]>(this.travelsList);
     this.travels = db.collection(this.dbPath);
@@ -49,6 +50,7 @@ export class TravelService {
 
   deleteTravel(travel: any): void {
     this.travels.doc(travel.id).delete();
+    this.storage.deleteTravelFromFire(travel.id);
     this.getTravelsFromFire();
   }
 
@@ -71,5 +73,9 @@ export class TravelService {
 
   buyTravel(travel: Travel, value: number): void {
     travel.peopleLimit -= value;
+  }
+
+  edit(travelId: string, event: Travel) {
+    this.storage.editTravel(travelId, event);
   }
 }

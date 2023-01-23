@@ -1,5 +1,4 @@
 import { TruncatedTravel } from './../mock-data/truncatedTravel';
-import { Travel } from '../mock-data/travel';
 import { TruncatedTravelData } from '../mock-data/truncatedTravelData';
 import { MyTravelsService } from '../my-travels.service';
 import { BasketService } from '../basket.service';

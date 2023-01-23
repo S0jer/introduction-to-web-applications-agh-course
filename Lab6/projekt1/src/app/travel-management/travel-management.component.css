@@ -59,6 +59,27 @@
     background-color: #f84848;
 }
 
+#editButton {
+    display: inline-flex;
+    justify-self: right;
+    width: 100px;
+    height: 45px;
+    cursor: pointer;
+    bottom: 0px;
+    right: 0px;
+    margin-right: 0;
+    background-color: rgba(6, 116, 226, 0.582);
+    border: 2px solid black;
+    font-weight: 900;
+    color: white;
+    border-radius: 100px;
+}
+
+#editButton:hover{
+    background-color: rgba(6, 130, 255, 0.582);
+}
+
+
 
 .btnDelWrapper {
     display: inline-flex;

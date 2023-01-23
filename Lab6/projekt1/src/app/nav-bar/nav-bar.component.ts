@@ -13,19 +13,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  upcomingTravelName: string = "";
   userList: User[]=[];
-  roles: Roles;
+  currentUserName: any = null;
 
-  constructor(private travelService: TravelService, private myTravelsService: MyTravelsService, private storage: StorageService, private authService: AuthService) { 
-    this.travelService = travelService;
-    this.roles = this.authService.getRolesData();
-  }
+  constructor(private travelService: TravelService, private myTravelsService: MyTravelsService, private storage: StorageService, public authService: AuthService) { }
 
   ngOnInit(): void { 
     this.getUserList();
-    this.authService.authState$.subscribe(data => console.log(data?.email))
-    console.log(this.roles)
+    this.getCurrentUserName();
   }
 
   getUserList(){
@@ -38,20 +33,12 @@ export class NavBarComponent implements OnInit {
     return this.travelService.getReservations();
   }
 
-  getUpcomingTravel(): string {
-    let len = 0
-    this.myTravelsService.getMyTravels().subscribe(travels => len = travels.length);
-    if(length > 0) {
-      this.myTravelsService.getMyTravels().subscribe({
-        next: travels => this.upcomingTravelName = travels[0].name,
-        error: error => console.log(error)
-      });
-    }
-    return this.upcomingTravelName;
-  }
-
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
+  }
+
+  getCurrentUserName() {
+    this.currentUserName = this.authService.getCurrentUserName();
   }
 
   logout() {

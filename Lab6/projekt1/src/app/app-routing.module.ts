@@ -1,3 +1,5 @@
+import { EditTravelsMenuComponent } from './edit-travels-menu/edit-travels-menu.component';
+import { EditTravelFormComponent } from './edit-travel-form/edit-travel-form.component';
 import { MenagoGuard } from './guard/menago.guard';
 import { LogGuard } from './guard/log.guard';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
@@ -25,7 +27,10 @@ const routes: Routes = [
   { path: 'addTravel', component: AddTravelComponent , canActivate: [MenagoGuard]},
   { path: 'basket', component: TravelsBasketComponent, canActivate: [AuthGuard]},
   { path: 'travel/:name', component: SingleTravelDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdmGuard]}
+  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdmGuard]},
+  { path: 'editTravelMenu', component: EditTravelsMenuComponent, canActivate: [MenagoGuard] },
+  { path: 'editTravel/:name', component: EditTravelFormComponent, canActivate: [MenagoGuard] },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({

@@ -62,6 +62,20 @@ body {
     background-repeat: no-repeat;
 }
 
+.nameHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    font-size: 20px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: rgba(15, 167, 15, 0.699);
+    background-repeat: no-repeat;
+}
+
 .midButton {
     font-size: 20px;
     color: white;
@@ -148,7 +162,7 @@ ol > li:hover > span {
     }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1350px) {
         .ol {
             display: flex;
             flex-direction: column;

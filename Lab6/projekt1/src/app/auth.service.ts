@@ -1,3 +1,4 @@
+import { User } from './mock-data/user';
 import { Roles } from './mock-data/roles';
 import { StorageService } from './storage.service';
 import { Injectable, OnInit } from '@angular/core';
@@ -11,6 +12,7 @@ import { Observable} from 'rxjs';
 export class AuthService {
 
   userData: any = null;
+  currentUserName: any = null;
   authState$: Observable<firebase.default.User | null> = this.angularFireAuth.authState;
   userRoles: Roles = {
     user: true,
@@ -83,20 +85,22 @@ export class AuthService {
   }
 
   getRoles() {
-    this.authState$.subscribe(state =>{
-      let userList = this.storage.getUserList();
-      userList.forEach(x =>{ if(x.id === state?.uid) {
-        console.log(x.nick)
+    this.authState$.forEach(state => {
+      this.storage.getUserList().subscribe(u => {u.forEach(x =>{ if(x.id === state?.uid) {
+        this.currentUserName = x.nick;
         this.userRoles.admin = x.admin;
         this.userRoles.menager = x.menager;
         this.userRoles.banned = x.banned;
-      }});
-    });
+    }})});});
   }
 
   getRolesData(): Roles {
     this.getRoles();
     return this.userRoles;
+  }
+
+  getCurrentUserName(): string {
+    return this.currentUserName;
   }
 
   isLoggedIn() {
