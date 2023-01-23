@@ -1,3 +1,5 @@
+import { AuthService } from './../auth.service';
+import { StorageService } from './../storage.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Travel } from './../mock-data/travel';
 
@@ -10,12 +12,13 @@ export class StarsComponent implements OnInit {
 
   @Input('travel') travel!: Travel;
 
-  constructor() { }
+  constructor(private storage: StorageService, private auth: AuthService) { }
 
   ngOnInit(): void {
   }
 
   addRating( value: number ): void {
     this.travel.ratings.push( value );
+    this.storage.editTravel(this.travel.id!, this.travel);
   }
 }

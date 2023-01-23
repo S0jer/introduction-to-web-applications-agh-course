@@ -780,8 +780,6 @@ NLab6/projekt1/src/app/single-travel-details/single-travel-details.component.ts
 0Lab6/projekt1/src/app/stars/stars.component.html,6\0\60a95e70d19c872b8485f3d7dfdd750749c98b16
 c
 3Lab6/projekt1/src/app/stars/stars.component.spec.ts,d\0\d0a722c1bb403467b1531e22f5f3138d38be19bd
-^
-.Lab6/projekt1/src/app/stars/stars.component.ts,d\0\d00aa7c728a74c08b3b40b88092e3f5ed6244148
 I
 Lab6/projekt1/src/test.ts,7\e\7ed2289a5cac580712cd36076e71a3dceed28f4e
 \
@@ -804,8 +802,6 @@ r
 BLab6/projekt1/src/app/travels-basket/travels-basket.component.html,6\a\6a4220519441cff9d0df8c135bf16a981063feda
 u
 ELab6/projekt1/src/app/travels-basket/travels-basket.component.spec.ts,4\c\4c60ccd03cc65510c74ddd1cf1cc923e3d2b317e
-p
-@Lab6/projekt1/src/app/travels-basket/travels-basket.component.ts,e\6\e6b15ee85501fb1b4ba98f0fc17f75da74f77a46
 r
 BLab6/projekt1/src/app/travels-filter/travels-filter.component.html,3\1\316ce905623190abde148ac0a8c2aadac392f903
 u
@@ -814,8 +810,6 @@ p
 @Lab6/projekt1/src/app/travels-filter/travels-filter.component.ts,f\7\f767fe7650000ac3373ea864cf9ee456bf412901
 b
 2Lab6/projekt1/src/app/mock-data/truncatedTravel.ts,6\e\6e34570e6f1c676ecdc69572bb054fb61041326f
-f
-6Lab6/projekt1/src/app/mock-data/truncatedTravelData.ts,6\7\672bc31f0e5f58275f9a193ab9f78a8e813e9305
 U
 %Lab5/zad1/src/app/download.service.ts,b\7\b756bbf1e54774c3af0db57499d3266d3803be81
 _

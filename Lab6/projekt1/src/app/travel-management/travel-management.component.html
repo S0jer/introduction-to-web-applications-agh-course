@@ -7,7 +7,8 @@
         <span class="commentSettingsWhite" id="numberPlace">{{getReservationsCnt()}}</span>
         <button *ngIf="getReservationsCnt() < travel.peopleLimit" id="plus" (click)="increment(travel)">+</button>
     </div>
-    <app-stars *ngIf="isLoggedIn() && rating && !roles.admin && !roles.banned" [travel]="travel"></app-stars><br>
+    <app-stars *ngIf="isLoggedIn() && rating && !roles.admin && !roles.banned && (roles.menager ||
+    (roles.user && boughtTravel(travel.name)))" [travel]="travel"></app-stars><br>
     <div class="btnDelWrapper" *ngIf="isLoggedIn() && (roles.admin || roles.menager)">
         <button id="deleteButton" (click)="deleteTravel(travel)"> Delete Travel </button>
     </div>

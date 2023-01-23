@@ -59,4 +59,15 @@ export class TravelManagementComponent implements OnInit {
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
   }
+
+  boughtTravel(travelName: string) {
+    let check = false;
+    this.storage.getBucketList().filter(b => b.userId === this.authService.userId).forEach(t => {
+        console.log(t);
+        if(t.name === travelName) {
+          check = true;
+        }
+    });
+    return check;
+  }
 }
